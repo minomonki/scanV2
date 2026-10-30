@@ -1,0 +1,231 @@
+<?php
+
+	session_start();
+	
+	include ("../System_config/config.php");
+	
+  /////  check session_id ของหน้า
+	if($_SESSION["PID"] == session_id()) {
+		
+	$imgpath_top = "../images/design_webOPD/web-OPDS01_01.jpg";
+	$imgpath_botton = "../images/design_webOPD/web-OPDS01_04.jpg";
+
+
+	include ("../System_config/connection.php");
+	
+	$showTable = $_GET['showTable'];
+
+	$Usergroup = $_SESSION["Usergroup"];
+
+	$un = $Usergroup;
+		$SQLgroup = "select * from tb_opd_group_detail  where groupID='$un'"	;
+		$RESgroup = mysql_db_query($database,$SQLgroup);
+		$VALgroup = mysql_fetch_array($RESgroup);
+			$del =  $VALgroup['del_list'];
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
+<title>::OPDS-Search</title>
+<style type="text/css">
+<!--
+.head-tb	 {	font-family: "mS Sans Serif"; font-size:16; font-weight:bold; color:#FFF; background-image:url(../images/asset.gif);	}
+.topic		{	font-family: "mS Sans Serif"; font-size:14; font-weight:bold;	}
+-->
+</style>
+
+
+<script type="text/javascript">  
+function popup(url,name,windowWidth,windowHeight){       
+    myleft=(screen.width)?(screen.width-windowWidth)/2:100;    
+    mytop=(screen.height)?(screen.height-windowHeight)/2:100;      
+    properties = "width="+windowWidth+",height="+windowHeight;   
+    properties +=",scrollbars=yes,toolbar=no,menubar=no,resizable=1"
+	properties +=",location=no, top="+mytop+",left="+myleft;      
+    window.open(url,name,properties); 
+}   
+</script> 
+<script>
+var statusmsg=""
+
+function hidestatus(){
+window.status=statusmsg
+return true
+}
+
+</script>
+
+</head>
+
+<body>
+
+
+<table align="center" width="999" border="0" cellspacing="0" cellpadding="0">
+  <tr><td width="999"><?php include ("../System_Design/header.php"); ?></td></tr>
+  
+  <tr>
+        <td background="../images/design_webOPD/web-OPDS01_03.jpg">
+        
+ <form name="search" method="post" action="?showTable=1">
+<table align="center" width="701" border="0" cellspacing="2" cellpadding="0">
+  <tr><td colspan="4" class="head-topic">:: ค้นหา ::</td></tr>
+  <tr>
+    <td width="158" align="right" bgcolor="#CCCCCC" class="topic">HN :</td>
+    <td width="187"><input type="text" name="txtSearchHN" value="<?=$_POST['txtSearchHN'];?>" /></td>
+  </tr>
+  <tr>
+    <td width="158" align="right" bgcolor="#CCCCCC" class="topic">ชื่อ :</td>
+    <td><input type="text" name="txtFname" value="<?=$_POST['txtFname'];?>" /></td>
+    <td width="144" align="right" bgcolor="#CCCCCC" class="topic">นามสกุล :</td>
+    <td><input type="text" name="txtLname" value="<?=$_POST['txtLname'];?>" /></td>
+  </tr>
+  <tr>
+    <td colspan="4" align="center">
+    	<input type="submit" name="cmd_search" value="Search" />
+        <input type="reset" name="cmd_clear_frm" value="Clear" />
+    </td>
+  </tr>
+</table>
+</form>
+
+<?php
+/////  SEARCH ////////////
+$chkw			=	"1";
+$chkd			=	"1";
+$chkdd			=	"0";
+$txtSearchHN	=	$_POST["txtSearchHN"];
+$txtFname		=	$_POST["txtFname"];
+$txtLname		=	$_POST["txtLname"];
+$tmphn =strlen($txtSearchHN);
+$zzz=0;
+if (($tmphn<'7')&&($tmphn>'0')){
+	for($zzz=0;$zzz<(7-$tmphn);$zzz++){
+	$txtSearchHN ="0".$txtSearchHN;
+	}
+}
+#print $txtSearchHN;
+///////////  default
+if ((empty($txtSearchHN))){
+		$sql_show = "	select hn,firstname,lastname 
+						from tb_opd ";
+						$chkw = 0;
+}
+		
+
+///////////// ? HN
+if (trim($txtSearchHN)!= ""){
+  		if ($chkw ==0) {	
+			$sql_show = $sql_show."  where (hn = '$txtSearchHN')" ;
+			$chkdd =1;	
+		}
+		else {	
+			$sql_show =	"	select hn,firstname,lastname 
+							from tb_opd where (hn = '$txtSearchHN')" ; 
+			$chkw = 0;
+			$chkd = 0;
+			$chkdd =1;
+		}
+}
+
+
+////////////////// ?  
+if (trim( $txtFname)!= ""){
+  		if ($chkw ==0) {
+			if($chkdd ==1){
+				$sql_show = $sql_show." and (firstname like '$txtFname%' )";}
+			else{
+				$sql_show = $sql_show." where (firstname like '$txtFname%' )";
+				$chkdd =1;}
+		}
+		else {
+			$sql_show =	"	select hn,firstname,lastname 
+							from tb_opd where (firstname like '$txtFname%' )";  
+							
+			$chkw = 0;
+			$chkd = 0;
+		}
+  }
+////////////////// ? ?
+if (trim( $txtLname)!= ""){
+		if ($chkw ==0) {
+			if($chkdd ==1){
+				$sql_show = $sql_show." and (lastname like '$txtLname%' )";}
+			else{
+				$sql_show = $sql_show." where (lastname like '$txtLname%' )";
+				$chkdd =1;}			
+		}
+		else {
+
+			$sql_show =	"	select hn,firstname,lastname 
+							from tb_opd where (lastname like '$txtLname%' )"; 
+							
+			$chkw = 0;
+			$chkd = 0;
+				}
+  
+}	  
+	$sql_show = $sql_show." group by hn  order by hn,datescan desc limit 0,100";
+
+#print 	$sql_show;
+#	print "sql_show = ".$sql_show."<br>";
+?>
+    	<img src="../images/span.gif" height="20" />
+ <?php
+ if(($showTable ==1) or ($showTable !="")){		///////////////////////// showTable
+ ?>
+<table align="center" width="88%" border="1" cellspacing="0" cellpadding="0">
+  <tr class="head-tb">
+    <!--<td width="10%" align="center">AN</td> -->
+    <td width="18%" height="37" align="center">HN</td>
+    <td width="25%" align="center">ชื่อ</td>
+    <td width="31%" align="center">นามสกุล</td>
+    <td width="26%" align="center">imagescan</td>
+  <?php 	
+		if ($del == 1){
+    	print "<td width=\"9%\" ><div align=\"center\">ลบ</div></td>";}?>
+  </tr>
+
+<?php
+///////////// while //////////////
+	$RESsearch = mysql_db_query($database,$sql_show);
+	while ($VALsearch=mysql_fetch_array($RESsearch)){
+?>
+  <tr>
+    <td><?=$VALsearch['hn'];?></td>
+    <td><?=$VALsearch['firstname'];?></td>
+    <td><?=$VALsearch['lastname'];?></td>
+    <td align="center">
+    <a href="javascript:popup('show_detail.php?hnID=<?=$VALsearch['hn'];?>&groupBy=<?php if($enableGroupByDoc == true) { echo "true"; } else { echo "false"; }?>','null',950,500);" onMouseover="return hidestatus()" onMouseOut="return hidestatus()"><img src="../images/icon_showinfo.gif" border="0"/></a>
+
+    </td>
+	<?php
+		if ($del == 1){
+			print "<td><div align=\"center\"><a href=\"delete_list_opd.php?uid=".$VALsearch['hn'];
+	 		print "\"><img src=\"../images/icon_b_delete2.gif\" border=\"0\"/></a></div></td>";
+		}
+	?>
+  </tr>
+<?php
+		}
+?>
+</table> 
+<?php  }  ///////////////////////  	showTable ?>
+    <img src="../images/span.gif" height="20" />
+    </td>
+  </tr>
+  <tr><td><?php include ("../System_Design/footer.php"); ?></td></tr>
+</table>
+
+</body>
+</html>
+
+
+<?php
+}
+else{
+	print "<script language='javascript' >window.location='../frm_login.php';</script>";
+}
+?>

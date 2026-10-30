@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-language" content="en" />
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="copyright" content="R. Schoo" />
+	
+	<link rel="stylesheet" media="screen" href="../datepick/styles/vlaCal-v2.1.css" type="text/css" />
+	<link rel="stylesheet" media="screen" href="../datepick/styles/vlaCal-v2.1-adobe_cs3.css" type="text/css" />
+	<link rel="stylesheet" media="screen" href="../datepick/styles/vlaCal-v2.1-apple_widget.css" type="text/css" />
+	
+	<script type="text/javascript" src="../datepick/jslib/mootools-1.2-core-compressed.js"></script>
+	<script type="text/javascript" src="../datepick/jslib/vlaCal-v2.1-compressed.js"></script>
+	
+	<!-- You could also include the uncompressed versions for developing purposes:
+	<script type="text/javascript" src="../datepick/jslib/mootools-1.2-core.js"></script>
+	<script type="text/javascript" src="../datepick/jslib/vlaCal-v2.1.js"></script>-->
+	
+	<title></title>
+	
+	<style>
+	body {
+		cursor: default;
+		text-align: left;
+		font-family: calibri, arial, sans-serif;
+		font-size: 13px;
+		margin: 0;
+		padding: 5px;
+	}
+	
+	table th {
+		vertical-align: top;
+	}
+
+	input {
+		text-align: center;
+		font-family: calibri, arial, sans-serif;
+		font-size: 13px;
+		background-color: white;
+		border: 1px solid;
+		border-color: #abadb3 #dbdfe6 #e3e9ef #e2e3ea;
+		padding: 2px;
+	}
+	input:focus, input:hover  {
+		border-color: #5794bf #b7d5ea #c7e2f1 #c5daed;
+	}
+
+	.pickerImg {
+		position: absolute;
+		margin-left: -16px;
+		margin-top: 5px;
+		cursor: pointer;
+	}
+	.infoBox {
+		background-color: #fefdec;
+		border: 1px solid #edebcd;
+		padding: 6px;
+		margin-bottom: 20px;
+	}
+	</style>
+	
+	<script type="text/javascript">
+		window.addEvent('domready', function() { 
+			new vlaDatePicker('exampleI');			
+		});	
+	</script>
+    
+</head>
+<body>
+	<table cellpadding="0">
+		<tr>
+			<th style="width: 100px">Example I</th>
+			<td><input id="exampleI" name="date" type="text" style="width: 80px;" maxlength="10" /></td>
+		</tr>
+		<tr><td></td><td>Standard datepicker.<br /><br /></td></tr>
+	</table>
+	<br /><br /><br /><br /><br /><br />
+</body>
+</html>

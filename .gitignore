@@ -1,0 +1,10 @@
+# OS metadata
+*:Zone.Identifier
+Thumbs.db
+.DS_Store
+.directory
+
+# Temporary files
+*.tmp
+*.swp
+*~

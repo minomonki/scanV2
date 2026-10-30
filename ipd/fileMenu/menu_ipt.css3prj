@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Css3Menu>
+    <project version="1.0">
+        <params>
+            <HasChanges>true</HasChanges>
+            <EmbandImg>false</EmbandImg>
+            <Data>//--- Common
+var isHorizontal=1;
+var smColumns=1;
+var smOrientation=0;
+var dmRTL=0;
+var pressedItem=-2;
+
+//--- Dimensions
+var menuWidth=&quot;&quot;;
+var menuHeight=&quot;&quot;;
+var smWidth=&quot;&quot;;
+var smHeight=&quot;&quot;;
+
+//--- Positioning
+var absolutePos=1;
+var posX=&quot;10px&quot;;
+var posY=&quot;10px&quot;;
+var subMenuAlign=&quot;left&quot;;
+var subMenuVAlign=&quot;top&quot;;
+
+//--- Font
+var fontStyle=[&quot;bold 14px Trebuchet MS,sans-serif&quot;,&quot;bold 14px Trebuchet MS,sans-serif&quot;];
+var fontColor=[&quot;#000&quot;,&quot;#333&quot;];
+var fontDecoration=[&quot;none&quot;,&quot;none&quot;];
+var fontColorDisabled=&quot;#AAAAAA&quot;;
+var textShadow=[&quot;#FFF 0 0 1px&quot;,&quot;#FFF 0 0 1px&quot;];
+
+
+//--- Appearance
+var menuBackColor=&quot;#dedede&quot;;
+var menuBackImage=&quot;&quot;;
+var menuBackRepeat=&quot;repeat&quot;;
+var menuBorderColor=&quot;#5f5f5f&quot;;
+var menuBorderWidth=&quot;1px&quot;;
+var menuBorderStyle=&quot;solid&quot;;
+var menuBorderRadius=&quot;5px&quot;;
+var smFrameImage=&quot;&quot;;
+var smFrameWidth=0;
+
+//--- Item Appearance
+var itemBackColor=[&quot;#222222&quot;,&quot;#61a700&quot;];
+var itemBackImage=[&quot;images/mainbk.png&quot;,&quot;images/mainbk.png&quot;];
+var itemBackPosY=[&quot;0&quot;,&quot;100%&quot;];
+var itemSlideBack=0;
+var itemShadow=0;
+var itemBorderWidth=&quot;0 0 0 1px&quot;;
+var itemBorderColor=[&quot;#C0C0C0&quot;,&quot;#C0C0C0&quot;];
+var itemBorderStyle=[&quot;solid&quot;,&quot;solid&quot;];
+var itemBorderRadius=&quot;&quot;;
+var itemSpacing=0;
+var itemPadding=&quot;10px&quot;;
+var itemAlignTop=&quot;left&quot;;
+var itemAlign=&quot;left&quot;;
+var itemCursor=&quot;pointer&quot;;
+
+//--- Item Icons
+var iconTopWidth=16;
+var iconTopHeight=16;
+var iconWidth=16;
+var iconHeight=16;
+var arrowImageMain=[&quot;&quot;,&quot;&quot;];
+var arrowWidth=0;
+var arrowImageSub=[&quot;images/arrowsub.png&quot;,&quot;images/arrowsub.png&quot;];
+var arrowWidthSub=4;
+
+//--- Separators
+var separatorImage=&quot;images/hsep.png&quot;;
+var separatorColor=&quot;&quot;;
+var separatorWidth=&quot;100%&quot;;
+var separatorHeight=&quot;1px&quot;;
+var separatorAlignment=&quot;left&quot;;
+var separatorVImage=&quot;&quot;;
+var separatorVColor=&quot;&quot;;
+var separatorVWidth=&quot;1&quot;;
+var separatorVHeight=&quot;100%&quot;;
+var separatorPadding=&quot;0px&quot;;
+
+//--- Transitional Effects &amp; Filters
+var transparency=&quot;100&quot;;
+var shadowLen=5;
+var shadowColor=&quot;#000000&quot;;
+var shadowTop=0;
+
+//--- CSS Support (CSS-based Menu)
+var cssSubmenu=&quot;&quot;;
+var cssItem=[&quot;&quot;,&quot;&quot;];
+var cssItemText=[&quot;&quot;,&quot;&quot;];
+
+//--- Floatable Menu
+var floatable=0;
+
+//--- Advanced Features
+var saveNavigationPath=1;
+var itemTarget=&quot;_self&quot;;
+var pathPrefix_img=&quot;&quot;;
+var pathPrefix_link=&quot;&quot;;
+
+var itemStylesNames=[&quot;Subitem&quot;,&quot;Top First Item&quot;,&quot;Top Last Item&quot;];
+var menuStylesNames=[&quot;Submenu&quot;,];
+
+var itemStyles = [
+    [&quot;itemBackColor=#424542,#424542&quot;,&quot;itemBackImage=none,none&quot;,&quot;fontStyle='normal 14px Tahoma,serif','normal 14px Tahoma,serif'&quot;,&quot;fontColor=#FFF,#6bd600&quot;,
+		&quot;fontDecoration=none,none&quot;,
+		&quot;itemBorderWidth=0&quot;,&quot;itemPadding=4px&quot;,&quot;textShadow=#FFF 0 0 0,#FFF 0 0 0&quot;
+	],
+	[&quot;itemBorderRadius=4px 0 0 4px&quot;,&quot;itemBorderWidth=0&quot;],
+	[&quot;itemBorderRadius=0 4px 4px 0&quot;]
+	
+];
+var menuStyles = [
+    [&quot;menuBackColor=#424542&quot;,&quot;menuBorderRadius=6px&quot;, &quot;menuBorderColor=#FFF&quot;, &quot;menuBorderWidth=2px&quot;, &quot;itemSpacing=10&quot;]
+];
+
+</Data>
+            <FontFamily>Times New Roman</FontFamily>
+            <FontSize>14</FontSize>
+            <Bold>true</Bold>
+            <Italic>false</Italic>
+            <Underline>false</Underline>
+            <FontFamily1>Tahoma,serif</FontFamily1>
+            <FontSize1>14</FontSize1>
+            <Bold1>false</Bold1>
+            <Italic1>false</Italic1>
+            <Underline1>false</Underline1>
+            <TextColor0>#ffffff</TextColor0>
+            <TextColor1>#ffffff</TextColor1>
+            <SubTextColor0>#FFF</SubTextColor0>
+            <SubTextColor1>#6bd600</SubTextColor1>
+            <ItemBackColor0>#222222</ItemBackColor0>
+            <ItemBackColor1>#1f07a7</ItemBackColor1>
+            <SubitemBackColor0>#424542</SubitemBackColor0>
+            <SubitemBackColor1>#424542</SubitemBackColor1>
+            <itemBorderRadius0>4</itemBorderRadius0>
+            <itemBorderRadius1>0</itemBorderRadius1>
+            <menuBorderRadius0>5</menuBorderRadius0>
+            <menuBorderRadius1>6</menuBorderRadius1>
+        </params>
+        <items>
+            <item>
+                <hint>สืบค้น</hint>
+                <link></link>
+                <target></target>
+                <text>สืบค้น</text>
+            </item>
+            <item>
+                <hint>ประกาศ</hint>
+                <link></link>
+                <target></target>
+                <text>ประกาศ</text>
+            </item>
+            <item>
+                <hint>เลี่ยนรหัสผ่าน</hint>
+                <link></link>
+                <target></target>
+                <text>เลี่ยนรหัสผ่าน</text>
+            </item>
+            <item>
+                <hint>จัดการเอกสาร</hint>
+                <link></link>
+                <target></target>
+                <text>จัดการเอกสาร</text>
+                <items>
+                    <item>
+                        <hint>เพิ่มประเภทเอกสาร</hint>
+                        <link></link>
+                        <target></target>
+                        <text>เพิ่มประเภทเอกสาร</text>
+                    </item>
+                </items>
+            </item>
+            <item>
+                <hint>จัดการผู้ใช้งานระบบ</hint>
+                <link></link>
+                <target></target>
+                <text>จัดการผู้ใช้งานระบบ</text>
+                <items>
+                    <item>
+                        <hint>กลุ่มผู้ใช้</hint>
+                        <link></link>
+                        <target></target>
+                        <text>กลุ่มผู้ใช้</text>
+                    </item>
+                    <item>
+                        <hint>เพิ่มผู้ใช้</hint>
+                        <link></link>
+                        <target></target>
+                        <text>เพิ่มผู้ใช้</text>
+                    </item>
+                    <item>
+                        <hint>กำหนดสิทธิ์การใช้งาน</hint>
+                        <link></link>
+                        <target></target>
+                        <text>กำหนดสิทธิ์การใช้งาน</text>
+                    </item>
+                </items>
+            </item>
+            <item>
+                <hint>ออกจากระบบ</hint>
+                <link></link>
+                <target></target>
+                <text>ออกจากระบบ</text>
+            </item>
+        </items>
+        <media>
+            <arrowsub.png>iVBORw0KGgoAAAANSUhEUgAAAAQAAAAFCAYAAABirU3bAAAAHUlEQVR42mP8DwQMEMAIJqB8uCAjQgFEEKsKFDMAuFsT9m2NIKYAAAAASUVORK5CYII=</arrowsub.png>
+            <hsep.png>iVBORw0KGgoAAAANSUhEUgAAAL4AAAABCAIAAADvioNqAAAAa0lEQVR42nVPQQ7AIAgrF/9msv//xRNL0EFBVhJsgaLKfOZaS0Rg2KRkAYXLTDa8cCRI3O1izJV+HF37jyAsJbek8BaqGtwiEet6VlCQPNSODa8fCRLfRLjIeK9qN4TMt7O3Pvb6Dn9/jPEC0Jix4HcuSB4AAAAASUVORK5CYII=</hsep.png>
+            <mainbk.png>iVBORw0KGgoAAAANSUhEUgAAAAEAAABQCAYAAADYxx/bAAAAAXNSR0IArs4c6QAAAAZiS0dEAOgAnAAAFe529QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oFDQ4qDse2DmEAAACFSURBVBjThc8xbgJRDATQp1mBRNKkocgBcnQOspfgEhR08LWs4nQf/RUoLqwZjz0jq6pzsAY6WoPHSNegjfQ+Cm2k93ezzUUb/dr/aat5nqmqr+BHVZ2CW//jGlyCpT/TOn3mPrrz7YW6jHtL8GtTVTUF6eH7YAp2ve1H9Bl8BIfgGHz/AUbbRnmPVfCgAAAAAElFTkSuQmCC</mainbk.png>
+            <mainbk1.png>iVBORw0KGgoAAAANSUhEUgAAAAEAAABQCAYAAADYxx/bAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oFDg0dKwxGa6UAAABkSURBVBjThY87DoAwDEMfRmLiYFy8B2JiaTEDUlCqAosVOx/H2N4FWABRnVF1tGWtgzagLe929PwfGbk92iJgxfYm4IgcNd+r2bLmRh3Mtc8c9wdzKYWwfAdsTwIkYAqQgPnRLlh0RquN7xvwAAAAAElFTkSuQmCC</mainbk1.png>
+        </media>
+    </project>
+</Css3Menu>

@@ -1,0 +1,17 @@
+body {  margin: 0px  0px; padding: 0px  0px}
+span{font-size: 18px; color: #862c3e; font-family: Angsana New;text-decoration: none;font-weight: normal;}
+.menuleft{font-family: tahoma;font-size: 12px;color: #000000}
+.box{background: #ffffff;border-top: 1 solid #871233;border-bottom: 1 solid #871233;border-left: 1 solid #871233;border-right: 1 solid #871233;font-size: 12px; color: #871233; text-decoration: none; font-family:tahoma;font-weight: normal;}
+.unbox{background-color: #c0c0c0;border-top: 1 solid #888888;border-bottom: 1 solid #888888;border-left: 1 solid #888888;border-right: 1 solid #888888;font-size: 12px; color: #871233; text-decoration: none; font-family:tahoma;font-weight: normal;}
+.rowh{line-height:25px}
+.rowh1{line-height:35px}
+.hdtable{font-size: 12px; color: #000000; font-family: tahoma;text-decoration: none;font-weight: normal;}
+.listdetail{font-size: 18px; color: #862c3e; font-family: Angsana New;text-decoration: none;font-weight: normal;}
+.listdetailb{font-size: 18px; color: #000000; font-family: Angsana New;text-decoration: none;font-weight: normal;}
+.labeltbl{font-size: 14px; color: #000000; font-family: tahoma;text-decoration: none;font-weight: bold;}
+.lnk{font-size: 12px; color: #e17100; font-family: tahoma;text-decoration: none;font-weight: normal;}
+.lnku{font-size: 12px; color: #e17100; font-family: tahoma;text-decoration: underline;font-weight: normal;}
+.lnkblue{font-size: 12px; color: #0000ff; font-family: tahoma;text-decoration: underline;font-weight: normal;}
+.lnkb{font-size: 12px; color: #000000; font-family: tahoma;text-decoration: none;font-weight: bold;}
+.redb{font-size: 12px; color: #ff0000; font-family: tahoma;text-decoration: none;font-weight: bold;}
+.blackb{font-size: 12px; color: #000000; font-family: tahoma;text-decoration: none;font-weight: bold;}
