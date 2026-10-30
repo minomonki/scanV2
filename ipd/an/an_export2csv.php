@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <?php
 	
@@ -18,7 +18,7 @@ print "pages = ".$pages."<br>";
 print "sizes = ".$sizes."<br>";
 ///////////////////////////////////
 /* example
-SELECT '��', '�ӹǹ AN ��к�', '�ӹǹ˹��', '��Ҵ(Mb)'
+SELECT 'ปี', 'จำนวน AN ในระบบ', 'จำนวนหน้า', 'ขนาด(Mb)'
 UNION (
 
 SELECT year( datescan ) , count( * ) AS sum_an, sum( pages ) AS pages, sum( OCTET_LENGTH( imagescan ) /1024 ) AS sizes
@@ -32,7 +32,7 @@ GROUP BY year( datescan )
 ) 
 */
 //////////////////////////////////
-$titlecsv="SELECT '��', '�ӹǹ AN ��к�', '�ӹǹ˹��', '��Ҵ(Mb)' UNION (";
+$titlecsv="SELECT 'ปี', 'จำนวน AN ในระบบ', 'จำนวนหน้า', 'ขนาด(Mb)' UNION (";
 $into=" INTO OUTFILE ";
 $path="'C:\AppServ\www\ipd\exportfile\ ";
 //$path="'../exportfile/";
@@ -49,7 +49,7 @@ if ($returnurl=="anreport"){
 	$sqlcmd=$titlecsv.$select.$into.trim($path).$exportname.$field.$enclosed.$lines.$from.$where.$groupby;
 	print "sqlcmd = ".$sqlcmd."<br>";
 	//$result=mysql_query($sqlcmd);
-	/*$list=array('���,$sum_an,$pages,$sizes');
+	/*$list=array('รวม,$sum_an,$pages,$sizes');
 	$fp = fopen($path.$exportname, 'a+');
 foreach ($list as $line) {
     fputcsv($fp, split(',', $line));

@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 	
 	include("../../System_config/connection.php");
@@ -8,7 +8,7 @@ $txtGname	= $_POST["txtGname"];
 
 
 if(empty($txtGname)){
-	print "<script>alert ('��سҡ�˹����͡������͹��úѹ�֡..'); </script>";
+	print "<script>alert ('กรุณากำหนดชื่อกลุ่มก่อนการบันทึก..'); </script>";
 	print "<script language='javascript' >window.location='../show_usergroup.php?status=0';</script>";
 	exit();
 }
@@ -20,7 +20,7 @@ else{
 		$chkgname = $VALgname['groupname'];
 	}
 	if($txtGname==$chkgname){
-		print "<script>alert ('���͡��������������������� ��س��Ǩ�ͺ��͹��úѹ�֡..'); </script>";
+		print "<script>alert ('ชื่อกลุ่มผู้ใช้นี้มีอยู่แล้ว กรุณตรวจสอบก่อนการบันทึก..'); </script>";
 		print "<script language='javascript' >window.location='../show_usergroup.php?status=0';</script>";
 		exit();
 	}

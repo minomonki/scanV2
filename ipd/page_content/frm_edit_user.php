@@ -6,7 +6,7 @@
 
 	include ("../System_config/connection.php");
 
-  /////  check session_id �ͧ˹��
+  /////  check session_id ของหน้า
 	if($_SESSION["PID"] == session_id()) {
 
 	////  query data user
@@ -21,7 +21,7 @@ $VALeditUser = mysql_fetch_array($RESeditUser);
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 <title>:: IPD - EDIT User Account ::</title>
 
@@ -36,7 +36,7 @@ $VALeditUser = mysql_fetch_array($RESeditUser);
 <script language="javascript">
 function fncSubmit()
 {
-	if(confirm('�׹�ѹ��úѹ�֡������')==true)
+	if(confirm('ยืนยันการบันทึกข้อมูล')==true)
 	{
 		return true;
 	}
@@ -79,7 +79,7 @@ function fncSubmit()
   <tr>
     <td width="324"  align="right" class="topic">User Group :</td>
     <td colspan="2" align="left"><select name="usergroup">
-      <option value="0">::  ���͡����������ҹ ::</option>
+      <option value="0">::  เลือกกลุ่มผู้ใช้งาน ::</option>
     	<?php
 			$SQLgroup = "select * from tb_ipd_usergroup order by groupID asc";
 			$RESgroup = mysql_db_query($database,$SQLgroup);
@@ -108,18 +108,18 @@ function fncSubmit()
     <td colspan="2" align="left"><input type="password" name="txtpass" value="<?=$VALeditUser["password"]?>" /></td>
   	</tr>
   <tr>
-    <td align="right" class="topic">�׹�ѹ Password <span class="star">*</span> :</td>
+    <td align="right" class="topic">ยืนยัน Password <span class="star">*</span> :</td>
     <td colspan="2" align="left"><input type="password" name="txtconpass" value="<?=$VALeditUser["password"]?>" /></td>
   	</tr>
     <tr>
     		<td colspan="3"  align="left">User Profile :</td>
  	</tr>
    <tr>
-    <td align="right" class="topic">����  <span class="star">*</span> :</td>
+    <td align="right" class="topic">ชื่อ  <span class="star">*</span> :</td>
     <td colspan="2" align="left"><input type="text" name="txtfname" value="<?=$VALeditUser["Fname"]?>" /></td>
   	</tr>
      <tr>
-    <td align="right" class="topic">���ʡ�� <span class="star">*</span> :</td>
+    <td align="right" class="topic">นามสกุล <span class="star">*</span> :</td>
     <td colspan="2" align="left"><input type="text" name="txtlname" value="<?=$VALeditUser["Lname"]?>" /></td>
   	</tr>
     <tr>

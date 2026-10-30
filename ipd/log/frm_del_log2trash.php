@@ -4,7 +4,7 @@
 	$imgpath_top = "../images/design_webIPD/web-IPDS01_01.jpg";
 	$imgpath_botton = "../images/design_webIPD/web-IPDS01_04.jpg";
 
-  /////  check session_id ¢ÕßÀπÈ“
+  /////  check session_id ‡∏Ç‡∏≠‡∏á‡∏´‡∏ô‡πâ‡∏≤
 	if($_SESSION["PID"] == session_id()) {
 		
 	include ("../System_config/connection.php");
@@ -19,20 +19,20 @@
 	$maxlog = $_REQUEST["maxlog"];
 ////////// check to complete data
 if ($start <=$minlog && $end>=$maxlog){
-	$notemsg .="*** µÈÕß°“√≈∫¢ÈÕ¡Ÿ≈ Log ∑—ÈßÀ¡¥ ";
-	//print "<script>alert ('∫—π∑÷°°“√°”Àπ¥ ‘∑∏‘‡√’¬∫√ÈÕ¬·≈È«'); </script>";
+	$notemsg .="*** ‡∏ï‡πâ‡∏≠‡∏á‡∏Å‡∏≤‡∏£‡∏•‡∏ö‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏• Log ‡∏ó‡∏±‡πâ‡∏á‡∏´‡∏°‡∏î ";
+	//print "<script>alert ('‡∏ö‡∏±‡∏ô‡∏ó‡∏∂‡∏Å‡∏Å‡∏≤‡∏£‡∏Å‡∏≥‡∏´‡∏ô‡∏î‡∏™‡∏¥‡∏ó‡∏ò‡∏¥‡πÄ‡∏£‡∏µ‡∏¢‡∏ö‡∏£‡πâ‡∏≠‡∏¢‡πÅ‡∏•‡πâ‡∏ß'); </script>";
 	//print "<script language='javascript' >window.location='frm_set_docpass.php?errmsg=$errmsg';</script>";
 	//exit();	
 }
-$note="¢ÈÕ¡Ÿ≈°“√‡¢È“„™Èß“π : ".countRowlog("tb_ipd_logfile",$startd,$endd,"")." √“¬°“√ ";
-$note2="¢ÈÕ¡Ÿ≈ª√–‡¿∑°“√„™Èß“π : ".countRowlog("tb_ipd_logfile",$startd,$endd,"tb_ipd_logfile_detail")." √“¬°“√ ";
+$note="‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡∏Å‡∏≤‡∏£‡πÄ‡∏Ç‡πâ‡∏≤‡πÉ‡∏ä‡πâ‡∏á‡∏≤‡∏ô : ".countRowlog("tb_ipd_logfile",$startd,$endd,"")." ‡∏£‡∏≤‡∏¢‡∏Å‡∏≤‡∏£ ";
+$note2="‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡∏õ‡∏£‡∏∞‡πÄ‡∏†‡∏ó‡∏Å‡∏≤‡∏£‡πÉ‡∏ä‡πâ‡∏á‡∏≤‡∏ô : ".countRowlog("tb_ipd_logfile",$startd,$endd,"tb_ipd_logfile_detail")." ‡∏£‡∏≤‡∏¢‡∏Å‡∏≤‡∏£ ";
 
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 <title>:: IPD - DELETE LOG ::</title>
 
@@ -58,7 +58,7 @@ $note2="¢ÈÕ¡Ÿ≈ª√–‡¿∑°“√„™Èß“π : ".countRowlog("tb_ipd_logfile",$startd,$endd,"tb
         
         <form name="DelDoc" id="DelDoc" action="fn_dellog2trash.php" method="post">
     	<table  align="center" width="500" border="0" cellspacing="0" cellpadding="0">
-  			<tr class="head-tb"><td height="38"> ¬◊π¬—π°“√≈∫¢ÈÕ¡Ÿ≈≈ß∂—ß¢¬– </td></tr>
+  			<tr class="head-tb"><td height="38"> ‡∏¢‡∏∑‡∏ô‡∏¢‡∏±‡∏ô‡∏Å‡∏≤‡∏£‡∏•‡∏ö‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡∏•‡∏á‡∏ñ‡∏±‡∏á‡∏Ç‡∏¢‡∏∞ </td></tr>
   			<tr bgcolor="#FFFFFF">
     			<td align="left">
                 	<img src="../images/span.gif" height="10" /><br />
@@ -66,7 +66,7 @@ $note2="¢ÈÕ¡Ÿ≈ª√–‡¿∑°“√„™Èß“π : ".countRowlog("tb_ipd_logfile",$startd,$endd,"tb
                 		<img src="../images/span.gif"  width="100"/>
 						<table align=center>
 						<tr><td><img src='../images/trash_full.gif' border='0' /> 
-						<span class="topic">µ—Èß·µË«—π∑’Ë : </span><span class="note"><?=$start?></span> ∂÷ß <span class="note"><?=$end?></span>
+						<span class="topic">‡∏ï‡∏±‡πâ‡∏á‡πÅ‡∏ï‡πà‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà : </span><span class="note"><?=$start?></span> ‡∏ñ‡∏∂‡∏á <span class="note"><?=$end?></span>
 						</td></tr>
 						<tr><td>
 						<span class="note"><?=$note?></span><br />

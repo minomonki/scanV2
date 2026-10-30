@@ -71,9 +71,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-	<title>:: ├╥┬┼╨р═╒┬┤ ::</title>
+	<title>:: р╕гр╕▓р╕вр╕ер╕░р╣Ар╕нр╕╡р╕вр╕Ф ::</title>
 	 	<!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
-	<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<script type="text/javascript" src="../jstree/_lib/jquery.js"></script>
 	<script type="text/javascript" src="../jstree/_lib/jquery.cookie.js"></script>
 	<script type="text/javascript" src="../jstree/_lib/jquery.hotkeys.js"></script>
@@ -82,7 +82,7 @@
     <link type="text/css" rel="stylesheet" href="../jstree/_docs/syntax/!style.css"/>
 	<link type="text/css" rel="stylesheet" href="../jstree/_docs/!style.css"/>
 <script language="JavaScript">
-var message="ф┴ш═╣╪н╥╡у╦щд┼╘бв╟╥.\n"; // Message for the alert box
+var message="р╣Др╕бр╣Ир╕нр╕Щр╕╕р╕Нр╕▓р╕Хр╣Гр╕лр╣Йр╕Др╕ер╕┤р╕Бр╕Вр╕зр╕▓.\n"; // Message for the alert box
 
 // Don't edit below!
 function click(e) 
@@ -142,7 +142,7 @@ document.onmousedown=click;
 						} 
 						window.location = url2;
 					}
-				"/> р├╒┬з╡╥┴к╣╘┤в═зр═б╩╥├  <br />
+				"/> р╣Ар╕гр╕╡р╕вр╕Зр╕Хр╕▓р╕бр╕Кр╕Щр╕┤р╕Фр╕Вр╕нр╕Зр╣Ар╕нр╕Бр╕кр╕▓р╕г  <br />
 			</td>
 		</tr>
 		<tr>
@@ -182,18 +182,18 @@ document.onmousedown=click;
 										$m = substr($day,5,2);
 										$d = substr($day,8,2);
 										
-										if($m=="01"){ $m="┴.д.";}
-										else if($m=="02"){ $m="б.╛.";}
-										else if($m=="03"){ $m="┴╒.д.";}
-										else if($m=="04"){ $m="р┴.┬.";}
-										else if($m=="05"){ $m="╛.д.";}
-										else if($m=="06"){ $m="┴╘.┬.";}
-										else if($m=="07"){ $m="б.д.";}
-										else if($m=="08"){ $m="╩.д.";}
-										else if($m=="09"){ $m="б.┬.";}
-										else if($m=="10"){ $m="╡.д.";}
-										else if($m=="11"){ $m="╛.┬.";}
-										else { $m="╕.д.";}
+										if($m=="01"){ $m="р╕б.р╕Д.";}
+										else if($m=="02"){ $m="р╕Б.р╕Ю.";}
+										else if($m=="03"){ $m="р╕бр╕╡.р╕Д.";}
+										else if($m=="04"){ $m="р╣Ар╕б.р╕в.";}
+										else if($m=="05"){ $m="р╕Ю.р╕Д.";}
+										else if($m=="06"){ $m="р╕бр╕┤.р╕в.";}
+										else if($m=="07"){ $m="р╕Б.р╕Д.";}
+										else if($m=="08"){ $m="р╕к.р╕Д.";}
+										else if($m=="09"){ $m="р╕Б.р╕в.";}
+										else if($m=="10"){ $m="р╕Х.р╕Д.";}
+										else if($m=="11"){ $m="р╕Ю.р╕в.";}
+										else { $m="р╕Ш.р╕Д.";}
 								
 										$Gday = $d." ".$m." ".$y;
 	?>
@@ -232,18 +232,18 @@ document.onmousedown=click;
 								$y = substr($mm,0,4);
 								$m = substr($mm,5,2);
 					
-								if($m=="01"){ $m="┴.д.";}
-								else if($m=="02"){ $m="б.╛.";}
-								else if($m=="03"){ $m="┴╒.д.";}
-								else if($m=="04"){ $m="р┴.┬.";}
-								else if($m=="05"){ $m="╛.д.";}
-								else if($m=="06"){ $m="┴╘.┬.";}
-								else if($m=="07"){ $m="б.д.";}
-								else if($m=="08"){ $m="╩.д.";}
-								else if($m=="09"){ $m="б.┬.";}
-								else if($m=="10"){ $m="╡.д.";}
-								else if($m=="11"){ $m="╛.┬.";}
-								else { $m="╕.д.";}
+								if($m=="01"){ $m="р╕б.р╕Д.";}
+								else if($m=="02"){ $m="р╕Б.р╕Ю.";}
+								else if($m=="03"){ $m="р╕бр╕╡.р╕Д.";}
+								else if($m=="04"){ $m="р╣Ар╕б.р╕в.";}
+								else if($m=="05"){ $m="р╕Ю.р╕Д.";}
+								else if($m=="06"){ $m="р╕бр╕┤.р╕в.";}
+								else if($m=="07"){ $m="р╕Б.р╕Д.";}
+								else if($m=="08"){ $m="р╕к.р╕Д.";}
+								else if($m=="09"){ $m="р╕Б.р╕в.";}
+								else if($m=="10"){ $m="р╕Х.р╕Д.";}
+								else if($m=="11"){ $m="р╕Ю.р╕в.";}
+								else { $m="р╕Ш.р╕Д.";}
 						
 								$Gmonth = $m."-".$y;
 	?>
@@ -263,18 +263,18 @@ document.onmousedown=click;
 									$m = substr($day,5,2);
 									$d = substr($day,8,2);
 										
-									if($m=="01"){ $m="┴.д.";}
-									else if($m=="02"){ $m="б.╛.";}
-									else if($m=="03"){ $m="┴╒.д.";}
-									else if($m=="04"){ $m="р┴.┬.";}
-									else if($m=="05"){ $m="╛.д.";}
-									else if($m=="06"){ $m="┴╘.┬.";}
-									else if($m=="07"){ $m="б.д.";}
-									else if($m=="08"){ $m="╩.д.";}
-									else if($m=="09"){ $m="б.┬.";}
-									else if($m=="10"){ $m="╡.д.";}
-									else if($m=="11"){ $m="╛.┬.";}
-									else { $m="╕.д.";}
+									if($m=="01"){ $m="р╕б.р╕Д.";}
+									else if($m=="02"){ $m="р╕Б.р╕Ю.";}
+									else if($m=="03"){ $m="р╕бр╕╡.р╕Д.";}
+									else if($m=="04"){ $m="р╣Ар╕б.р╕в.";}
+									else if($m=="05"){ $m="р╕Ю.р╕Д.";}
+									else if($m=="06"){ $m="р╕бр╕┤.р╕в.";}
+									else if($m=="07"){ $m="р╕Б.р╕Д.";}
+									else if($m=="08"){ $m="р╕к.р╕Д.";}
+									else if($m=="09"){ $m="р╕Б.р╕в.";}
+									else if($m=="10"){ $m="р╕Х.р╕Д.";}
+									else if($m=="11"){ $m="р╕Ю.р╕в.";}
+									else { $m="р╕Ш.р╕Д.";}
 								
 									$Gday = $d." ".$m." ".$y;
 	?>

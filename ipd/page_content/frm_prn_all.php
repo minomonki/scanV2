@@ -8,7 +8,7 @@
 	include ("../System_config/connect.php");
 	include ("../System_config/func.php");
 
-  /////  check session_id �ͧ˹��
+  /////  check session_id ของหน้า
 	if($_SESSION["PID"] == session_id()) {
 	
 	$an = base64_decode($_REQUEST["anID"]);//echo $an;
@@ -17,7 +17,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 <title>:: IPD - Print All ::</title>
 
@@ -37,7 +37,7 @@
 <script language="javascript">
 function fncSubmit()
 {
-	if(confirm('�׹�ѹ��úѹ�֡������')==true)
+	if(confirm('ยืนยันการบันทึกข้อมูล')==true)
 	{
 		return true;
 	}

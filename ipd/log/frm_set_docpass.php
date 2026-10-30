@@ -9,7 +9,7 @@ include ("../System_config/const.php");
 
 	include ("../System_config/connection.php");
 	
-  /////  check session_id �ͧ˹��
+  /////  check session_id ของหน้า
 	if($_SESSION["PID"] == session_id()) {
 
 ?>
@@ -17,7 +17,7 @@ include ("../System_config/const.php");
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="../datepick/css/smoothness/jquery-ui-1.7.2.custom.css">
@@ -55,17 +55,17 @@ return true
 function validSubmit() { 
 //valid dform values
 	if(document.dform.txt_foruser.value == ""){ 
-		alert('��س��кآ����ż����ҹ�͡���'); 
+		alert('กรุณาระบุข้อมูลผู้ใช้งานเอกสาร'); 
 		document.dform.txt_foruser.focus(); 
 		return false; 
 	}    
 	if(document.dform.admit_s.value == ""){ 
-		alert('��سҡ�͡������ Ǵ�. ������鹡����ҹ'); 
+		alert('กรุณากรอกข้อมูล วดป. เริ่มต้นการใช้งาน'); 
 		document.dform.admit_s.focus(); 
 		return false; 
 	}    
 	if(document.dform.admit_e.value == ""){ 
-		alert('��سҡ�͡������ Ǵ�. ����ش�����ҹ'); 
+		alert('กรุณากรอกข้อมูล วดป. สิ้นสุดการใช้งาน'); 
 		document.dform.admit_e.focus();         
 		return false; 
 	}    
@@ -77,17 +77,17 @@ function validSubmit() {
 function validSubmit2() { 
 //valid dform values
 	if(document.dform.txt_plusan.value == ""){ 
-		alert('��س��кآ����� AN');
+		alert('กรุณาระบุข้อมูล AN');
 		document.dform.txt_plusan.focus(); 
 		return false; 
 	}    
 	if(document.dform.admit_s.value == ""){ 
-		alert('��سҡ�͡������ Ǵ�. ������鹡����ҹ'); 
+		alert('กรุณากรอกข้อมูล วดป. เริ่มต้นการใช้งาน'); 
 		document.dform.admit_s.focus(); 
 		return false; 
 	}    
 	if(document.dform.admit_e.value == ""){ 
-		alert('��سҡ�͡������ Ǵ�. ����ش�����ҹ'); 
+		alert('กรุณากรอกข้อมูล วดป. สิ้นสุดการใช้งาน'); 
 		document.dform.admit_e.focus();         
 		return false; 
 	}    
@@ -111,7 +111,7 @@ function validSubmit2() {
 <table align="center" width="701" border="0" cellspacing="2" cellpadding="0">
 <form name="search" method="post" action="frm_set_docpass.php">
   <tr>
-    <td class="head-topic"><BR>:: ��˹����ʼ�ҹ��������ҹ AN :: </td>
+    <td class="head-topic"><BR>:: กำหนดรหัสผ่านการยืมใช้งาน AN :: </td>
 	<td><BR><!--<input type="text" name="txt_an" size="15" maxlength="20"/>-->
 		<input type="text" name="txt_an" id="s_txt_an" />
 		<input name="h_txt_an" type="hidden" id="h_txt_an" value="" />
@@ -121,7 +121,7 @@ function validSubmit2() {
 </form>
 <form name="add" method="post" action="frm_set_docpass.php">
   <tr>
-    <td class="head-topic" align=right width=250><BR>:: ���������� AN ����ʼ�ҹ :: </td>
+    <td class="head-topic" align=right width=250><BR>:: เพิ่มการยืม AN ในรหัสผ่าน :: </td>
 	<td><BR><!-- <input type="text" name="txt_an" size="25" maxlength="20"/>-->
 				<input type="text" name="txt_addan" id="s_txt_addan" />
 				<input name="h_txt_addan" type="hidden" id="h_txt_addan" value="" />
@@ -130,7 +130,7 @@ function validSubmit2() {
 </form>
 <form name="add" method="post" action="frm_set_docpass.php">
   <tr>
-    <td class="head-topic" align=right width=250><BR>:: ���������� AN 㹼����ҹ :: </td>
+    <td class="head-topic" align=right width=250><BR>:: เพิ่มการยืม AN ในผู้ใช้งาน :: </td>
 	<td><BR><!-- <input type="text" name="txt_an" size="25" maxlength="20"/>-->
 				<input type="text" name="txt_addanbyuser" id="s_txt_addanbyuser" />
 				<input name="h_txt_addanbyuser" type="hidden" id="h_txt_addanbyuser" value="" />
@@ -159,7 +159,7 @@ if ($_REQUEST['cmd_create']<>''){
 		echo "<td class='listdetail'>&nbsp;&nbsp;&nbsp;&nbsp;".$row['hn']."</td>";
 		echo "</tr>";
 		echo "<tr>";
-		echo "<td bgcolor='#a9a9a9' align='right' class='hdtable' width='10%'>����-ʡ�� :&nbsp; </td>";
+		echo "<td bgcolor='#a9a9a9' align='right' class='hdtable' width='10%'>ชื่อ-สกุล :&nbsp; </td>";
 		echo "<td class='listdetail'>&nbsp;&nbsp;&nbsp;&nbsp;".$row['firstname']."&nbsp;&nbsp;".$row['lastname']."</td>";
 		echo "</tr>";
 		echo "<tr>";
@@ -169,13 +169,13 @@ if ($_REQUEST['cmd_create']<>''){
 		echo "</table><br>";
 		//////////////////////////////////////////////////////////////
 		//////////////////////// Create new password //////////////////////////
-		echo "<div class='blackb' align='center'>###### ������á�˹��Է��  #####</div>";
+		echo "<div class='blackb' align='center'>###### เพิ่มการกำหนดสิทธิ  #####</div>";
 		echo "<table class='rowh1' align='center' width='90%' cellspacing='0' cellpadding='0' bordercolor='#000000' border='1' style='border-collapse:collapse;'>";
 		echo "<tr bgcolor='#a9a9a9'>";
-		echo "<td align='center' class='hdtable' width='5%'>�ӴѺ</td>";
+		echo "<td align='center' class='hdtable' width='5%'>ลำดับ</td>";
 		echo "<td align='center' class='hdtable' width='10%'>Password</td>";
-		echo "<td align='center' class='hdtable' width='15%'>�����ҹ�͡���</td>";
-		echo "<td align='center' class='hdtable' width='70%'>Ǵ�.����������ҹ   �֧ Ǵ�.����ش�����ҹ </td>";
+		echo "<td align='center' class='hdtable' width='15%'>ผู้ใช้งานเอกสาร</td>";
+		echo "<td align='center' class='hdtable' width='70%'>วดป.เริ่มการใช้งาน   ถึง วดป.สิ้นสุดการใช้งาน </td>";
 		echo "</tr>";
 		echo "<form name='dform' method='post' action='fn_setdocpass.php' onSubmit='JavaScript:return validSubmit();'>";
 		echo "<tr>";
@@ -197,10 +197,10 @@ if ($_REQUEST['cmd_create']<>''){
 		echo "</td>";
 		echo "<td align='center' class='listdetail'>";
  ?>      
-    	<strong>��������ѹ���</strong>
+    	<strong>เริ่มต้นวันที่</strong>
 		<input type="text" name="admit_s" id="admit_s" />
         <img src="../images/span.gif" width="10" />   
-        <strong>����ش�ѹ���</strong>
+        <strong>สิ้นสุดวันที่</strong>
         <img src="../images/span.gif" width="10" />   
         <input type="text" name="admit_e" id="admit_e" />
         <script type="text/javascript" src="../datepick/js/jquery-1.3.2.min.js"></script>
@@ -214,12 +214,12 @@ if ($_REQUEST['cmd_create']<>''){
 		echo "<input type='hidden' name='txt_byuser' value='".$_SESSION["user_ipd"]."'>";
 		echo "<input type='hidden' name='logno' value='".$_SESSION["logno"]."'>";
 		echo "</table><br>";
-		echo "<div align='center'><input type='submit' name='cmd_show' value=' ��˹��Է�� ' /></div>";
+		echo "<div align='center'><input type='submit' name='cmd_show' value=' กำหนดสิทธิ ' /></div>";
 		echo "</form>";
 		//////////////////////// End Create new ///////////////////////////
 	
 	}else{//no record found
-		echo "<div class='blackb' align='center'>======== ��辺������ ========</div>";
+		echo "<div class='blackb' align='center'>======== ไม่พบข้อมูล ========</div>";
 	}// end of if chk $result
 }elseif ($_REQUEST['cmd_addan']<>''){
 	include("../System_config/connect.php");
@@ -247,18 +247,18 @@ if ($_REQUEST['cmd_create']<>''){
 			echo "<td class='listdetail' colspan=7>&nbsp;&nbsp;&nbsp;&nbsp;".$txt_password."</td>";
 			echo "</tr>";
 			echo "<tr>";
-			echo "<td bgcolor='#a9a9a9' align='right' class='hdtable'>����-ʡ�� :&nbsp; </td>";
+			echo "<td bgcolor='#a9a9a9' align='right' class='hdtable'>ชื่อ-สกุล :&nbsp; </td>";
 			echo "<td class='listdetail' colspan=7>&nbsp;&nbsp;&nbsp;&nbsp;".$row['foruser']."</td>";
 			echo "</tr>";
 			echo "<tr>";
 			echo "<td align='right' class='hdtable' bgcolor='#ffffff' >&nbsp; </td>";
-			echo "<td class='hdtable' align='center' width=5%>�ӴѺ</td>";
+			echo "<td class='hdtable' align='center' width=5%>ลำดับ</td>";
 			echo "<td class='hdtable' align='center' width=16%>AN</td>";
-			echo "<td class='hdtable' align='center'>Ǵ�.����������ҹ</td>";
-			echo "<td class='hdtable' align='center'>Ǵ�.����ش�����ҹ</td>";
-			echo "<td class='hdtable' align='center'>��Ѻ��ا����ش �����</td>";
-			echo "<td class='hdtable' align='center'>���</td>";
-			echo "<td class='hdtable' align='center'>ź</td>";
+			echo "<td class='hdtable' align='center'>วดป.เริ่มการใช้งาน</td>";
+			echo "<td class='hdtable' align='center'>วดป.สิ้นสุดการใช้งาน</td>";
+			echo "<td class='hdtable' align='center'>ปรับปรุงล่าสุด เมื่อ</td>";
+			echo "<td class='hdtable' align='center'>แก้ไข</td>";
+			echo "<td class='hdtable' align='center'>ลบ</td>";
 			echo "</tr>";
 		}// end  if did
 			echo "<tr".$rcolor.">";
@@ -281,7 +281,7 @@ if ($_REQUEST['cmd_create']<>''){
 		//////////////////////////////////////////////////////////////
 	}// end if num_rows
 		////////////////////////Add New AN//////////////////////////
-		echo "<div class='blackb' align='center'></div>";//###### ��˹� AN ����  #####
+		echo "<div class='blackb' align='center'></div>";//###### กำหนด AN เพิ่ม  #####
 		echo "<table class='rowh' align='center' width='90%' cellspacing='2' cellpadding='2' bordercolor='#000000' border='0' >";
 		echo "<form name='dform' method='post' action='fn_addan2docpass.php' onSubmit='JavaScript:return validSubmit2();'>";
 		echo "<tr>";
@@ -295,10 +295,10 @@ if ($_REQUEST['cmd_create']<>''){
 		echo "</td>";
 		echo "<td align='left' class='listdetail' colspan=3 bgcolor='#D9D9FF'>";
  ?>      
-    	<strong>��������ѹ���</strong>
+    	<strong>เริ่มต้นวันที่</strong>
 		<input type="text" name="admit_s" id="admit_s" />
         <img src="../images/span.gif" width="10" />   
-        <strong>����ش�ѹ���</strong>
+        <strong>สิ้นสุดวันที่</strong>
         <img src="../images/span.gif" width="10" />   
         <input type="text" name="admit_e" id="admit_e" />
         <script type="text/javascript" src="../datepick/js/jquery-1.3.2.min.js"></script>
@@ -349,8 +349,8 @@ function make_autocom(autoObj,showObj){
     });	
 }	
  
-// �����ҹ
-// make_autocom(" id �ͧ input ��Ƿ���ͧ��á�˹� "," id �ͧ input ��Ƿ���ͧ����Ѻ���");
+// การใช้งาน
+// make_autocom(" id ของ input ตัวที่ต้องการกำหนด "," id ของ input ตัวที่ต้องการรับค่า");
 make_autocom("s_txt_foruser","h_txt_foruser");
 </script>
 <script type="text/javascript">
@@ -370,8 +370,8 @@ function make_autocom2(autoObj,showObj){
     });	
 }	
  
-// �����ҹ
-// make_autocom(" id �ͧ input ��Ƿ���ͧ��á�˹� "," id �ͧ input ��Ƿ���ͧ����Ѻ���");
+// การใช้งาน
+// make_autocom(" id ของ input ตัวที่ต้องการกำหนด "," id ของ input ตัวที่ต้องการรับค่า");
 make_autocom2("s_txt_an","h_txt_an");
 </script>
 <script type="text/javascript">
@@ -391,8 +391,8 @@ function make_autocom3(autoObj,showObj){
     });	
 }	
  
-// �����ҹ
-// make_autocom(" id �ͧ input ��Ƿ���ͧ��á�˹� "," id �ͧ input ��Ƿ���ͧ����Ѻ���");
+// การใช้งาน
+// make_autocom(" id ของ input ตัวที่ต้องการกำหนด "," id ของ input ตัวที่ต้องการรับค่า");
 make_autocom3("s_txt_addan","h_txt_addan");
 </script>
 
@@ -413,8 +413,8 @@ function make_autocom4(autoObj,showObj){
     });	
 }	
  
-// �����ҹ
-// make_autocom(" id �ͧ input ��Ƿ���ͧ��á�˹� "," id �ͧ input ��Ƿ���ͧ����Ѻ���");
+// การใช้งาน
+// make_autocom(" id ของ input ตัวที่ต้องการกำหนด "," id ของ input ตัวที่ต้องการรับค่า");
 make_autocom4("s_txt_plusan","h_txt_plusan");
 </script>
 <script type="text/javascript">
@@ -434,8 +434,8 @@ function make_autocom6(autoObj,showObj){
     });	
 }	
  
-// �����ҹ
-// make_autocom(" id �ͧ input ��Ƿ���ͧ��á�˹� "," id �ͧ input ��Ƿ���ͧ����Ѻ���");
+// การใช้งาน
+// make_autocom(" id ของ input ตัวที่ต้องการกำหนด "," id ของ input ตัวที่ต้องการรับค่า");
 make_autocom6("s_txt_addanbyuser","h_txt_addanbyuser");
 </script>
 

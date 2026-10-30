@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <?php
 	//session_start();	
@@ -21,67 +21,67 @@ $filName = "anscancheck_list".$today3.".csv";
 $objWrite = fopen($pathdir.$filName, "w"); 
 //////////////////////////////////
 if ($_REQUEST["status"]==0){ // list all dchdate is null
-	$titledetail=" �ӹǹ AN admitted ����� ".getFormatdate($_REQUEST["thmindate"],1)." �֧ ".getFormatdate($_REQUEST["thmaxdate"],1);
+	$titledetail=" จำนวน AN admitted ตั้งแต่ ".getFormatdate($_REQUEST["thmindate"],1)." ถึง ".getFormatdate($_REQUEST["thmaxdate"],1);
 	$select="select a.an,dchdate,day(dchdate) as d , month(dchdate) as m , year(dchdate) as y, year(dchdate)+543 as thy ";
 	$select .=" ,hn";
 	$from=" from hos.ipt a";
 	$where=" where dchdate is null or dchdate=''";
 }elseif ($_REQUEST["status"]==1){ // list all yesan
-	$titledetail=" �ӹǹ AN �᡹���� ����� ".getFormatdate($_REQUEST["thmindate"],1)." �֧ ".getFormatdate($_REQUEST["thmaxdate"],1);
+	$titledetail=" จำนวน AN สแกนแล้ว ตั้งแต่ ".getFormatdate($_REQUEST["thmindate"],1)." ถึง ".getFormatdate($_REQUEST["thmaxdate"],1);
 	$select="select a.an,dchdate,day(dchdate) as d , month(dchdate) as m , year(dchdate) as y,day(datescan) as dd , month(datescan) as mm , year(datescan) as yy ";
 	$select .=" ,b.hn,b.firstname,b.lastname,b.pages";
 	$from=" from hos.ipt a, hdbms.tb_ipd b ";
 	$where=" where a.an= b.an";
 }elseif ($_REQUEST["status"]==2){ // list all noan
-	$titledetail=" �ӹǹ AN ����᡹���ú  ����� ".getFormatdate($_REQUEST["thmindate"],1)." �֧ ".getFormatdate($_REQUEST["thmaxdate"],1);
+	$titledetail=" จำนวน AN ที่สแกนไม่ครบ  ตั้งแต่ ".getFormatdate($_REQUEST["thmindate"],1)." ถึง ".getFormatdate($_REQUEST["thmaxdate"],1);
 	$select="select a.an,dchdate,day(dchdate) as d , month(dchdate) as m , year(dchdate) as y, year(dchdate)+543 as thy ";
 	$select .=" ,hn";
 	$from=" from hos.ipt a";
 	$where=" where an not in (select an from hdbms.tb_ipd)";
 }elseif ($_REQUEST["status"]==3){ // list yesan by year
-	$titledetail=" �ӹǹ AN �᡹���� �� ".$_REQUEST["thyr"];
+	$titledetail=" จำนวน AN สแกนแล้ว ปี ".$_REQUEST["thyr"];
 	$select="select a.an,dchdate,day(dchdate) as d , month(dchdate) as m , year(dchdate) as y,day(outdate) as dd , month(outdate) as mm , year(outdate) as yy ";
 	$select .=" ,b.hn,b.firstname,b.lastname,b.pages";
 	$from=" from hos.ipt a, hdbms.tb_ipd b ";
 	$where=" where a.an=b.an and year(dchdate)='".$_REQUEST["enyr"]."'";
 }elseif ($_REQUEST["status"]==4){ // list noan by year
-	$titledetail=" �ӹǹ AN ����᡹���ú �� ".$_REQUEST["thyr"];
+	$titledetail=" จำนวน AN ที่สแกนไม่ครบ ปี ".$_REQUEST["thyr"];
 	$select="select a.an,dchdate,day(dchdate) as d , month(dchdate) as m , year(dchdate) as y, year(dchdate)+543 as thy ";
 	$select .=" ,hn";
 	$from=" from hos.ipt a";
 	$where=" where year(dchdate)='".$_REQUEST["enyr"]."' and an not in (select an from hdbms.tb_ipd)";
 }elseif ($_REQUEST["status"]==5){ // list yesan by month
-	$titledetail=" �ӹǹ AN �᡹���� ��͹ ".$month[$_REQUEST["mon"]-1]." �� ".$_REQUEST["thyr"];
+	$titledetail=" จำนวน AN สแกนแล้ว เดือน ".$month[$_REQUEST["mon"]-1]." ปี ".$_REQUEST["thyr"];
 	$select="select a.an,dchdate,day(dchdate) as d , month(dchdate) as m , year(dchdate) as y,day(outdate) as dd , month(outdate) as mm , year(outdate) as yy ";
 	$select .=" ,b.hn,b.firstname,b.lastname,b.pages";
 	$from=" from hos.ipt a, hdbms.tb_ipd b ";
 	$where=" where a.an=b.an and year(dchdate)='".$_REQUEST["enyr"]."' and month(dchdate)='".$_REQUEST["mon"]."'";
 }elseif ($_REQUEST["status"]==6){ // list noan by month
-	$titledetail=" �ӹǹ AN ����᡹���ú ��͹ ".$month[$_REQUEST["mon"]-1]." �� ".$_REQUEST["thyr"];
+	$titledetail=" จำนวน AN ที่สแกนไม่ครบ เดือน ".$month[$_REQUEST["mon"]-1]." ปี ".$_REQUEST["thyr"];
 	$select="select a.an,dchdate,day(dchdate) as d , month(dchdate) as m , year(dchdate) as y, year(dchdate)+543 as thy ";
 	$select .=" ,hn";
 	$from=" from hos.ipt a";
 	$where=" where year(dchdate)='".$_REQUEST["enyr"]."' and month(dchdate)='".$_REQUEST["mon"]."' and an not in (select an from hdbms.tb_ipd)";
 }elseif ($_REQUEST["status"]==7){ // list yesan by day/month/year
-	$titledetail=" �ӹǹ AN �᡹���� �ѹ��� ".$_REQUEST["day"]." ".$month[$_REQUEST["mon"]-1]." ".$_REQUEST["thyr"];
+	$titledetail=" จำนวน AN สแกนแล้ว วันที่ ".$_REQUEST["day"]." ".$month[$_REQUEST["mon"]-1]." ".$_REQUEST["thyr"];
 	$select="select a.an,dchdate,day(dchdate) as d , month(dchdate) as m , year(dchdate) as y,day(outdate) as dd , month(outdate) as mm , year(outdate) as yy ";
 	$select .=" ,b.hn,b.firstname,b.lastname,b.pages";
 	$from=" from hos.ipt a, hdbms.tb_ipd b ";
 	$where=" where a.an=b.an and dchdate='".$_REQUEST["enyr"]."-".$_REQUEST["mon"]."-".$_REQUEST["day"]."'";
 }elseif ($_REQUEST["status"]==8){ // list noan by day/month/year
-	$titledetail=" �ӹǹ AN ����᡹���ú�ѹ��� ".$_REQUEST["day"]." ".$month[$_REQUEST["mon"]-1]." ".$_REQUEST["thyr"];
+	$titledetail=" จำนวน AN ที่สแกนไม่ครบวันที่ ".$_REQUEST["day"]." ".$month[$_REQUEST["mon"]-1]." ".$_REQUEST["thyr"];
 	$select="select a.an,dchdate,day(dchdate) as d , month(dchdate) as m , year(dchdate) as y, year(dchdate)+543 as thy ";
 	$select .=" ,hn";
 	$from=" from hos.ipt a";
 	$where=" where dchdate='".$_REQUEST["enyr"]."-".$_REQUEST["mon"]."-".$_REQUEST["day"]."' and an not in (select an from hdbms.tb_ipd)";
 }elseif ($_REQUEST["status"]==9){ // list yesan by search from-to
-	$titledetail=" �ӹǹ AN �᡹���� ����� ".getFormatdate($_REQUEST["thmindate"],1)." - ".getFormatdate($_REQUEST["thmaxdate"],1);
+	$titledetail=" จำนวน AN สแกนแล้ว ตั้งแต่ ".getFormatdate($_REQUEST["thmindate"],1)." - ".getFormatdate($_REQUEST["thmaxdate"],1);
 	$select="select a.an,dchdate,day(dchdate) as d , month(dchdate) as m , year(dchdate) as y,day(outdate) as dd , month(outdate) as mm , year(outdate) as yy ";
 	$select .=" ,b.hn,b.firstname,b.lastname,b.pages";
 	$from=" from hos.ipt a, hdbms.tb_ipd b ";
 	$where=" where a.an=b.an and dchdate between '".$_REQUEST["enmindate"]."' and '".$_REQUEST["enmaxdate"]."'";
 }elseif ($_REQUEST["status"]==10){ // list noan by search from-to
-	$titledetail=" �ӹǹ AN ����᡹���ú  ����� ".getFormatdate($_REQUEST["thmindate"],1)." - ".getFormatdate($_REQUEST["thmaxdate"],1);
+	$titledetail=" จำนวน AN ที่สแกนไม่ครบ  ตั้งแต่ ".getFormatdate($_REQUEST["thmindate"],1)." - ".getFormatdate($_REQUEST["thmaxdate"],1);
 	$select="select a.an,dchdate,day(dchdate) as d , month(dchdate) as m , year(dchdate) as y, year(dchdate)+543 as thy ";
 	$select .=" ,hn";
 	$from=" from hos.ipt a";
@@ -100,9 +100,9 @@ while($row = mysql_fetch_array($result)){
 			//////// table header ////////
 			if ($id==1){
 				if ($_REQUEST["status"]%2==0){
-					fwrite($objWrite, "\"�ӴѺ\",\"AN\",\"HN\"\n"); 
+					fwrite($objWrite, "\"ลำดับ\",\"AN\",\"HN\"\n"); 
 				}else{
-					fwrite($objWrite, "\"�ӴѺ\",\"AN\",\"HN\",\"����\",\"���ʡ��\",\"dchdate\",\"datescan\"\n"); 
+					fwrite($objWrite, "\"ลำดับ\",\"AN\",\"HN\",\"ชื่อ\",\"นามสกุล\",\"dchdate\",\"datescan\"\n"); 
 				}
 			}
 			/////////////////////////////
@@ -117,7 +117,7 @@ while($row = mysql_fetch_array($result)){
 			$id++;
 } //end of while loop
 ////////////////////////////////// SUM
-//fwrite($objWrite, "\"���\",\"$colallan\",\"$colallyesan\",\"$colallnoan\"\n"); 
+//fwrite($objWrite, "\"รวม\",\"$colallan\",\"$colallyesan\",\"$colallnoan\"\n"); 
 //////////////////////////////////
 fclose($objWrite); 
 //echo "<br>Generate CSV Done<br><a href=".$pathdir."".$filName.">Download</a>"; 

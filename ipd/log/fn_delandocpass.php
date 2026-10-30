@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 $txt_an	= $_REQUEST["txt_an"];
 $txt_password= $_REQUEST["txt_password"];
@@ -25,10 +25,10 @@ updatelogdetail($_REQUEST["logno"],$detail);
 //////////////////////////////////////////////
 
 if ($_REQUEST['totalan']==1){
-	print "<script>alert ('ลบข้อมูล an ในระบบยืมเรียบร้อยแล้ว'); </script>";
+	print "<script>alert ('เธฅเธเธเนเธญเธกเธนเธฅ an เนเธเธฃเธฐเธเธเธขเธทเธกเน€เธฃเธตเธขเธเธฃเนเธญเธขเนเธฅเนเธง'); </script>";
 	print "<script language='javascript' >window.location='frm_list_docpass.php';</script>";
 }else{
-	print "<script>alert ('ลบข้อมูล an ในระบบยืมเรียบร้อยแล้ว'); </script>";
+	print "<script>alert ('เธฅเธเธเนเธญเธกเธนเธฅ an เนเธเธฃเธฐเธเธเธขเธทเธกเน€เธฃเธตเธขเธเธฃเนเธญเธขเนเธฅเนเธง'); </script>";
 	print "<script language='javascript' >window.location='frm_set_docpass.php?cmd_addan=1&txt_addan=".$txt_password."';</script>";
 }
 ?>

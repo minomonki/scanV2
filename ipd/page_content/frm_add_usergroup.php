@@ -7,7 +7,7 @@
 	
 	include ("../System_config/connection.php");
 
-  /////  check session_id ของหน้า
+  /////  check session_id เธเธญเธเธซเธเนเธฒ
 	if($_SESSION["PID"] == session_id()) {
 	
 	$showTable = "0";
@@ -28,7 +28,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 <title>:: IPD -  ADD Usergroup ::</title>
 
@@ -42,7 +42,7 @@
 <script language="javascript">
 function fncSubmit()
 {
-	if(confirm('ยืนยันการบันทึกข้อมูล')==true)
+	if(confirm('เธขเธทเธเธขเธฑเธเธเธฒเธฃเธเธฑเธเธ—เธถเธเธเนเธญเธกเธนเธฅ')==true)
 	{
 		return true;
 	}
@@ -121,7 +121,7 @@ for (i = 0; i < field.length; i++)
   </tr>
 </table>
 
-<!-- ตารางเลือก DocType -->
+<!-- เธ•เธฒเธฃเธฒเธเน€เธฅเธทเธญเธ DocType -->
 
 <?php
 if($showTable != "0" and $showTable != ""  ){
@@ -143,18 +143,18 @@ onSubmit="JavaScript:return fncSubmit();">
   	<td colspan="2"><img src="../images/span.gif" height="10" /></td>
     </tr>
   <tr>
-  	<td width="589" align="left">&nbsp;&nbsp;กำหนดสิทธิ์การเข้าถึงประเภทเอกสาร</td>
-    <td width="211" colspan="3" class="note">จำนวนประเภทเอกสาร <strong><?=$NUMeodtype-1?> </strong>รายการ</td>
+  	<td width="589" align="left">&nbsp;&nbsp;เธเธณเธซเธเธ”เธชเธดเธ—เธเธดเนเธเธฒเธฃเน€เธเนเธฒเธ–เธถเธเธเธฃเธฐเน€เธ เธ—เน€เธญเธเธชเธฒเธฃ</td>
+    <td width="211" colspan="3" class="note">เธเธณเธเธงเธเธเธฃเธฐเน€เธ เธ—เน€เธญเธเธชเธฒเธฃ <strong><?=$NUMeodtype-1?> </strong>เธฃเธฒเธขเธเธฒเธฃ</td>
   </tr>
 </table>
 
 
 <table align="center" width="875" border="1" cellspacing="0" cellpadding="0">
   <tr class="head-tb">
-    <td width="618" height="37" align="center">ประเภทเอกสาร</td>
-    <td width="135" align="center">อ่าน</td>
-    <td width="115" align="center">พิมพ์</td>
-    <!--td width="92" align="center">เลือกทั้งหมด</td-->
+    <td width="618" height="37" align="center">เธเธฃเธฐเน€เธ เธ—เน€เธญเธเธชเธฒเธฃ</td>
+    <td width="135" align="center">เธญเนเธฒเธ</td>
+    <td width="115" align="center">เธเธดเธกเธเน</td>
+    <!--td width="92" align="center">เน€เธฅเธทเธญเธเธ—เธฑเนเธเธซเธกเธ”</td-->
   </tr>
   <!--==================================-->
   <tr>

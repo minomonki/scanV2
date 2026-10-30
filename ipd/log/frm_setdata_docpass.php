@@ -9,7 +9,7 @@ include ("../System_config/const.php");
 
 	include ("../System_config/connection.php");
 	
-  /////  check session_id �ͧ˹��
+  /////  check session_id ของหน้า
 	if($_SESSION["PID"] == session_id()) {
 
 ?>
@@ -17,7 +17,7 @@ include ("../System_config/const.php");
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="../datepick/css/smoothness/jquery-ui-1.7.2.custom.css">
@@ -93,12 +93,12 @@ if ($_REQUEST['cmd_setdata']<>''){
 	if ($total>0) {
 			echo "<table class='rowh' align='center' width='70%' cellspacing='2' cellpadding='2' border='0'>";
 			echo "<tr>";
-			echo "<td align='center' class='hdtable' colspan=3>import data to ���ҧ tb_ipd_doc_pass �ӹǹ $total &nbsp;��¡�� </td>";
+			echo "<td align='center' class='hdtable' colspan=3>import data to ตาราง tb_ipd_doc_pass จำนวน $total &nbsp;รายการ </td>";
 			echo "</tr>";
 			echo "<tr bgcolor='#a9a9a9'>";
-			echo "<td align='center' class='hdtable' width='10%'>�ӴѺ</td>";
+			echo "<td align='center' class='hdtable' width='10%'>ลำดับ</td>";
 			echo "<td class='listdetail' align='center'>password</td>";
-			echo "<td class='listdetail'>&nbsp;&nbsp;���ͼ����</td>";
+			echo "<td class='listdetail'>&nbsp;&nbsp;ชื่อผู้ใช้</td>";
 			echo "</tr>";
 		while ($row = mysql_fetch_array($result)){
 			$sql = "INSERT INTO tb_ipd_doc_pass (`password`,`userdocpass`,`foruser`,`lastupdate`) VALUES ('$row[0]','$row[0]','$row[1]',".CURRENT_TIMESTAMP.")";
@@ -116,7 +116,7 @@ if ($_REQUEST['cmd_setdata']<>''){
 		echo "</table><br>";
 		//////////////////////////////////////////////////////////////
 	}else{//no record found
-		//echo "<div class='blackb' align='center'>======== ��辺������ import ========</div>";
+		//echo "<div class='blackb' align='center'>======== ไม่พบข้อมูล import ========</div>";
 	}// end of if chk $result
 }// end if chk cmd???
 ?>

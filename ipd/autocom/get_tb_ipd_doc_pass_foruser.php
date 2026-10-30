@@ -2,7 +2,7 @@
 header("Content-type:text/html; charset=UTF-8");        
 header("Cache-Control: no-store, no-cache, must-revalidate");       
 header("Cache-Control: post-check=0, pre-check=0", false);       
-// �������Ͱҹ������
+// เชื่อมต่อฐานข้อมูล
 //$link=mysql_connect("localhost","root","password") or die("error".mysql_error());
 //mysql_select_db("hdbms",$link);
 include("../System_config/connect.php");
@@ -20,17 +20,17 @@ mysql_query("SET NAMES UTF8");
  
 $q = urldecode($_GET["q"]);
 //$q= iconv('utf-8', 'tis-620', $_GET['test']);
-$pagesize = 50; // �ӹǹ��¡�÷���ͧ����ʴ�
-$table_db=" tb_ipd_doc_pass"; // ���ҧ����ͧ��ä���
-$find_field="foruser"; // ��ŷ���ͧ��ä���
+$pagesize = 50; // จำนวนรายการที่ต้องการแสดง
+$table_db=" tb_ipd_doc_pass"; // ตารางที่ต้องการค้นหา
+$find_field="foruser"; // ฟิลที่ต้องการค้นหา
 $sql = "select distinct foruser from $table_db  where locate('$q', $find_field) > 0 order by locate('$q', $find_field), $find_field limit $pagesize";
 $results = mysql_query($sql);
 while ($row = mysql_fetch_array( $results )) {
-	$id = $row["foruser"]; // ��ŷ���ͧ����觤�ҡ�Ѻ
-	$name =$row["foruser"]; // ��ŷ���ͧ����ʴ����
-	// ��ͧ�ѹ����ͧ���� '
+	$id = $row["foruser"]; // ฟิลที่ต้องการส่งค่ากลับ
+	$name =$row["foruser"]; // ฟิลที่ต้องการแสดงค่า
+	// ป้องกันเครื่องหมาย '
 	$name = str_replace("'", "'", $name);
-	// ��˹����˹����Ѻ�ӷ���ա�þ����
+	// กำหนดตัวหนาให้กับคำที่มีการพิมพ์
 	$display_name = preg_replace("/(" . $q . ")/i", "<b>$1</b>", $name);
 	echo "<li onselect=\"this.setText('$name').setValue('$id');\">$display_name</li>";
 }

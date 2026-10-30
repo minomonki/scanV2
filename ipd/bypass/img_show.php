@@ -36,8 +36,8 @@ if (chkSecret($an)==1){
 		$detail=" Access deny AN=".$an;
 		updatelogdetail($_SESSION["logno"],$detail);
 		//////////////////////////////////////////////
-	print "<script>alert ('AN : $anID ���١��˹��繢������Ѻ'); </script>";
-	print "<script language='javascript' >window.location='show_message.php?msg=AN : $an ���١��˹��繢������Ѻ';</script>";
+	print "<script>alert ('AN : $anID นี้ถูกกำหนดเป็นข้อมูลลับ'); </script>";
+	print "<script language='javascript' >window.location='show_message.php?msg=AN : $an นี้ถูกกำหนดเป็นข้อมูลลับ';</script>";
 }
 /*
 print "an = ".$an."<br>";

@@ -10,7 +10,7 @@ include ("../System_config/const.php");
 	include ("../System_config/connection.php");
 	include_once("../System_config/func.php");
 	
-  /////  check session_id ของหน้า
+  /////  check session_id เธเธญเธเธซเธเนเธฒ
 	if($_SESSION["PID"] == session_id()) {
 
 ?>
@@ -18,7 +18,7 @@ include ("../System_config/const.php");
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="../datepick/css/smoothness/jquery-ui-1.7.2.custom.css">
@@ -54,12 +54,12 @@ return true
 function validSubmit() { 
 //valid dform values
 	if(document.dellog.admit_s.value == ""){ 
-		alert('กรุณากรอกข้อมูล วดป. ลบข้อมูลตั้งแต่วันที่'); 
+		alert('เธเธฃเธธเธ“เธฒเธเธฃเธญเธเธเนเธญเธกเธนเธฅ เธงเธ”เธ. เธฅเธเธเนเธญเธกเธนเธฅเธ•เธฑเนเธเนเธ•เนเธงเธฑเธเธ—เธตเน'); 
 		document.dellog.admit_s.focus(); 
 		return false; 
 	}    
 	if(document.dellog.admit_e.value == ""){ 
-		alert('กรุณากรอกข้อมูล วดป. ลบข้อมูลถึงวันที่'); 
+		alert('เธเธฃเธธเธ“เธฒเธเธฃเธญเธเธเนเธญเธกเธนเธฅ เธงเธ”เธ. เธฅเธเธเนเธญเธกเธนเธฅเธ–เธถเธเธงเธฑเธเธ—เธตเน'); 
 		document.dellog.admit_e.focus();         
 		return false; 
 	}    
@@ -71,12 +71,12 @@ function validSubmit() {
 function validSubmit2() { 
 //valid dform values
 	if(document.emptytrash.dis_s.value == ""){ 
-		alert('กรุณากรอกข้อมูล วดป. Empty Trash ตั้งแต่วันที่'); 
+		alert('เธเธฃเธธเธ“เธฒเธเธฃเธญเธเธเนเธญเธกเธนเธฅ เธงเธ”เธ. Empty Trash เธ•เธฑเนเธเนเธ•เนเธงเธฑเธเธ—เธตเน'); 
 		document.emptytrash.dis_s.focus(); 
 		return false; 
 	}    
 	if(document.emptytrash.dis_e.value == ""){ 
-		alert('กรุณากรอกข้อมูล วดป. Empty Trash ถึงวันที่'); 
+		alert('เธเธฃเธธเธ“เธฒเธเธฃเธญเธเธเนเธญเธกเธนเธฅ เธงเธ”เธ. Empty Trash เธ–เธถเธเธงเธฑเธเธ—เธตเน'); 
 		document.emptytrash.dis_e.focus();         
 		return false; 
 	}    
@@ -98,20 +98,20 @@ function validSubmit2() {
 <!-- ############### Sum Table ################## -->
 <table align="center" width="90%" border="0" cellspacing="2" cellpadding="0">
   <tr>
-    <td colspan="2" class="head-topic">:: รายงานการใช้งาน - ข้อมูลสรุป ::</td>
+    <td colspan="2" class="head-topic">:: เธฃเธฒเธขเธเธฒเธเธเธฒเธฃเนเธเนเธเธฒเธ - เธเนเธญเธกเธนเธฅเธชเธฃเธธเธ ::</td>
   </tr>
   <tr>
-    <td width="30%" align="right" bgcolor="#98E6F3" class="topic">วดป. ข้อมูลการใช้งาน :</td>
+    <td width="30%" align="right" bgcolor="#98E6F3" class="topic">เธงเธ”เธ. เธเนเธญเธกเธนเธฅเธเธฒเธฃเนเธเนเธเธฒเธ :</td>
     <td width="70%"> &nbsp;
 <?php 
 		$m_minlog=chkMinMaxLogin("min","tb_ipd_logfile");
 		$m_maxlog=chkMinMaxLogin("max","tb_ipd_logfile");
-		if ($m_minlog=="") {echo "ไม่มีข้อมูล";}else{echo $m_minlog." - ".$m_maxlog;}
+		if ($m_minlog=="") {echo "เนเธกเนเธกเธตเธเนเธญเธกเธนเธฅ";}else{echo $m_minlog." - ".$m_maxlog;}
 ?>
 	</td>
   </tr>
   <tr>
-    <td align="right" bgcolor="#98E6F3" class="topic">จำนวนการเข้าใช้งานทั้งหมด (ครั้ง) :</td>
+    <td align="right" bgcolor="#98E6F3" class="topic">เธเธณเธเธงเธเธเธฒเธฃเน€เธเนเธฒเนเธเนเธเธฒเธเธ—เธฑเนเธเธซเธกเธ” (เธเธฃเธฑเนเธ) :</td>
     <td > &nbsp;<?php echo countRow("tb_ipd_logfile");?></td>
   </tr>
   <tr>
@@ -135,7 +135,7 @@ function validSubmit2() {
 	</td>
   </tr>
    <tr>
-    <td align="right" bgcolor="#98E6F3" class="topic">ประเภทการเข้าใช้งานทั้งหมด (ครั้ง) :</td>
+    <td align="right" bgcolor="#98E6F3" class="topic">เธเธฃเธฐเน€เธ เธ—เธเธฒเธฃเน€เธเนเธฒเนเธเนเธเธฒเธเธ—เธฑเนเธเธซเธกเธ” (เธเธฃเธฑเนเธ) :</td>
     <td colspan=2> &nbsp;<?php echo countRow("tb_ipd_logfile_detail");?></td>
   </tr>
    <tr>
@@ -173,7 +173,7 @@ function validSubmit2() {
 </table>
 <table align="center" width="90%" border="0" cellspacing="2" cellpadding="2">
   <tr>
-    <td width="100" align="right" bgcolor="#CCCCCC" class="topic">ตั้งแต่วันที่ :</td>
+    <td width="100" align="right" bgcolor="#CCCCCC" class="topic">เธ•เธฑเนเธเนเธ•เนเธงเธฑเธเธ—เธตเน :</td>
     <td colspan="3">
     	<input type="text" name="admit_s" id="admit_s" />
         
@@ -204,14 +204,14 @@ function validSubmit2() {
 	<?php
 		$b_minlog=chkMinMaxLogin("min","tb_ipd_logfile_bak");
 		$b_maxlog=chkMinMaxLogin("max","tb_ipd_logfile_bak");
-		if ($b_minlog=="") {echo "ไม่มีข้อมูล";}else{echo $b_minlog." - ".$b_maxlog; echo "&nbsp;&nbsp;&nbsp;&nbsp;<a href='logfilereport_trash.php' title='ดูข้อมูล Log ในถังขยะทั้งหมด'><img border=0 src='../images/bin.png' width=28></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='logfilereport2_trash.php' title='ดูข้อมูล Log ในถังขยะ ตามเงื่อนไข'><img border=0 src='../images/search.png' width=28></a>";}
+		if ($b_minlog=="") {echo "เนเธกเนเธกเธตเธเนเธญเธกเธนเธฅ";}else{echo $b_minlog." - ".$b_maxlog; echo "&nbsp;&nbsp;&nbsp;&nbsp;<a href='logfilereport_trash.php' title='เธ”เธนเธเนเธญเธกเธนเธฅ Log เนเธเธ–เธฑเธเธเธขเธฐเธ—เธฑเนเธเธซเธกเธ”'><img border=0 src='../images/bin.png' width=28></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='logfilereport2_trash.php' title='เธ”เธนเธเนเธญเธกเธนเธฅ Log เนเธเธ–เธฑเธเธเธขเธฐ เธ•เธฒเธกเน€เธเธทเนเธญเธเนเธ'><img border=0 src='../images/search.png' width=28></a>";}
 	?>
 	</td>
   </tr>
 </table>
 <table align="center" width="90%" border="0" cellspacing="2" cellpadding="1">
   <tr>
-    <td width="100" align="right" bgcolor="#CCCCCC" class="topic">ตั้งแต่วันที่ :</td>
+    <td width="100" align="right" bgcolor="#CCCCCC" class="topic">เธ•เธฑเนเธเนเธ•เนเธงเธฑเธเธ—เธตเน :</td>
     <td colspan="3">
     	<input type="text" name="dis_s" id="dis_s" />
         

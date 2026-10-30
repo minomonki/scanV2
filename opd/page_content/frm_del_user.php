@@ -4,7 +4,7 @@
 	$imgpath_top = "../images/design_webOPD/web-OPDS01_01.jpg";
 	$imgpath_botton = "../images/design_webOPD/web-OPDS01_04.jpg";
 
-  /////  check session_id ของหน้า
+  /////  check session_id เธเธญเธเธซเธเนเธฒ
 	if($_SESSION["PID"] == session_id()) {
 		
 	include ("../System_config/connection.php");
@@ -24,7 +24,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 <title>:: OPD - DELETE  User Account ::</title>
 
@@ -50,21 +50,21 @@
         
         <form name="DelDoc" id="DelDoc" action="FN_Delete/fn_deluser.php?userid=<?=$uid?>" method="post">
     	<table  width="500" border="0" cellspacing="0" cellpadding="0">
-  			<tr class="head-tb"><td height="38"> ยืนยันการลบข้อมูล </td></tr>
+  			<tr class="head-tb"><td height="38"> เธขเธทเธเธขเธฑเธเธเธฒเธฃเธฅเธเธเนเธญเธกเธนเธฅ </td></tr>
   			<tr bgcolor="#FFFFFF">
     			<td align="left">
                 	<img src="../images/span.gif" height="10" /><br />
                     	<img src="../images/span.gif"  width="100"/><br />
                 		<img src="../images/span.gif"  width="100"/><span class="topic">User Account : </span><span class="note"><?=$VALdelUser["username"]?></span><br />
-						<img src="../images/span.gif" width="100" /><span class="topic">ชื่อ - นามสกุล : </span><span class="note"><?=$VALdelUser["Fname"]?>  <?=$VALdelUser["Lname"]?></span><br />
-                        <img src="../images/span.gif" width="100" /><span class="topic">กลุ่มผู้ใช้ : </span><span class="note"><?=$VALG["groupname"]?></span><br />
+						<img src="../images/span.gif" width="100" /><span class="topic">เธเธทเนเธญ - เธเธฒเธกเธชเธเธธเธฅ : </span><span class="note"><?=$VALdelUser["Fname"]?>  <?=$VALdelUser["Lname"]?></span><br />
+                        <img src="../images/span.gif" width="100" /><span class="topic">เธเธฅเธธเนเธกเธเธนเนเนเธเน : </span><span class="note"><?=$VALG["groupname"]?></span><br />
                    <img src="../images/span.gif" height="10" />
                 </td>
   			</tr>
   			<tr bgcolor="#FFFFFF">
             	<td align="center">
                		<img src="../images/span.gif" height="10" /><br />
-                	<span class="memo">ยืนยันการลบข้อมูล</span><br />
+                	<span class="memo">เธขเธทเธเธขเธฑเธเธเธฒเธฃเธฅเธเธเนเธญเธกเธนเธฅ</span><br />
             		<input type="submit" value=".. DELETE Document .." />
                     <br /><img src="../images/span.gif" height="10" />
                 </td>

@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 
 include ("../../System_config/connection.php");
@@ -8,12 +8,12 @@ include ("../../System_config/connection.php");
 	$txtDocname = $_POST['txtDocname'];
 
 if((empty($txtDocname) || empty($txtDocType)) && ($docid <>0)){
-	print "<script>alert ('กรุณาป้อนชื่อรหัสย่อเอกสารและชื่อประเภทเอกสารให้ครบก่อนการบันทึก..'); </script>";
+	print "<script>alert ('เธเธฃเธธเธ“เธฒเธเนเธญเธเธเธทเนเธญเธฃเธซเธฑเธชเธขเนเธญเน€เธญเธเธชเธฒเธฃเนเธฅเธฐเธเธทเนเธญเธเธฃเธฐเน€เธ เธ—เน€เธญเธเธชเธฒเธฃเนเธซเนเธเธฃเธเธเนเธญเธเธเธฒเธฃเธเธฑเธเธ—เธถเธ..'); </script>";
 	print "<script language='javascript' >window.location='../show_document.php?status=0';</script>";
 	exit();
 }
 else{
-	//==check Duplicate อักษรย่อ======
+	//==check Duplicate เธญเธฑเธเธฉเธฃเธขเนเธญ======
 	$SQLdchk= "select * from tb_opd_doctype where doctype_id ='$docid'";
 	$RESdchk = mysql_db_query($database,$SQLdchk);
 	while($VALdname = mysql_fetch_array($RESdchk)){
@@ -28,7 +28,7 @@ else{
 			$chkdname = $VALdname['DocType'];
 		}
 		if($txtDocType==$chkdname){
-			print "<script>alert ('รหัสย่อเอกสารนี้มีอยู่แล้ว กรุณตรวจสอบก่อนการบันทึก..'); </script>";
+			print "<script>alert ('เธฃเธซเธฑเธชเธขเนเธญเน€เธญเธเธชเธฒเธฃเธเธตเนเธกเธตเธญเธขเธนเนเนเธฅเนเธง เธเธฃเธธเธ“เธ•เธฃเธงเธเธชเธญเธเธเนเธญเธเธเธฒเธฃเธเธฑเธเธ—เธถเธ..'); </script>";
 			print "<script language='javascript' >window.location='../show_document.php?status=0';</script>";
 			exit();
 		}

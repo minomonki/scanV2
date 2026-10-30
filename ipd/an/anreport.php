@@ -9,14 +9,14 @@ include ("../System_config/const.php");
 
 	include ("../System_config/connection.php");
 	
-  /////  check session_id ของหน้า
+  /////  check session_id เธเธญเธเธซเธเนเธฒ
 	if($_SESSION["PID"] == session_id()) {
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="../datepick/css/smoothness/jquery-ui-1.7.2.custom.css">
@@ -71,7 +71,7 @@ include("../System_config/connect.php");
 include_once("../System_config/func.php");
 EmptyDir($exportdir); // delete all old export file
 echo "<div class='blackb' align='center'>";
-echo "ข้อมูล AN ทั้งหมดในระบบ ตั้งแต่วันที่ <span class=blue>".chkMinMaxDate("min(datescan)","tb_ipd","th")."</span> - <span class=blue>".chkMinMaxDate("max(datescan)","tb_ipd","th")."</span>";
+echo "เธเนเธญเธกเธนเธฅ AN เธ—เธฑเนเธเธซเธกเธ”เนเธเธฃเธฐเธเธ เธ•เธฑเนเธเนเธ•เนเธงเธฑเธเธ—เธตเน <span class=blue>".chkMinMaxDate("min(datescan)","tb_ipd","th")."</span> - <span class=blue>".chkMinMaxDate("max(datescan)","tb_ipd","th")."</span>";
 echo "</div><br>";
 //###################################
 $colanreport=getValue("count(*)","tb_ipd ","");
@@ -79,9 +79,9 @@ $colpages=getValue("sum( pages )","tb_ipd_doctype_detail","");
 $colsizes=getValue("sum( OCTET_LENGTH( imagescan ) /1048576 )","tb_ipd a, `tb_ipd_doctype_detail` b","a.an = b.an");
 echo "<table class='rowh' align='center' width='70%' cellspacing='1' cellpadding='1' border='0'>";// create table title
 echo "<tr bgcolor='#3399CC'>";
-echo "<td align='center' class='hdtable' width='30%'>จำนวน AN ในระบบ</td>";
-echo "<td align='center' class='hdtable' width='30%'>จำนวนหน้า</td>";
-echo "<td align='center' class='hdtable' width='30%'>ขนาด (Mb)</td>";
+echo "<td align='center' class='hdtable' width='30%'>เธเธณเธเธงเธ AN เนเธเธฃเธฐเธเธ</td>";
+echo "<td align='center' class='hdtable' width='30%'>เธเธณเธเธงเธเธซเธเนเธฒ</td>";
+echo "<td align='center' class='hdtable' width='30%'>เธเธเธฒเธ” (Mb)</td>";
 echo "</tr>";
 if (fmod($id,2)) {$rcolor=' bgcolor=#99FF99';}else{$rcolor=' bgcolor=#FFFF5B';}
 echo "<tr".$rcolor.">";
@@ -120,8 +120,8 @@ if ($totalpage>0) {
 	echo "<table class='rowh' align='center' width='70%' cellspacing='1' cellpadding='1' border='0'>";// create table title
 	echo "<tr bgcolor='#ffffff'>";
 	echo "<td align='center' class='hdtable'>";
-	echo "<div class='blackb' align='center'>พบข้อมูลทั้งหมด <span class=blue>".$total."</span> ปี";
-	if ($totalpage>1){echo " ขณะนี้แสดงหน้าที่  ".$pageid."/".$totalpage;}
+	echo "<div class='blackb' align='center'>เธเธเธเนเธญเธกเธนเธฅเธ—เธฑเนเธเธซเธกเธ” <span class=blue>".$total."</span> เธเธต";
+	if ($totalpage>1){echo " เธเธ“เธฐเธเธตเนเนเธชเธ”เธเธซเธเนเธฒเธ—เธตเน  ".$pageid."/".$totalpage;}
 	echo "</div>";
 	echo "</td>";
 	echo "<td align='right' class='hdtable' width='35'>";//onMouseover='return hidestatus()' onMouseOut='return hidestatus()' 
@@ -135,10 +135,10 @@ if ($totalpage>0) {
 if ($id==1){
 	echo "<table class='rowh' align='center' width='70%' cellspacing='1' cellpadding='1' border='0'>";// create table title
 	echo "<tr bgcolor='#a9a9a9'>";
-	echo "<td align='center' class='hdtable' width='15%'>ปี</td>";
-	echo "<td align='center' class='hdtable' width='30%'>จำนวน AN ในระบบ </td>";
-	echo "<td align='center' class='hdtable' width='20%'>จำนวนหน้า</td>";
-	echo "<td align='center' class='hdtable' width='30%'>ขนาด (Mb)</td>";
+	echo "<td align='center' class='hdtable' width='15%'>เธเธต</td>";
+	echo "<td align='center' class='hdtable' width='30%'>เธเธณเธเธงเธ AN เนเธเธฃเธฐเธเธ </td>";
+	echo "<td align='center' class='hdtable' width='20%'>เธเธณเธเธงเธเธซเธเนเธฒ</td>";
+	echo "<td align='center' class='hdtable' width='30%'>เธเธเธฒเธ” (Mb)</td>";
 	echo "</tr>";
 }
 			if (fmod($id,2)) {$rcolor=' bgcolor=#f5deb3';}else{$rcolor=' bgcolor=#ffbb77';}
@@ -146,7 +146,7 @@ if ($id==1){
 			$pages=getValue("sum( b.pages )","tb_ipd a, `tb_ipd_doctype_detail` b","a.an = b.an and year(datescan)=".$row['yr']."");
 			echo "<tr".$rcolor.">";
 			echo "<td align='center' class='listdetail'>";
-			echo "<a target='_blank' title='ดูรายละเอียด' onMouseover='return hidestatus()' onMouseOut='return hidestatus()'  href=anreport_yeardetail.php?yr=".$row['yr']."&sum_an=".$row['sum_an']."&pages=".$pages."&sizes=".$sizes.">";
+			echo "<a target='_blank' title='เธ”เธนเธฃเธฒเธขเธฅเธฐเน€เธญเธตเธขเธ”' onMouseover='return hidestatus()' onMouseOut='return hidestatus()'  href=anreport_yeardetail.php?yr=".$row['yr']."&sum_an=".$row['sum_an']."&pages=".$pages."&sizes=".$sizes.">";
 			echo $row['yr'];
 			echo "</a>";
 			echo "</td>";
@@ -158,7 +158,7 @@ if ($id==1){
 		} //end of while loop
 		echo "</table>";
 }else{//no record found
-	echo "<BR><BR><div class='blackb' align='center'>======== ไม่พบข้อมูล ========</div><BR>";
+	echo "<BR><BR><div class='blackb' align='center'>======== เนเธกเนเธเธเธเนเธญเธกเธนเธฅ ========</div><BR>";
 }// end of if chk $result
 
 	//header table pages row 
@@ -181,15 +181,15 @@ if ($id==1){
 <form name="search" method="post" action="anreport2.php">
 <table align="center" width="70%" border="1" bordercolor="#C0C0C0" cellspacing="0" cellpadding="0" style="border-collapse: collapse">
   <tr>
-    <td colspan="4" class="head-topic" bgcolor="#C0C0C0">:: เงื่อนไขการแสดงผล ::</td>
+    <td colspan="4" class="head-topic" bgcolor="#C0C0C0">:: เน€เธเธทเนเธญเธเนเธเธเธฒเธฃเนเธชเธ”เธเธเธฅ ::</td>
   </tr>
   <tr>
-    <td width="35%" align="right" bgcolor="#CCCCCC" class="topic">เอกสารที่สแกน ตั้งแต่วันที่ :</td>
+    <td width="35%" align="right" bgcolor="#CCCCCC" class="topic">เน€เธญเธเธชเธฒเธฃเธ—เธตเนเธชเนเธเธ เธ•เธฑเนเธเนเธ•เนเธงเธฑเธเธ—เธตเน :</td>
     <td colspan="3">
     	<input type="text" name="admit_s" id="admit_s" />
         
         <img src="../images/span.gif" width="10" />   
-        <strong>ถึงวันที่.</strong>
+        <strong>เธ–เธถเธเธงเธฑเธเธ—เธตเน.</strong>
         <img src="../images/span.gif" width="10" />   
         <input type="text" name="admit_e" id="admit_e" />
         <script type="text/javascript" src="../datepick/js/jquery-1.3.2.min.js"></script>

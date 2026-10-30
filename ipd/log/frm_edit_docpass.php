@@ -6,7 +6,7 @@
 
 	include("../System_config/connect.php");
 
-  /////  check session_id �ͧ˹��
+  /////  check session_id ของหน้า
 	if($_SESSION["PID"] == session_id()) {
 	
 	$an = $_REQUEST["an"];
@@ -22,7 +22,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 	<link rel="stylesheet" href="../css/autocomplete.css"  type="text/css"/>
 	<script type="text/javascript" src="../autocom/autocomplete.js"></script>
@@ -55,7 +55,7 @@
 <table align="center" width="625" border="0" cellspacing="2" cellpadding="0"><!--//////////////// Step 1.  Add group name -->
   <form name="editDocpass" id="editDocpass" action="fn_editdocpass.php" method="post">
   <tr>
-    <td width="201" align="right" class="topic">�����ҹ :</td>
+    <td width="201" align="right" class="topic">ผู้ใช้งาน :</td>
 	<td colspan="2" align="left">
 	<!--<input name="txtforuser" type="text"  value="<?=$row["foruser"]?>" size="15" />-->
 	<?php 
@@ -65,11 +65,11 @@
 	</td> 
   </tr>
   <tr>
-    <td align="right" class="topic">Ǵ�.����������ҹ :</td>
+    <td align="right" class="topic">วดป.เริ่มการใช้งาน :</td>
 	<td colspan="2" align="left"> <input name="txtstartdate" type="text"  value="<?=$row["startdate"]?>" size="15" /></td> 
   </tr>
   <tr>
-    <td align="right" class="topic">Ǵ�.����ش�����ҹ :</td>
+    <td align="right" class="topic">วดป.สิ้นสุดการใช้งาน :</td>
 	<td colspan="2" align="left"> <input name="txtexpired" type="text"  value="<?=$row["expired"]?>" size="15" /></td> 
   </tr>
   <tr>
@@ -110,8 +110,8 @@ function make_autocom(autoObj,showObj){
     });	
 }	
  
-// �����ҹ
-// make_autocom(" id �ͧ input ��Ƿ���ͧ��á�˹� "," id �ͧ input ��Ƿ���ͧ����Ѻ���");
+// การใช้งาน
+// make_autocom(" id ของ input ตัวที่ต้องการกำหนด "," id ของ input ตัวที่ต้องการรับค่า");
 make_autocom("s_txt_foruser","h_txt_foruser");
 </script>
 

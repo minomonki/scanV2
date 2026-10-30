@@ -6,7 +6,7 @@
 
 	include ("../System_config/connection.php");
 
-  /////  check session_id ของหน้า
+  /////  check session_id เธเธญเธเธซเธเนเธฒ
 	if($_SESSION["PID"] == session_id()) {
 	
 	$docid = $_GET["docid"];
@@ -19,7 +19,7 @@ $VALeditDoc = mysql_fetch_array($RESeditDoc)
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 <title>:: OPD - EDIT Document ::</title>
 
@@ -51,11 +51,11 @@ $VALeditDoc = mysql_fetch_array($RESeditDoc)
 <table align="center" width="625" border="0" cellspacing="2" cellpadding="0"><!--//////////////// Step 1.  Add group name -->
   <form name="editDoc" id="editDoc" action="FN_Update/fn_editdocument.php?docid=<?=$docid?>" method="post">
   <tr>
-    <td width="201" align="right" class="topic">รหัสอักษรย่อ :</td>
+    <td width="201" align="right" class="topic">เธฃเธซเธฑเธชเธญเธฑเธเธฉเธฃเธขเนเธญ :</td>
 	<td colspan="2" align="left"> <input name="txtDocType" type="text"  value="<?=$VALeditDoc["DocType"]?>" size="10" /></td> 
   </tr>
   <tr>
-    <td align="right" class="topic">ชื่อเอกสาร :</td>
+    <td align="right" class="topic">เธเธทเนเธญเน€เธญเธเธชเธฒเธฃ :</td>
     <td width="180"><input name="txtDocname" type="text" value="<?=$VALeditDoc["DocTypeName"]?>" size="30" /></td>
     <td width="236"><input type="submit" value="..SAVE Document.." /></td>
   </tr>

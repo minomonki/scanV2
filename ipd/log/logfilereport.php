@@ -9,7 +9,7 @@ include ("../System_config/const.php");
 
 	include ("../System_config/connection.php");
 	
-  /////  check session_id ของหน้า
+  /////  check session_id เธเธญเธเธซเธเนเธฒ
 	if($_SESSION["PID"] == session_id()) {
 
 ?>
@@ -17,7 +17,7 @@ include ("../System_config/const.php");
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="../datepick/css/smoothness/jquery-ui-1.7.2.custom.css">
@@ -95,18 +95,18 @@ $result=mysql_query($query);
 if ($totalpage>0) {
 	include_once("../System_config/func.php");
 	echo "<div class='blackb' align='center'>";
-	echo "การเข้าใช้ระบบงานตั้งแต่วันที่ ".chkMinMaxLogin("min","tb_ipd_logfile")." - ".chkMinMaxLogin("max","tb_ipd_logfile");
+	echo "เธเธฒเธฃเน€เธเนเธฒเนเธเนเธฃเธฐเธเธเธเธฒเธเธ•เธฑเนเธเนเธ•เนเธงเธฑเธเธ—เธตเน ".chkMinMaxLogin("min","tb_ipd_logfile")." - ".chkMinMaxLogin("max","tb_ipd_logfile");
 	echo "</div><br>";
-	echo "<div class='blackb' align='center'>พบข้อมูลทั้งหมด ".$total." รายการ";
-	if ($totalpage>1){echo " ขณะนี้แสดงหน้าที่  ".$pageid."/".$totalpage;}
+	echo "<div class='blackb' align='center'>เธเธเธเนเธญเธกเธนเธฅเธ—เธฑเนเธเธซเธกเธ” ".$total." เธฃเธฒเธขเธเธฒเธฃ";
+	if ($totalpage>1){echo " เธเธ“เธฐเธเธตเนเนเธชเธ”เธเธซเธเนเธฒเธ—เธตเน  ".$pageid."/".$totalpage;}
 	echo "</div><br>";
 	echo "<table class='rowh' align='center' width='90%' cellspacing='1' cellpadding='1' border='0'>";// create table title
 	echo "<tr bgcolor='#a9a9a9'>";
-	echo "<td align='center' class='hdtable' width='5%'>ลำดับ</td>";
+	echo "<td align='center' class='hdtable' width='5%'>เธฅเธณเธ”เธฑเธ</td>";
 	echo "<td align='center' class='hdtable' width='20%'>Username</td>";
-	echo "<td align='center' class='hdtable' width='20%'>ชื่อ-สกุล</td>";
-	echo "<td align='center' class='hdtable' width='20%'>วดป.-เวลา</td>";
-	echo "<td align='center' class='hdtable' width='10%'>การเข้าใช้งาน</td>";
+	echo "<td align='center' class='hdtable' width='20%'>เธเธทเนเธญ-เธชเธเธธเธฅ</td>";
+	echo "<td align='center' class='hdtable' width='20%'>เธงเธ”เธ.-เน€เธงเธฅเธฒ</td>";
+	echo "<td align='center' class='hdtable' width='10%'>เธเธฒเธฃเน€เธเนเธฒเนเธเนเธเธฒเธ</td>";
 	echo "<td align='center' class='hdtable' width='15%'>IP ADDRESS</td>";
 	echo "</tr>";
 		while($row = mysql_fetch_array($result)){
@@ -128,14 +128,14 @@ if ($totalpage>0) {
 			/// get name
 			echo "<td align='center' class='listdetail'>";
 			//echo $u_array[0];
-			echo "<a title='ดูรายละเอียด' onMouseover='return hidestatus()' onMouseOut='return hidestatus()' target='_blank' href=logfilereport_detail.php?logno=".$row['logno']."&username=".base64_encode($row['username'])."&getname=".$getname.">";
+			echo "<a title='เธ”เธนเธฃเธฒเธขเธฅเธฐเน€เธญเธตเธขเธ”' onMouseover='return hidestatus()' onMouseOut='return hidestatus()' target='_blank' href=logfilereport_detail.php?logno=".$row['logno']."&username=".base64_encode($row['username'])."&getname=".$getname.">";
 			if ($row['logtype']=="E"){	
 				$u_array = split('/', $row['username']);
 				echo $u_array[0]."/****";
 			}elseif ($row['logtype']=="B"){
 				echo "HosXP";
 			}elseif ($row['logtype']=="N" || $row['logtype']=="L" || $row['logtype']=="Q"){
-				echo "ระบบยืม";
+				echo "เธฃเธฐเธเธเธขเธทเธก";
 			}else{
 				echo $row['username'];
 			}
@@ -154,7 +154,7 @@ if ($totalpage>0) {
 		} //end of while loop
 		echo "</table>";
 }else{//no record found
-	echo "<BR><BR><div class='blackb' align='center'>======== ไม่พบข้อมูล ========</div><BR>";
+	echo "<BR><BR><div class='blackb' align='center'>======== เนเธกเนเธเธเธเนเธญเธกเธนเธฅ ========</div><BR>";
 }// end of if chk $result
 
 	//header table pages row 

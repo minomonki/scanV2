@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 
 include ("../../System_config/connection.php");
@@ -13,7 +13,7 @@ $fname 				= $_POST["txtfname"];
 $lname 				= $_POST["txtlname"];
 ////////////////////////  check from
 if (empty($username)||empty($password)||empty($conpassword)||empty($fname)||empty($lname)||empty($uid)){
-	print "<script>alert ('��سҡ�͡���������ú��͹��úѹ�֡'); </script>";
+	print "<script>alert ('กรุณากรอกข้อมูลให้ครบก่อนการบันทึก'); </script>";
 	print "<script language='javascript' >window.location='../show_user.php?status=0';</script>";
 	exit();	
 }
@@ -33,7 +33,7 @@ else{
 			$chkuname = $VALgname['username'];
 		}
 		if($username==$chkuname){
-			print "<script>alert ('���ͼ���������������� ��س��Ǩ�ͺ��͹��úѹ�֡..'); </script>";
+			print "<script>alert ('ชื่อผู้ใช้นี้มีอยู่แล้ว กรุณตรวจสอบก่อนการบันทึก..'); </script>";
 			print "<script language='javascript' >window.location='../show_user.php?status=0';</script>";
 			exit();
 		}

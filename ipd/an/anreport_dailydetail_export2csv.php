@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <?php
 	if($_SESSION["PID"] == session_id()) {
@@ -17,7 +17,7 @@ $pathdir= "../exportfile/";
 $filName = $filename.$today3.".csv"; 
 $objWrite = fopen($pathdir.$filName, "w"); 
 //write header title
-$titleheader="ข้อมูล AN ทั้งหมดในระบบ วันที่ ".$_REQUEST["d"]." ".$month[$_REQUEST["mon"]-1]." ปี ".$_REQUEST["yr"]; 
+$titleheader="เธเนเธญเธกเธนเธฅ AN เธ—เธฑเนเธเธซเธกเธ”เนเธเธฃเธฐเธเธ เธงเธฑเธเธ—เธตเน ".$_REQUEST["d"]." ".$month[$_REQUEST["mon"]-1]." เธเธต ".$_REQUEST["yr"]; 
 fwrite($objWrite, "\"$titleheader\"\n"); 
 //////////////////////////////////
 $select="select an,year(datescan) as yr,month(datescan) as mon,day(datescan) as d, count( * ) AS sum_an";
@@ -27,8 +27,8 @@ $groupby=" group by an";
 $query =$select.$from.$where.$groupby.$orderby;
 $result=mysql_query($query);
 //$total=mysql_num_rows($result);
-fwrite($objWrite, "\"AN\",\"จำนวนเอกสาร\",\"จำนวนหน้า\","); 
-fwrite($objWrite, "\"ขนาด (Mb)\"\n"); 
+fwrite($objWrite, "\"AN\",\"เธเธณเธเธงเธเน€เธญเธเธชเธฒเธฃ\",\"เธเธณเธเธงเธเธซเธเนเธฒ\","); 
+fwrite($objWrite, "\"เธเธเธฒเธ” (Mb)\"\n"); 
 while($row = mysql_fetch_array($result)){
 	$sizes=getValue("sum( OCTET_LENGTH( imagescan ) /1048576 )","tb_ipd a, `tb_ipd_doctype_detail` b","a.an = b.an and year(datescan)=".$row['yr']." and month(datescan)=".$row['mon']." and day(datescan)=".$row['d']." and a.an=".$row['an']."");
 	$sumdoctype=getValue("count(doctype)","tb_ipd a, `tb_ipd_doctype_detail` b","a.an = b.an and year(datescan)=".$row['yr']." and month(datescan)=".$row['mon']." and day(datescan)=".$row['d']." and a.an=".$row['an']."");
@@ -40,7 +40,7 @@ while($row = mysql_fetch_array($result)){
 	unset($sizes);unset($sumdoctype);
 } //end of while loop
 ////////////////////////////////// SUM
-fwrite($objWrite, "\"รวม\",\"$sumdoctype\",\"$sum_pages\","); 
+fwrite($objWrite, "\"เธฃเธงเธก\",\"$sumdoctype\",\"$sum_pages\","); 
 fwrite($objWrite, "\"$sum_sizes\"\n"); 
 //////////////////////////////////
 fclose($objWrite); 

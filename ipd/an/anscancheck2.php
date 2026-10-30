@@ -9,7 +9,7 @@ include ("../System_config/const.php");
 
 	include ("../System_config/connection.php");
 	
-  /////  check session_id �ͧ˹��
+  /////  check session_id ของหน้า
 	if($_SESSION["PID"] == session_id()) {
 
 ?>
@@ -17,7 +17,7 @@ include ("../System_config/const.php");
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="../datepick/css/smoothness/jquery-ui-1.7.2.custom.css">
@@ -65,15 +65,15 @@ return true
 <form name="search" method="post" action="anscancheck2.php">
 <table align="center" width="70%" border="0" bordercolor="#C0C0C0" cellspacing="0" cellpadding="0" style="border-collapse: collapse">
   <tr>
-    <td colspan="4" class="head-topic">:: ���͹䢡���ʴ��� ::</td>
+    <td colspan="4" class="head-topic">:: เงื่อนไขการแสดงผล ::</td>
   </tr>
   <tr>
-    <td width="38%" align="right" bgcolor="#CCCCCC" class="topic">��Ǩ�ͺ�͡��÷���᡹ ������ѹ��� :</td>
+    <td width="38%" align="right" bgcolor="#CCCCCC" class="topic">ตรวจสอบเอกสารที่สแกน ตั้งแต่วันที่ :</td>
     <td colspan="3">
     	<input type="text" name="admit_s" id="admit_s" />
         
         <img src="../images/span.gif" width="10" />   
-        <strong>�֧�ѹ���.</strong>
+        <strong>ถึงวันที่.</strong>
         <img src="../images/span.gif" width="10" />   
         
         <input type="text" name="admit_e" id="admit_e" />
@@ -141,8 +141,8 @@ $s_thmindate=$thminyear."-".substr($fromdate,5,2)."-".substr($fromdate,8,2);
 	echo "<tr bgcolor='#ffffff'>";
 	echo "<td align='center' class='hdtable'>";
 	echo "<div class='blackb' align='center'>";
-	echo "�ʴ��š�ä��ҵ�����ѹ��� <span class=blue>".substr($fromdate,8,2)."/".substr($fromdate,5,2)."/".$thminyear."</span> �֧ <span class=blue>".substr($todate,8,2)."/".substr($todate,5,2)."/".$thmaxyear."</span>";
-	if ($totalpage>1){echo " ��й���ʴ�˹�ҷ��  ".$pageid."/".$totalpage;}
+	echo "แสดงผลการค้นหาตั้งแต่วันที่ <span class=blue>".substr($fromdate,8,2)."/".substr($fromdate,5,2)."/".$thminyear."</span> ถึง <span class=blue>".substr($todate,8,2)."/".substr($todate,5,2)."/".$thmaxyear."</span>";
+	if ($totalpage>1){echo " ขณะนี้แสดงหน้าที่  ".$pageid."/".$totalpage;}
 	echo "</div>";
 	echo "</td>";
 	echo "<td align='right' class='hdtable' width='35'>";//onMouseover='return hidestatus()' onMouseOut='return hidestatus()' 
@@ -154,9 +154,9 @@ $s_thmindate=$thminyear."-".substr($fromdate,5,2)."-".substr($fromdate,8,2);
 	echo "</table>";
 echo "<table class='rowh' align='center' width='70%' cellspacing='1' cellpadding='1' border='0'>";// create table title
 echo "<tr bgcolor='#a9a9a9'>";
-echo "<td align='center' class='hdtable' width='30%'>�ӹǹ AN ��к�</td>";
-echo "<td align='center' class='hdtable' width='30%'>�ӹǹ AN �᡹����</td>";
-echo "<td align='center' class='hdtable' width='30%'>�ӹǹ AN ����᡹���ú</td>";
+echo "<td align='center' class='hdtable' width='30%'>จำนวน AN ในระบบ</td>";
+echo "<td align='center' class='hdtable' width='30%'>จำนวน AN สแกนแล้ว</td>";
+echo "<td align='center' class='hdtable' width='30%'>จำนวน AN ที่สแกนไม่ครบ</td>";
 echo "</tr>";
 if (fmod($id,2)) {$rcolor=' bgcolor=#f5deb3';}else{$rcolor=' bgcolor=#ffbb77';}
 echo "<tr".$rcolor.">";

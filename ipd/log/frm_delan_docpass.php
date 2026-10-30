@@ -4,7 +4,7 @@
 	$imgpath_top = "../images/design_webIPD/web-IPDS01_01.jpg";
 	$imgpath_botton = "../images/design_webIPD/web-IPDS01_04.jpg";
 
-  /////  check session_id �ͧ˹��
+  /////  check session_id ของหน้า
 	if($_SESSION["PID"] == session_id()) {
 		
 	include ("../System_config/connection.php");
@@ -15,7 +15,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 <title>:: IPD - DELETE  User Account ::</title>
 
@@ -42,7 +42,7 @@
         <form name="DelanDoc" id="DelanDoc" action="fn_delandocpass.php" method="post">
 		
 		<table  align="center" width="500" border="0" cellspacing="0" cellpadding="0">
-  			<tr class="head-tb"><td height="38"> �׹�ѹ���ź�����Ũҡ AN �ҡ��¡�âͧ password : <?=$psw?></td></tr>
+  			<tr class="head-tb"><td height="38"> ยืนยันการลบข้อมูลจาก AN จากรายการของ password : <?=$psw?></td></tr>
   			<tr bgcolor="#FFFFFF">
     			<td align="left">
                 	<img src="../images/span.gif" height="10" /><br />
@@ -55,9 +55,9 @@
             	<td align="center">
                		<img src="../images/span.gif" height="10" /><br />
  		<?php
-		if ($_REQUEST['totalan']==1){echo "<div class=red align=center>���ź AN ���������¡���ش�������ʵ� �к���ź password �͡�ҡ�к��������</div>";}
+		if ($_REQUEST['totalan']==1){echo "<div class=red align=center>การลบ AN นี้ซึ่งเป็นรายการสุดท้ายในลิสต์ ระบบจะลบ password ออกจากระบบยืมด้วย</div>";}
 		?>
-               	<span class="memo">�׹�ѹ���ź������</span><br />
+               	<span class="memo">ยืนยันการลบข้อมูล</span><br />
             		<input type="submit" value=" DELETE " /> &nbsp;<input type="button" value=" CANCEL " onclick="window.location='frm_set_docpass.php?cmd_addan=1&txt_addan=<?=$psw?>';" />
 					<br /><img src="../images/span.gif" height="10" />
                 </td>

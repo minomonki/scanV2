@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 
 <?php
@@ -19,10 +19,10 @@ $pathdir= "../exportfile/";
 $filName = "anscancheck_monthdetail".$today3.".csv";  
 $objWrite = fopen($pathdir.$filName, "w"); 
 //write header title
-$titleheader="������ AN ��������к��ҹ ��͹ ".$month[$_REQUEST["mon"]-1]." �� ".$_REQUEST["thyr"];
+$titleheader="ข้อมูล AN ทั้งหมดในระบบงาน เดือน ".$month[$_REQUEST["mon"]-1]." ปี ".$_REQUEST["thyr"];
 fwrite($objWrite, "\"$titleheader\"\n"); 
 //////////////////////////////////
-fwrite($objWrite, "\"Ǵ�.\",\"�ӹǹ AN ��к�\",\"�ӹǹ AN �᡹����\",\"�ӹǹ AN ����᡹���ú\"\n"); 
+fwrite($objWrite, "\"วดป.\",\"จำนวน AN ในระบบ\",\"จำนวน AN สแกนแล้ว\",\"จำนวน AN ที่สแกนไม่ครบ\"\n"); 
 //////////////////////////////////
 $total=0;
 for ($i=1;$i<=31;$i++){
@@ -41,7 +41,7 @@ for ($i=1;$i<=31;$i++){
 	}//end if
 } //end for
 ////////////////////////////////// SUM
-fwrite($objWrite, "\"���\",\"$colan\",\"$colyesan\",\"$colnoan\"\n"); 
+fwrite($objWrite, "\"รวม\",\"$colan\",\"$colyesan\",\"$colnoan\"\n"); 
 //////////////////////////////////
 fclose($objWrite); 
 //echo "<br>Generate CSV Done<br><a href=".$pathdir."".$filName.">Download</a>"; 

@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 
 include("../../System_config/connection.php");
@@ -9,7 +9,7 @@ include("../../System_config/connection.php");
 	print $docid;
 	
 if((empty($hn)) and (empty($vn))){
-	print "<script>alert ('��سҵ�Ǩ�ͺ��¡�÷�����͡�ա����..'); </script>";
+	print "<script>alert ('กรุณาตรวจสอบรายการที่เลือกอีกครั้ง..'); </script>";
 	print "<script language='javascript' >window.location='../frm_search.php?status=0';</script>";
 	exit();
 }	
@@ -24,7 +24,7 @@ if((empty($hn)) and (empty($vn))){
 		print "<script language='javascript' >window.location='../delete_list_opd.php?uid=$hn';</script>";
 	}
 	else{
-		print "<script>alert ('��سҵ�Ǩ�ͺ��¡�÷�����͡�ա����..'); </script>";
+		print "<script>alert ('กรุณาตรวจสอบรายการที่เลือกอีกครั้ง..'); </script>";
 		print "<script language='javascript' >window.location='../delete_list_opd.php?uid=$hn';</script>";
 	}	
 

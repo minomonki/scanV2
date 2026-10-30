@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 ///// check data before delete
 $txt_plusan	= $_REQUEST["txt_plusan"];
@@ -9,18 +9,18 @@ $admit_e= $_REQUEST["admit_e"];
 $txt_byuser= $_REQUEST["txt_byuser"];
 //echo "plusan=".$txt_plusan."<br>";
 //echo "password=".$txt_password."<br>";
-//$errmsg="ข้อมูลไม่ครบถ้วน ";
+//$errmsg="เธเนเธญเธกเธนเธฅเนเธกเนเธเธฃเธเธ–เนเธงเธ ";
 //$flag = 0;
 
 ////////// check to complete data
 if(empty($txt_plusan)){
-	$errmsg .=" ต้องระบุข้อมูล AN";
+	$errmsg .=" เธ•เนเธญเธเธฃเธฐเธเธธเธเนเธญเธกเธนเธฅ AN";
 	$flag = 1;
 }elseif (empty($admit_s)){
-	$errmsg .=" , ต้องระบุข้อมูล วดป.เริ่มการใช้งาน";
+	$errmsg .=" , เธ•เนเธญเธเธฃเธฐเธเธธเธเนเธญเธกเธนเธฅ เธงเธ”เธ.เน€เธฃเธดเนเธกเธเธฒเธฃเนเธเนเธเธฒเธ";
 	$flag = 1;
 }elseif (empty($admit_e)){
-	$errmsg .=" , ต้องระบุข้อมูล วดป.สิ้นสุดการใช้งาน";
+	$errmsg .=" , เธ•เนเธญเธเธฃเธฐเธเธธเธเนเธญเธกเธนเธฅ เธงเธ”เธ.เธชเธดเนเธเธชเธธเธ”เธเธฒเธฃเนเธเนเธเธฒเธ";
 	$flag = 1;
 }
 if ($flag == 1){

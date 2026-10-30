@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 /////////////////////// FUNCTION ///////////////////
 function insertAN2pass($an,$pass,$startdate,$expired,$foruser,$byuser,$byupdate){
@@ -71,7 +71,7 @@ for ($i=0;$i<=count($foruser)-1;$i++){
 	}// while password
 }//end for foruser
 	
-print "<script>alert ('ดำเนินการเรียบร้อยแล้ว'); </script>";
+print "<script>alert ('เธ”เธณเน€เธเธดเธเธเธฒเธฃเน€เธฃเธตเธขเธเธฃเนเธญเธขเนเธฅเนเธง'); </script>";
 print "<script language='javascript' >window.location='frm_setdata_docpass.php';</script>";
 
 //////////////////////////////////////////////////////////////////

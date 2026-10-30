@@ -9,7 +9,7 @@ include ("../System_config/const.php");
 
 	include ("../System_config/connection.php");
 	
-  /////  check session_id �ͧ˹��
+  /////  check session_id ของหน้า
 	if($_SESSION["PID"] == session_id()) {
 
 ?>
@@ -17,7 +17,7 @@ include ("../System_config/const.php");
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="../datepick/css/smoothness/jquery-ui-1.7.2.custom.css">
@@ -63,7 +63,7 @@ return true
     <td background="../images/design_webIPD/web-IPDS01_03.jpg">
 <table align="center" width="701" border="0" cellspacing="2" cellpadding="1">
   <tr>
-    <td colspan="4" class="head-topic">:: ���͹䢡���ʴ��� ::</td>
+    <td colspan="4" class="head-topic">:: เงื่อนไขการแสดงผล ::</td>
   </tr>
   <tr>
     <td width="25%" align="right" bgcolor="#CCCCCC" class="topic">Username :</td>
@@ -71,7 +71,7 @@ return true
 				<input type="text" name="txtusername" id="s_txtusername"  value="<?=$_REQUEST['txtusername'];?>" maxlength="30"/>
 				<input name="h_txtusername" type="hidden" id="h_txtusername" value="" />
 	</td>
-    <td width="25%" align="right" bgcolor="#CCCCCC" class="topic">��������ҹ :</td>
+    <td width="25%" align="right" bgcolor="#CCCCCC" class="topic">การเข้าใช้งาน :</td>
     <td width="25%">
 	<select name="txtlogtype">
 	<option value=""></option>
@@ -88,12 +88,12 @@ for ($i = 1; $i <= count($logtype_array); $i++){
 	</td>
   </tr>
   <tr>
-    <td align="right" bgcolor="#CCCCCC" class="topic">���ͼ����ҹ :</td>
+    <td align="right" bgcolor="#CCCCCC" class="topic">ชื่อผู้ใช้งาน :</td>
     <td>
 				<input type="text" name="txtloginname" id="s_txtloginname"  value="<?=$_REQUEST['txtloginname'];?>" maxlength="50"/>
 				<input name="h_txtloginname" type="hidden" id="h_txtloginname" value="" />
 	</td>
-    <td align="right" bgcolor="#CCCCCC" class="topic">���ʡ�ż����ҹ :</td>
+    <td align="right" bgcolor="#CCCCCC" class="topic">นามสกุลผู้ใช้งาน :</td>
     <td>
 				<input type="text" name="txtloginlname" id="s_txtloginlname"  value="<?=$_REQUEST['txtloginlname'];?>" maxlength="50"/>
 				<input name="h_txtloginlname" type="hidden" id="h_txtloginlname" value="" />
@@ -105,7 +105,7 @@ for ($i = 1; $i <= count($logtype_array); $i++){
 				<input type="text" name="txtan" id="s_txtan"  value="<?=$_REQUEST['txtan'];?>" maxlength="50"/>
 				<input name="h_txtan" type="hidden" id="h_txtan" value="" />
 	</td>
-    <td align="right" bgcolor="#CCCCCC" class="topic">������͡��� :</td>
+    <td align="right" bgcolor="#CCCCCC" class="topic">การใช้เอกสาร :</td>
     <td>
 	<select name="txtpcode">
 	<option value=""></option>
@@ -120,7 +120,7 @@ for ($i = 1; $i <= count($pcode_array); $i++){
 	</td>
   </tr>
   <tr>
-    <td align="right" bgcolor="#CCCCCC" class="topic">���ͼ����ҹ �к���� :</td>
+    <td align="right" bgcolor="#CCCCCC" class="topic">ชื่อผู้ใช้งาน ระบบยืม :</td>
     <td>
 				<input type="text" name="txtdocpassforuser" id="s_txtdocpassforuser"  value="<?=$_REQUEST['txtdocpassforuser'];?>" maxlength="50"/>
 				<input name="h_txtdocpassforuser" type="hidden" id="h_txtdocpassforuser" value="" />
@@ -132,12 +132,12 @@ for ($i = 1; $i <= count($pcode_array); $i++){
 	</td>
   </tr>
   <tr>
-    <td align="right" bgcolor="#CCCCCC" class="topic">������ѹ��� :</td>
+    <td align="right" bgcolor="#CCCCCC" class="topic">ตั้งแต่วันที่ :</td>
     <td colspan="3">
     	<input type="text" name="admit_s" id="admit_s" />
         
         <img src="../images/span.gif" width="10" />   
-        <strong>�֧�ѹ���.</strong>
+        <strong>ถึงวันที่.</strong>
         <img src="../images/span.gif" width="10" />   
         
         <input type="text" name="admit_e" id="admit_e" />
@@ -270,11 +270,11 @@ if ($result) {
 	if ($fromdate<>"" && $todate<>""){
 		$yrfrom=substr($fromdate,0,4)+543;
 		$yrto=substr($todate,0,4)+543;
-		echo "<br><div class=blue align=center>������ѹ��� ".substr($fromdate,8,2)."/".substr($fromdate,5,2)."/".$yrfrom." - ".substr($todate,8,2)."/".substr($todate,5,2)."/".$yrto."</div>";
+		echo "<br><div class=blue align=center>ตั้งแต่วันที่ ".substr($fromdate,8,2)."/".substr($fromdate,5,2)."/".$yrfrom." - ".substr($todate,8,2)."/".substr($todate,5,2)."/".$yrto."</div>";
 	
 	}
-	echo "<div class='blackb' align='center'>�ʴ������ŷ����� ".$total." ��¡��";
-	if ($totalpage>1){echo " ��й���ʴ�˹�ҷ��  ".$pageid."/".$totalpage;}
+	echo "<div class='blackb' align='center'>แสดงข้อมูลทั้งหมด ".$total." รายการ";
+	if ($totalpage>1){echo " ขณะนี้แสดงหน้าที่  ".$pageid."/".$totalpage;}
 	echo "</div>";
 	echo "<table class='rowh' align='center' width='90%' cellspacing='1' cellpadding='1' border='0'>";// create table title
 	if ($_REQUEST['txtpcode']<>"" || $_REQUEST['txtan']<>""){$colno=10;}else{$colno=6;}
@@ -295,19 +295,19 @@ if ($result) {
 	echo "</a>";
 	echo "</td>";
 	echo "<tr bgcolor='#a9a9a9'>";
-	echo "<td align='center' class='hdtable' width='5%'>�ӴѺ</td>";
-	echo "<td align='center' class='hdtable' width='10%'>��������ҹ</td>";
+	echo "<td align='center' class='hdtable' width='5%'>ลำดับ</td>";
+	echo "<td align='center' class='hdtable' width='10%'>การเข้าใช้งาน</td>";
 	echo "<td align='center' class='hdtable' width='10%'>Username</td>";
-	echo "<td align='center' class='hdtable' width='15%'>����-ʡ��</td>";
+	echo "<td align='center' class='hdtable' width='15%'>ชื่อ-สกุล</td>";
 	if ($_REQUEST['txtpcode']<>"" || $_REQUEST['txtan']<>""){
 		echo "<td align='center' class='hdtable' width='10%'>AN</td>";
 		echo "<td align='center' class='hdtable' width='15%'>Doc Type</td>";
-		echo "<td align='center' class='hdtable' width='10%'>������͡���</td>";
+		echo "<td align='center' class='hdtable' width='10%'>การใช้เอกสาร</td>";
 	}	
-	echo "<td align='center' class='hdtable' width='15%'>Ǵ�.-����</td>";
+	echo "<td align='center' class='hdtable' width='15%'>วดป.-เวลา</td>";
 	echo "<td align='center' class='hdtable' width='10%'>IP ADDRESS</td>";
 	if ($_REQUEST['txtpcode']<>"" || $_REQUEST['txtan']<>""){
-		echo "<td align='center' class='hdtable' width='10%'>�����˵�</td>";
+		echo "<td align='center' class='hdtable' width='10%'>หมายเหตุ</td>";
 	}	
 	echo "</tr>";
 		while($row = mysql_fetch_array($result)){
@@ -328,7 +328,7 @@ if ($result) {
 			}elseif ($row['logtype']=="B"){
 				echo "HosXP";
 			}elseif ($row['logtype']=="N" || $row['logtype']=="L" || $row['logtype']=="Q"){
-				echo "�к����";
+				echo "ระบบยืม";
 			}else{
 				echo $row['username'];
 			}
@@ -378,7 +378,7 @@ if ($row['descr']==""){
 		} //end of while loop
 		echo "</table>";
 }else{//no record found
-	echo "<div class='blackb' align='center'>======== ��辺������ ========</div>";
+	echo "<div class='blackb' align='center'>======== ไม่พบข้อมูล ========</div>";
 }// end of if chk $result
 
 	//header table pages row 
@@ -435,8 +435,8 @@ function make_autocom(autoObj,showObj){
     });	
 }	
  
-// �����ҹ
-// make_autocom(" id �ͧ input ��Ƿ���ͧ��á�˹� "," id �ͧ input ��Ƿ���ͧ����Ѻ���");
+// การใช้งาน
+// make_autocom(" id ของ input ตัวที่ต้องการกำหนด "," id ของ input ตัวที่ต้องการรับค่า");
 make_autocom("s_txtusername","h_txtusername");
 </script>
 <script type="text/javascript">
@@ -456,8 +456,8 @@ function make_autocom2(autoObj,showObj){
     });	
 }	
  
-// �����ҹ
-// make_autocom(" id �ͧ input ��Ƿ���ͧ��á�˹� "," id �ͧ input ��Ƿ���ͧ����Ѻ���");
+// การใช้งาน
+// make_autocom(" id ของ input ตัวที่ต้องการกำหนด "," id ของ input ตัวที่ต้องการรับค่า");
 make_autocom2("s_txtan","h_txtan");
 </script>
 <script type="text/javascript">
@@ -477,8 +477,8 @@ function make_autocom3(autoObj,showObj){
     });	
 }	
  
-// �����ҹ
-// make_autocom(" id �ͧ input ��Ƿ���ͧ��á�˹� "," id �ͧ input ��Ƿ���ͧ����Ѻ���");
+// การใช้งาน
+// make_autocom(" id ของ input ตัวที่ต้องการกำหนด "," id ของ input ตัวที่ต้องการรับค่า");
 make_autocom3("s_txtipaddr","h_txtipaddr");
 </script>
 <script type="text/javascript">
@@ -498,8 +498,8 @@ function make_autocom4(autoObj,showObj){
     });	
 }	
  
-// �����ҹ
-// make_autocom(" id �ͧ input ��Ƿ���ͧ��á�˹� "," id �ͧ input ��Ƿ���ͧ����Ѻ���");
+// การใช้งาน
+// make_autocom(" id ของ input ตัวที่ต้องการกำหนด "," id ของ input ตัวที่ต้องการรับค่า");
 make_autocom4("s_txtloginname","h_txtloginname");
 </script>
 <script type="text/javascript">
@@ -519,8 +519,8 @@ function make_autocom5(autoObj,showObj){
     });	
 }	
  
-// �����ҹ
-// make_autocom(" id �ͧ input ��Ƿ���ͧ��á�˹� "," id �ͧ input ��Ƿ���ͧ����Ѻ���");
+// การใช้งาน
+// make_autocom(" id ของ input ตัวที่ต้องการกำหนด "," id ของ input ตัวที่ต้องการรับค่า");
 make_autocom5("s_txtloginlname","h_txtloginlname");
 </script>
 <script type="text/javascript">
@@ -540,8 +540,8 @@ function make_autocom6(autoObj,showObj){
     });	
 }	
  
-// �����ҹ
-// make_autocom(" id �ͧ input ��Ƿ���ͧ��á�˹� "," id �ͧ input ��Ƿ���ͧ����Ѻ���");
+// การใช้งาน
+// make_autocom(" id ของ input ตัวที่ต้องการกำหนด "," id ของ input ตัวที่ต้องการรับค่า");
 make_autocom6("s_txtdocpassforuser","h_txtdocpassforuser");
 </script>
 

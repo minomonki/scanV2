@@ -4,7 +4,7 @@
 	
 	include ("../System_config/config.php");
 	
-  /////  check session_id ของหน้า
+  /////  check session_id เธเธญเธเธซเธเนเธฒ
 	if($_SESSION["PID"] == session_id()) {
 		
 	$imgpath_top = "../images/design_webOPD/web-OPDS01_01.jpg";
@@ -27,7 +27,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 <title>::OPDS-Search</title>
 <style type="text/css">
@@ -71,15 +71,15 @@ return true
         
  <form name="search" method="post" action="?showTable=1">
 <table align="center" width="701" border="0" cellspacing="2" cellpadding="0">
-  <tr><td colspan="4" class="head-topic">:: ค้นหา ::</td></tr>
+  <tr><td colspan="4" class="head-topic">:: เธเนเธเธซเธฒ ::</td></tr>
   <tr>
     <td width="158" align="right" bgcolor="#CCCCCC" class="topic">HN :</td>
     <td width="187"><input type="text" name="txtSearchHN" value="<?=$_POST['txtSearchHN'];?>" /></td>
   </tr>
   <tr>
-    <td width="158" align="right" bgcolor="#CCCCCC" class="topic">ชื่อ :</td>
+    <td width="158" align="right" bgcolor="#CCCCCC" class="topic">เธเธทเนเธญ :</td>
     <td><input type="text" name="txtFname" value="<?=$_POST['txtFname'];?>" /></td>
-    <td width="144" align="right" bgcolor="#CCCCCC" class="topic">นามสกุล :</td>
+    <td width="144" align="right" bgcolor="#CCCCCC" class="topic">เธเธฒเธกเธชเธเธธเธฅ :</td>
     <td><input type="text" name="txtLname" value="<?=$_POST['txtLname'];?>" /></td>
   </tr>
   <tr>
@@ -180,12 +180,12 @@ if (trim( $txtLname)!= ""){
   <tr class="head-tb">
     <!--<td width="10%" align="center">AN</td> -->
     <td width="18%" height="37" align="center">HN</td>
-    <td width="25%" align="center">ชื่อ</td>
-    <td width="31%" align="center">นามสกุล</td>
+    <td width="25%" align="center">เธเธทเนเธญ</td>
+    <td width="31%" align="center">เธเธฒเธกเธชเธเธธเธฅ</td>
     <td width="26%" align="center">imagescan</td>
   <?php 	
 		if ($del == 1){
-    	print "<td width=\"9%\" ><div align=\"center\">ลบ</div></td>";}?>
+    	print "<td width=\"9%\" ><div align=\"center\">เธฅเธ</div></td>";}?>
   </tr>
 
 <?php

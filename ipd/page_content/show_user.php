@@ -8,11 +8,11 @@
 	#print  $StatusAdd;
 	if($Status == 1){
 			$bgcolor = "#66FF66";
-			$showstatus = "ดำเนินการสำเร็จ";
+			$showstatus = "เธ”เธณเน€เธเธดเธเธเธฒเธฃเธชเธณเน€เธฃเนเธ";
 	}
 	else if (($Status == 0) and ($Status != "")){
 			$bgcolor = "#FF0000";
-			$showstatus = "ไม่สามารถดำเนินการได้ กรุณาลองอีกครั้ง";
+			$showstatus = "เนเธกเนเธชเธฒเธกเธฒเธฃเธ–เธ”เธณเน€เธเธดเธเธเธฒเธฃเนเธ”เน เธเธฃเธธเธ“เธฒเธฅเธญเธเธญเธตเธเธเธฃเธฑเนเธ";
 	}
 	else {
 			$bgcolor = "";
@@ -21,14 +21,14 @@
 	
 	include ("../System_config/connection.php");
 	
-  /////  check session_id ของหน้า
+  /////  check session_id เธเธญเธเธซเธเนเธฒ
 	if($_SESSION["PID"] == session_id()) {
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 <title>:: IPD - SHOW User_Account ::</title>
 
@@ -63,10 +63,10 @@
 
 <table align="center" width="800" border="1" cellspacing="0" cellpadding="0">
   <tr class="head-tb">
-    <td width="62" height="36" align="center">ลำดับที่</td>
-    <td width="635" align="center">รายละเอียดผู้ใช้งาน</td>
-    <td width="59" align="center">แก้ไข</td>
-    <td width="44" align="center">ลบ</td>
+    <td width="62" height="36" align="center">เธฅเธณเธ”เธฑเธเธ—เธตเน</td>
+    <td width="635" align="center">เธฃเธฒเธขเธฅเธฐเน€เธญเธตเธขเธ”เธเธนเนเนเธเนเธเธฒเธ</td>
+    <td width="59" align="center">เนเธเนเนเธ</td>
+    <td width="44" align="center">เธฅเธ</td>
   </tr>
 <?php
 $SQLshowUser = "select * from tb_ipd_login order by userID asc";
@@ -83,9 +83,9 @@ while($VALshowUser = mysql_fetch_array($RESshowUser)){
   <tr bgcolor="#FFFFFF">
     <td align="center"><?=$RCount?></td>
     <td>
-    		<span class="usermain"> ชื่อ - นามสกุล : </span>  <span class="userdetail"><?=$VALshowUser["Fname"]?>   <?=$VALshowUser["Lname"]?></span><br>
+    		<span class="usermain"> เธเธทเนเธญ - เธเธฒเธกเธชเธเธธเธฅ : </span>  <span class="userdetail"><?=$VALshowUser["Fname"]?>   <?=$VALshowUser["Lname"]?></span><br>
             <span class="usermain">Username : </span>	<span class="userdetail"><?=$VALshowUser["username"]?></span><br>
-            <span class="usermain">กลุ่มผู้ใช้ : </span>  <span class="userdetail"><?=$VALG["groupname"];?></span><br>
+            <span class="usermain">เธเธฅเธธเนเธกเธเธนเนเนเธเน : </span>  <span class="userdetail"><?=$VALG["groupname"];?></span><br>
     </td>
     <?php
 		if($_SESSION["user_ipd"] != $VALshowUser["username"]){			///////////////////////////////////////// if chk show list

@@ -8,11 +8,11 @@
 	#print  $StatusAdd;
 	if($StatusAdd == 1){
 			$bgcolor = "#66FF66";
-			$showstatus = "ดำเนินการสำเร็จ";
+			$showstatus = "เธ”เธณเน€เธเธดเธเธเธฒเธฃเธชเธณเน€เธฃเนเธ";
 	}
 	else if (($StatusAdd == 0) and ($StatusAdd != "")){
 			$bgcolor = "#FF0000";
-			$showstatus = "ไม่สามารถดำเนินการได้ กรุณาลองอีกครั้ง";
+			$showstatus = "เนเธกเนเธชเธฒเธกเธฒเธฃเธ–เธ”เธณเน€เธเธดเธเธเธฒเธฃเนเธ”เน เธเธฃเธธเธ“เธฒเธฅเธญเธเธญเธตเธเธเธฃเธฑเนเธ";
 	}
 	else {
 			$bgcolor = "";
@@ -21,14 +21,14 @@
 	
 	include ("../System_config/connection.php");
 	
-  /////  check session_id ของหน้า
+  /////  check session_id เธเธญเธเธซเธเนเธฒ
 	if($_SESSION["PID"] == session_id()) {
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 <title>:: OPD - SHOW Document ::</title>
 
@@ -63,11 +63,11 @@
 
 <table align="center" width="800" border="1" cellspacing="0" cellpadding="0">
   <tr class="head-tb">
-  	<td width="62" align="center">ลำดับที่</td>
-    <td width="575" align="center">ประเภทเอกสาร</td>
-	<td width="62"  align="center">รหัสย่อ</td>
-    <td width="59" align="center">แก้ไข</td>
-<!--     <td width="44" align="center">ลบ</td>
+  	<td width="62" align="center">เธฅเธณเธ”เธฑเธเธ—เธตเน</td>
+    <td width="575" align="center">เธเธฃเธฐเน€เธ เธ—เน€เธญเธเธชเธฒเธฃ</td>
+	<td width="62"  align="center">เธฃเธซเธฑเธชเธขเนเธญ</td>
+    <td width="59" align="center">เนเธเนเนเธ</td>
+<!--     <td width="44" align="center">เธฅเธ</td>
  -->  </tr>
 <?php
 $SQLshowDoc = "select * from tb_opd_doctype order by DocTypeName asc";

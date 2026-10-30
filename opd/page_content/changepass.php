@@ -2,7 +2,7 @@
 	session_start();
 #print $_SESSION["Usergroup"];
 
-  /////  check session_id ของหน้า
+  /////  check session_id เธเธญเธเธซเธเนเธฒ
 	if($_SESSION["PID"] == session_id()) {
 		
 	$imgpath_top = "../images/design_webOPD/web-OPDS01_01.jpg";
@@ -13,7 +13,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 <title>:: OPD - Change Password ::</title>
 <style type="text/css">
@@ -37,12 +37,12 @@
 	<?php
 		$tmp = $_GET['status'];
 		if($tmp=="1"){
-			$message 	= "ดำเนินการเรียบร้อย";
+			$message 	= "เธ”เธณเน€เธเธดเธเธเธฒเธฃเน€เธฃเธตเธขเธเธฃเนเธญเธข";
 			$image 		= "accept.gif";
 			$bgcolor	= "#CCFFFF";
 		}
 		else{
-			$message 	= "ดำเนินการไม่สำเร็จ กรุณาลองอีกครั้ง";
+			$message 	= "เธ”เธณเน€เธเธดเธเธเธฒเธฃเนเธกเนเธชเธณเน€เธฃเนเธ เธเธฃเธธเธ“เธฒเธฅเธญเธเธญเธตเธเธเธฃเธฑเนเธ";
 			$image 		= "cancel.gif";
 			$bgcolor	= "#F46A5B";
 		}
@@ -73,15 +73,15 @@ if($tmp!=""){
     <td width="168" align="left"><?=$_SESSION["user"]?><!--<input type="text" name="username"   /> --></td>
   </tr>
   <tr>
-    <td align="right">Password  เดิม <span class="star">*</span> : </td>
+    <td align="right">Password  เน€เธ”เธดเธก <span class="star">*</span> : </td>
     <td width="168" align="left"><input type="password" name="password" /></td>
   </tr>
   <tr>
-    <td align="right">Password  ใหม่ <span class="star">*</span> : </td>
+    <td align="right">Password  เนเธซเธกเน <span class="star">*</span> : </td>
     <td width="168" align="left"><input type="password" name="passnew" /></td>
   </tr>
   <tr>
-    <td align="right">ยืนยัน Password ใหม่<span class="star">*</span> : </td>
+    <td align="right">เธขเธทเธเธขเธฑเธ Password เนเธซเธกเน<span class="star">*</span> : </td>
     <td width="168" align="left"><input type="password" name="conpass" /></td>
   </tr>
   <tr>

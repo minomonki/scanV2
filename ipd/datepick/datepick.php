@@ -1,7 +1,7 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!--<link rel="stylesheet" type="text/css" href="css/smoothness/jquery-ui-1.7.2.custom.css"> -->
 <style type="text/css">
-/* Overide css code ��˹��������ҧ�ͧ��ԷԹ������� */
+/* Overide css code กำหนดความกว้างของปฏิทินและอื่นๆ */
 .ui-datepicker{
 	width:170px;
 	font-family:tahoma;
@@ -30,8 +30,8 @@ $(function(){
 		showOn: 'button',
 		buttonImage: '../datepick/calendar.gif',
 		buttonImageOnly: true,
-		dayNamesMin: ['��', '�', '�', '�', '��', '�', '�'], 
-		monthNamesShort: ['���Ҥ�','����Ҿѹ��','�չҤ�','����¹','����Ҥ�','�Զع�¹','�á�Ҥ�','�ԧ�Ҥ�','�ѹ��¹','���Ҥ�','��Ȩԡ�¹','�ѹ�Ҥ�'],
+		dayNamesMin: ['อา', 'จ', 'อ', 'พ', 'พฤ', 'ศ', 'ส'], 
+		monthNamesShort: ['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม'],
 		changeMonth: true,
 		changeYear: true ,
 		beforeShow:function(){
@@ -89,8 +89,8 @@ $(function(){
 		showOn: 'button',
 		buttonImage: '../datepick/calendar.gif',
 		buttonImageOnly: true,
-		dayNamesMin: ['��', '�', '�', '�', '��', '�', '�'], 
-		monthNamesShort: ['���Ҥ�','����Ҿѹ��','�չҤ�','����¹','����Ҥ�','�Զع�¹','�á�Ҥ�','�ԧ�Ҥ�','�ѹ��¹','���Ҥ�','��Ȩԡ�¹','�ѹ�Ҥ�'],
+		dayNamesMin: ['อา', 'จ', 'อ', 'พ', 'พฤ', 'ศ', 'ส'], 
+		monthNamesShort: ['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม'],
 		changeMonth: true,
 		changeYear: true ,
 		beforeShow:function(){
@@ -150,8 +150,8 @@ $(function(){
 		showOn: 'button',
 		buttonImage: '../datepick/calendar.gif',
 		buttonImageOnly: true,
-		dayNamesMin: ['��', '�', '�', '�', '��', '�', '�'], 
-		monthNamesShort: ['���Ҥ�','����Ҿѹ��','�չҤ�','����¹','����Ҥ�','�Զع�¹','�á�Ҥ�','�ԧ�Ҥ�','�ѹ��¹','���Ҥ�','��Ȩԡ�¹','�ѹ�Ҥ�'],
+		dayNamesMin: ['อา', 'จ', 'อ', 'พ', 'พฤ', 'ศ', 'ส'], 
+		monthNamesShort: ['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม'],
 		changeMonth: true,
 		changeYear: true ,
 		beforeShow:function(){
@@ -210,8 +210,8 @@ $(function(){
 		showOn: 'button',
 		buttonImage: '../datepick/calendar.gif',
 		buttonImageOnly: true,
-		dayNamesMin: ['��', '�', '�', '�', '��', '�', '�'], 
-		monthNamesShort: ['���Ҥ�','����Ҿѹ��','�չҤ�','����¹','����Ҥ�','�Զع�¹','�á�Ҥ�','�ԧ�Ҥ�','�ѹ��¹','���Ҥ�','��Ȩԡ�¹','�ѹ�Ҥ�'],
+		dayNamesMin: ['อา', 'จ', 'อ', 'พ', 'พฤ', 'ศ', 'ส'], 
+		monthNamesShort: ['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม'],
 		changeMonth: true,
 		changeYear: true ,
 		beforeShow:function(){

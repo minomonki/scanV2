@@ -66,7 +66,7 @@
 <head>
 	<title>:: ? ::</title>
 	 	<!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
-	<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<script type="text/javascript" src="../jstree/_lib/jquery.js"></script>
 	<script type="text/javascript" src="../jstree/_lib/jquery.cookie.js"></script>
 	<script type="text/javascript" src="../jstree/_lib/jquery.hotkeys.js"></script>

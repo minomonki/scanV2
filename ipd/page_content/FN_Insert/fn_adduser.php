@@ -15,7 +15,7 @@ $lname 		= $_POST["txtlname"];
 
 
 if (empty($username)||empty($password)||empty($conpassword)||empty($fname)||empty($lname)||empty($uid)){
-	print "<script>alert ('��سҡ�͡���������ú��͹��úѹ�֡'); </script>";
+	print "<script>alert ('กรุณากรอกข้อมูลให้ครบก่อนการบันทึก'); </script>";
 	print "<script language='javascript' >window.location='../show_user.php?status=0';</script>";
 	exit();	
 }
@@ -27,7 +27,7 @@ else{
 		$chkuname = $VALgname['username'];
 	}
 	if($username==$chkuname){
-		print "<script>alert ('���ͼ���������������� ��سҵ�Ǩ�ͺ��͹��úѹ�֡..'); </script>";
+		print "<script>alert ('ชื่อผู้ใช้นี้มีอยู่แล้ว กรุณาตรวจสอบก่อนการบันทึก..'); </script>";
 		print "<script language='javascript' >window.location='../show_user.php?status=0';</script>";
 		exit();	
 	}

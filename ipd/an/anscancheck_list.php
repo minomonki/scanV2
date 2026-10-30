@@ -9,7 +9,7 @@ include ("../System_config/const.php");
 
 	include ("../System_config/connection.php");
 	
-  /////  check session_id �ͧ˹��
+  /////  check session_id ของหน้า
 	if($_SESSION["PID"] == session_id()) {
 
 ?>
@@ -17,7 +17,7 @@ include ("../System_config/const.php");
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="../datepick/css/smoothness/jquery-ui-1.7.2.custom.css">
@@ -75,67 +75,67 @@ include_once("../System_config/func.php");
 //###################################
 $pagesize=50;
 if ($_REQUEST["status"]==0){ // list all dchdate is null
-	$titledetail=" �ӹǹ AN admitted ����� <span class=blue>".getFormatdate($_REQUEST["thmindate"],1)." �֧ ".getFormatdate($_REQUEST["thmaxdate"],1)."</span>";
+	$titledetail=" จำนวน AN admitted ตั้งแต่ <span class=blue>".getFormatdate($_REQUEST["thmindate"],1)." ถึง ".getFormatdate($_REQUEST["thmaxdate"],1)."</span>";
 	$select="select a.an,dchdate,day(dchdate) as d , month(dchdate) as m , year(dchdate) as y, year(dchdate)+543 as thy ";
 	$select .=" ,hn";
 	$from=" from hos.ipt a";
 	$where=" where dchdate is null or dchdate=''";
 }elseif ($_REQUEST["status"]==1){ // list all yesan
-	$titledetail=" �ӹǹ AN �᡹���� ����� <span class=blue>".getFormatdate($_REQUEST["thmindate"],1)." �֧ ".getFormatdate($_REQUEST["thmaxdate"],1)."</span>";
+	$titledetail=" จำนวน AN สแกนแล้ว ตั้งแต่ <span class=blue>".getFormatdate($_REQUEST["thmindate"],1)." ถึง ".getFormatdate($_REQUEST["thmaxdate"],1)."</span>";
 	$select="select a.an,dchdate,day(dchdate) as d , month(dchdate) as m , year(dchdate) as y,day(datescan) as dd , month(datescan) as mm , year(datescan) as yy ";
 	$select .=" ,b.hn,b.firstname,b.lastname,b.pages";
 	$from=" from hos.ipt a, hdbms.tb_ipd b ";
 	$where=" where a.an= b.an";
 }elseif ($_REQUEST["status"]==2){ // list all noan
-	$titledetail=" �ӹǹ AN ����᡹���ú  ����� <span class=blue>".getFormatdate($_REQUEST["thmindate"],1)." �֧ ".getFormatdate($_REQUEST["thmaxdate"],1)."</span>";
+	$titledetail=" จำนวน AN ที่สแกนไม่ครบ  ตั้งแต่ <span class=blue>".getFormatdate($_REQUEST["thmindate"],1)." ถึง ".getFormatdate($_REQUEST["thmaxdate"],1)."</span>";
 	$select="select a.an,dchdate,day(dchdate) as d , month(dchdate) as m , year(dchdate) as y, year(dchdate)+543 as thy ";
 	$select .=" ,hn";
 	$from=" from hos.ipt a";
 	$where=" where an not in (select an from hdbms.tb_ipd)";
 }elseif ($_REQUEST["status"]==3){ // list yesan by year
-	$titledetail=" �ӹǹ AN �᡹���� �� <span class=blue>".$_REQUEST["thyr"]."</span>";
+	$titledetail=" จำนวน AN สแกนแล้ว ปี <span class=blue>".$_REQUEST["thyr"]."</span>";
 	$select="select a.an,dchdate,day(dchdate) as d , month(dchdate) as m , year(dchdate) as y,day(outdate) as dd , month(outdate) as mm , year(outdate) as yy ";
 	$select .=" ,b.hn,b.firstname,b.lastname,b.pages";
 	$from=" from hos.ipt a, hdbms.tb_ipd b ";
 	$where=" where a.an=b.an and year(dchdate)='".$_REQUEST["enyr"]."'";
 }elseif ($_REQUEST["status"]==4){ // list noan by year
-	$titledetail=" �ӹǹ AN ����᡹���ú �� <span class=blue>".$_REQUEST["thyr"]."</span>";
+	$titledetail=" จำนวน AN ที่สแกนไม่ครบ ปี <span class=blue>".$_REQUEST["thyr"]."</span>";
 	$select="select a.an,dchdate,day(dchdate) as d , month(dchdate) as m , year(dchdate) as y, year(dchdate)+543 as thy ";
 	$select .=" ,hn";
 	$from=" from hos.ipt a";
 	$where=" where year(dchdate)='".$_REQUEST["enyr"]."' and an not in (select an from hdbms.tb_ipd)";
 }elseif ($_REQUEST["status"]==5){ // list yesan by month
-	$titledetail=" �ӹǹ AN �᡹���� ��͹ <span class=blue>".$month[$_REQUEST["mon"]-1]."</span> �� <span class=blue>".$_REQUEST["thyr"]."</span>";
+	$titledetail=" จำนวน AN สแกนแล้ว เดือน <span class=blue>".$month[$_REQUEST["mon"]-1]."</span> ปี <span class=blue>".$_REQUEST["thyr"]."</span>";
 	$select="select a.an,dchdate,day(dchdate) as d , month(dchdate) as m , year(dchdate) as y,day(outdate) as dd , month(outdate) as mm , year(outdate) as yy ";
 	$select .=" ,b.hn,b.firstname,b.lastname,b.pages";
 	$from=" from hos.ipt a, hdbms.tb_ipd b ";
 	$where=" where a.an=b.an and year(dchdate)='".$_REQUEST["enyr"]."' and month(dchdate)='".$_REQUEST["mon"]."'";
 }elseif ($_REQUEST["status"]==6){ // list noan by month
-	$titledetail=" �ӹǹ AN ����᡹���ú ��͹ <span class=blue>".$month[$_REQUEST["mon"]-1]."</span> �� <span class=blue>".$_REQUEST["thyr"]."</span>";
+	$titledetail=" จำนวน AN ที่สแกนไม่ครบ เดือน <span class=blue>".$month[$_REQUEST["mon"]-1]."</span> ปี <span class=blue>".$_REQUEST["thyr"]."</span>";
 	$select="select a.an,dchdate,day(dchdate) as d , month(dchdate) as m , year(dchdate) as y, year(dchdate)+543 as thy ";
 	$select .=" ,hn";
 	$from=" from hos.ipt a";
 	$where=" where year(dchdate)='".$_REQUEST["enyr"]."' and month(dchdate)='".$_REQUEST["mon"]."' and an not in (select an from hdbms.tb_ipd)";
 }elseif ($_REQUEST["status"]==7){ // list yesan by day/month/year
-	$titledetail=" �ӹǹ AN �᡹���� �ѹ��� <span class=blue>".$_REQUEST["day"]." ".$month[$_REQUEST["mon"]-1]." ".$_REQUEST["thyr"]."</span>";
+	$titledetail=" จำนวน AN สแกนแล้ว วันที่ <span class=blue>".$_REQUEST["day"]." ".$month[$_REQUEST["mon"]-1]." ".$_REQUEST["thyr"]."</span>";
 	$select="select a.an,dchdate,day(dchdate) as d , month(dchdate) as m , year(dchdate) as y,day(outdate) as dd , month(outdate) as mm , year(outdate) as yy ";
 	$select .=" ,b.hn,b.firstname,b.lastname,b.pages";
 	$from=" from hos.ipt a, hdbms.tb_ipd b ";
 	$where=" where a.an=b.an and dchdate='".$_REQUEST["enyr"]."-".$_REQUEST["mon"]."-".$_REQUEST["day"]."'";
 }elseif ($_REQUEST["status"]==8){ // list noan by day/month/year
-	$titledetail=" �ӹǹ AN ����᡹���ú�ѹ��� <span class=blue>".$_REQUEST["day"]." ".$month[$_REQUEST["mon"]-1]." ".$_REQUEST["thyr"]."</span>";
+	$titledetail=" จำนวน AN ที่สแกนไม่ครบวันที่ <span class=blue>".$_REQUEST["day"]." ".$month[$_REQUEST["mon"]-1]." ".$_REQUEST["thyr"]."</span>";
 	$select="select a.an,dchdate,day(dchdate) as d , month(dchdate) as m , year(dchdate) as y, year(dchdate)+543 as thy ";
 	$select .=" ,hn";
 	$from=" from hos.ipt a";
 	$where=" where dchdate='".$_REQUEST["enyr"]."-".$_REQUEST["mon"]."-".$_REQUEST["day"]."' and an not in (select an from hdbms.tb_ipd)";
 }elseif ($_REQUEST["status"]==9){ // list yesan by search from-to
-	$titledetail=" �ӹǹ AN �᡹���� ����� <span class=blue>".getFormatdate($_REQUEST["thmindate"],1)." - ".getFormatdate($_REQUEST["thmaxdate"],1)."</span>";
+	$titledetail=" จำนวน AN สแกนแล้ว ตั้งแต่ <span class=blue>".getFormatdate($_REQUEST["thmindate"],1)." - ".getFormatdate($_REQUEST["thmaxdate"],1)."</span>";
 	$select="select a.an,dchdate,day(dchdate) as d , month(dchdate) as m , year(dchdate) as y,day(outdate) as dd , month(outdate) as mm , year(outdate) as yy ";
 	$select .=" ,b.hn,b.firstname,b.lastname,b.pages";
 	$from=" from hos.ipt a, hdbms.tb_ipd b ";
 	$where=" where a.an=b.an and dchdate between '".$_REQUEST["enmindate"]."' and '".$_REQUEST["enmaxdate"]."'";
 }elseif ($_REQUEST["status"]==10){ // list noan by search from-to
-	$titledetail=" �ӹǹ AN ����᡹���ú  ����� <span class=blue>".getFormatdate($_REQUEST["thmindate"],1)." - ".getFormatdate($_REQUEST["thmaxdate"],1)."</span>";
+	$titledetail=" จำนวน AN ที่สแกนไม่ครบ  ตั้งแต่ <span class=blue>".getFormatdate($_REQUEST["thmindate"],1)." - ".getFormatdate($_REQUEST["thmaxdate"],1)."</span>";
 	$select="select a.an,dchdate,day(dchdate) as d , month(dchdate) as m , year(dchdate) as y, year(dchdate)+543 as thy ";
 	$select .=" ,hn";
 	$from=" from hos.ipt a";
@@ -166,10 +166,10 @@ if ($totalpage>0) {
 	echo "<table class='rowh' align='center' width='80%' cellspacing='1' cellpadding='1' border='0'>";// create table title
 	echo "<tr bgcolor='#ffffff'>";
 	echo "<td align='center' class='hdtable'>";
-	echo "<div class='blackb' align='center'>��������";
+	echo "<div class='blackb' align='center'>พบข้อมูล";
 	echo $titledetail;
-	echo " ������ <span class=blue>".number_format($total)."</span> ��¡��";
-	if ($totalpage>1){echo "<BR> ��й���ʴ�˹�ҷ��  <span class=red>".$pageid."</span>/".$totalpage;}
+	echo " ทั้งหมด <span class=blue>".number_format($total)."</span> รายการ";
+	if ($totalpage>1){echo "<BR> ขณะนี้แสดงหน้าที่  <span class=red>".$pageid."</span>/".$totalpage;}
 	echo "</div>";
 	echo "</td>";
 	echo "<td align='right' class='hdtable' width='35'>";//onMouseover='return hidestatus()' onMouseOut='return hidestatus()' 
@@ -188,12 +188,12 @@ $id=1;
 				echo "<table class='rowh' align='center' width='80%' cellspacing='1' cellpadding='1' border='0'>";// create table title
 				//echo "<tr><td colspan=4>HN : ".$row['hn']."&nbsp;&nbsp;".$row['firstname']." &nbsp;".$row['lastname']."</td></tr>";
 				echo "<tr bgcolor='#a9a9a9'>";
-				echo "<td align='center' class='hdtable' width='5%'>�ӴѺ</td>";
+				echo "<td align='center' class='hdtable' width='5%'>ลำดับ</td>";
 				echo "<td align='center' class='hdtable' width='15%'>AN</td>";
 				echo "<td align='center' class='hdtable' width='15%'>HN</td>";
 				if ($_REQUEST["status"]%2<>0){ 
-					echo "<td align='center' class='hdtable' width='20%'>����</td>";
-					echo "<td align='center' class='hdtable' width='20%'>���ʡ��</td>";
+					echo "<td align='center' class='hdtable' width='20%'>ชื่อ</td>";
+					echo "<td align='center' class='hdtable' width='20%'>นามสกุล</td>";
 					echo "<td align='center' class='hdtable' width='15%'>dchdate</td>";
 					echo "<td align='center' class='hdtable' width='15%'>datescan</td>";
 				}
@@ -204,7 +204,7 @@ $id=1;
 			echo "<td align='center' class='listdetail'>".number_format($id)."</td>";
 			echo "<td align='center' class='listdetail'>";
 			if ($_REQUEST["status"]%2<>0){ // make an link
-				echo "<a title='����������´' onMouseover='return hidestatus()' onMouseOut='return hidestatus()' target='_blank' href=anreport_listdetail2.php?yr=".$row['yy']."&mon=".$row['mm']."&d=".$row['dd']."&an=".$row['an'].">";
+				echo "<a title='ดูรายละเอียด' onMouseover='return hidestatus()' onMouseOut='return hidestatus()' target='_blank' href=anreport_listdetail2.php?yr=".$row['yy']."&mon=".$row['mm']."&d=".$row['dd']."&an=".$row['an'].">";
 				echo $row['an'];
 				echo "</a>";
 			}else{
@@ -223,7 +223,7 @@ $id=1;
 		} //end of while loop
 		echo "</table>";
 }else{//no record found
-	echo "<BR><BR><div class='blackb' align='center'>======== ��辺������ ========</div><BR>";
+	echo "<BR><BR><div class='blackb' align='center'>======== ไม่พบข้อมูล ========</div><BR>";
 }// end of if chk $result
 //echo $totalpage
 	//header table pages row 

@@ -2,7 +2,7 @@
 	session_start();
 #print $_SESSION["Usergroup"];
 
-  /////  check session_id ของหน้า
+  /////  check session_id เธเธญเธเธซเธเนเธฒ
 	if($_SESSION["PID"] == session_id()) {
 		
 	$imgpath_top = "../images/design_webIPD/web-IPDS01_01.jpg";
@@ -13,9 +13,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
-<title>:: IPD - ระบบยืม Change Password ::</title>
+<title>:: IPD - เธฃเธฐเธเธเธขเธทเธก Change Password ::</title>
 <style type="text/css">
 <!--
 .star		{	font-family: "mS Sans Serif"; font-size:14; color:#F00  }
@@ -25,22 +25,22 @@
 function validSubmit() { 
 //valid dform values
 	if(document.dform.password.value == ""){ 
-		alert('กรุณาระบุข้อมูล password เดิม'); 
+		alert('เธเธฃเธธเธ“เธฒเธฃเธฐเธเธธเธเนเธญเธกเธนเธฅ password เน€เธ”เธดเธก'); 
 		document.dform.password.focus(); 
 		return false; 
 	}    
 	if(document.dform.passnew.value == ""){ 
-		alert('กรุณาระบุข้อมูล password ใหม่'); 
+		alert('เธเธฃเธธเธ“เธฒเธฃเธฐเธเธธเธเนเธญเธกเธนเธฅ password เนเธซเธกเน'); 
 		document.dform.passnew.focus(); 
 		return false; 
 	}    
 	if(document.dform.conpass.value == ""){ 
-		alert('กรุณาระบุข้อมูลยืนยัน password ใหม่'); 
+		alert('เธเธฃเธธเธ“เธฒเธฃเธฐเธเธธเธเนเธญเธกเธนเธฅเธขเธทเธเธขเธฑเธ password เนเธซเธกเน'); 
 		document.dform.conpass.focus();         
 		return false; 
 	}    
 	if(document.dform.conpass.value != document.dform.passnew.value ){ 
-		alert('ข้อมูล password ใหม่ ไม่ตรงกัน'); 
+		alert('เธเนเธญเธกเธนเธฅ password เนเธซเธกเน เนเธกเนเธ•เธฃเธเธเธฑเธ'); 
 		document.dform.conpass.focus();         
 		return false; 
 	}    
@@ -64,12 +64,12 @@ function validSubmit() {
 	<?php
 		$tmp = $_GET['status'];
 		if($tmp=="1"){
-			$message 	= "ดำเนินการเรียบร้อย";
+			$message 	= "เธ”เธณเน€เธเธดเธเธเธฒเธฃเน€เธฃเธตเธขเธเธฃเนเธญเธข";
 			$image 		= "accept.gif";
 			$bgcolor	= "#CCFFFF";
 		}
 		else{
-			$message 	= "ดำเนินการไม่สำเร็จ กรุณาลองอีกครั้ง";
+			$message 	= "เธ”เธณเน€เธเธดเธเธเธฒเธฃเนเธกเนเธชเธณเน€เธฃเนเธ เธเธฃเธธเธ“เธฒเธฅเธญเธเธญเธตเธเธเธฃเธฑเนเธ";
 			$image 		= "cancel.gif";
 			$bgcolor	= "#F46A5B";
 		}
@@ -96,15 +96,15 @@ if($tmp!=""){
 <form action="fn_change2docpass.php" method="post" name="dform" onSubmit='JavaScript:return validSubmit();'>
 <table width="339" border="0" cellspacing="1" cellpadding="1" bgcolor="#ececec" >
   <tr>
-    <td align="right">Password  เดิม <span class="star">*</span> : </td>
+    <td align="right">Password  เน€เธ”เธดเธก <span class="star">*</span> : </td>
     <td width="168" align="left"><input type="password" name="password" maxlength=5 /></td>
   </tr>
   <tr>
-    <td align="right">Password  ใหม่ <span class="star">*</span> : </td>
+    <td align="right">Password  เนเธซเธกเน <span class="star">*</span> : </td>
     <td width="168" align="left"><input type="password" name="passnew" maxlength="10"/></td>
   </tr>
   <tr>
-    <td align="right">ยืนยัน Password ใหม่<span class="star">*</span> : </td>
+    <td align="right">เธขเธทเธเธขเธฑเธ Password เนเธซเธกเน<span class="star">*</span> : </td>
     <td width="168" align="left"><input type="password" name="conpass"  maxlength="10"/></td>
   </tr>
   <tr>

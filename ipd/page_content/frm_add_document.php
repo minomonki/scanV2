@@ -6,7 +6,7 @@
 
 	include ("../System_config/connection.php");
 
-  /////  check session_id ของหน้า
+  /////  check session_id เธเธญเธเธซเธเนเธฒ
 	if($_SESSION["PID"] == session_id()) {
 	
 	$showTable = "0";
@@ -18,7 +18,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 <title>:: IPD - ADD Document ::</title>
 
@@ -32,7 +32,7 @@
 <script language="javascript">
 function fncSubmit()
 {
-	if(confirm('ยืนยันการบันทึกข้อมูล')==true)
+	if(confirm('เธขเธทเธเธขเธฑเธเธเธฒเธฃเธเธฑเธเธ—เธถเธเธเนเธญเธกเธนเธฅ')==true)
 	{
 		return true;
 	}
@@ -84,11 +84,11 @@ function fncSubmit()
 <table align="center" width="839" border="0" cellspacing="2" cellpadding="0"><!--//////////////// Step 1.  Add Document name -->
 <form name="addDoc_ipd" id="addDoc_ipd" action="FN_Insert/fn_adddocument.php?IPDid=<?=$id?>" method="post"> <!-- form 1 -->
   <tr>
-    <td width="324"  align="right" class="topic">รหัสอักษรย่อ :</td>
+    <td width="324"  align="right" class="topic">เธฃเธซเธฑเธชเธญเธฑเธเธฉเธฃเธขเนเธญ :</td>
  	<td colspan="2" align="left"> <input name="txtDocType" type="text"  size="10" /></td>  
 </tr>
   <tr>
-    <td align="right" class="topic">ชื่อเอกสาร  :</td>
+    <td align="right" class="topic">เธเธทเนเธญเน€เธญเธเธชเธฒเธฃ  :</td>
     <td width="180" ><input name="txtDocname" type="text"  size="30" /></td>
     <td width="327"><input type="submit" value="..ADD Document.." /></td>
   </tr>

@@ -9,7 +9,7 @@ include ("../System_config/const.php");
 
 	include ("../System_config/connection.php");
 	
-  /////  check session_id �ͧ˹��
+  /////  check session_id ของหน้า
 	if($_SESSION["PID"] == session_id()) {
 
 ?>
@@ -17,7 +17,7 @@ include ("../System_config/const.php");
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="../datepick/css/smoothness/jquery-ui-1.7.2.custom.css">
@@ -74,7 +74,7 @@ EmptyDir($exportdir); // delete all old export file
 echo "<div class='blackb' align='center'>";
 $iptmaxdate=chkMinMaxDate("min(dchdate)","hos.ipt","en");
 $iptmindate=chkMinMaxDate("max(dchdate)","hos.ipt","en");
-echo "��ػ�͡����᡹ AN ������ ������ѹ��� <span class=blue>".$iptmaxdate."</span> �֧ <span class=blue>".$iptmindate."</span>";
+echo "สรุปเอกสารสแกน AN ทั้งหมด ตั้งแต่วันที่ <span class=blue>".$iptmaxdate."</span> ถึง <span class=blue>".$iptmindate."</span>";
 echo "</div><br>";
 $enmaxdate=chkMinMaxFormatDate("max(dchdate)","hos.ipt","en");
 $enmindate=chkMinMaxFormatDate("min(dchdate)","hos.ipt","en");
@@ -90,11 +90,11 @@ $colallnoan=number_format(getValue("count(*)","hos.ipt"," dchdate is not null an
 //###################################
 echo "<table class='rowh' align='center' width='80%' cellspacing='1' cellpadding='1' border='0'>";// create table title
 echo "<tr bgcolor='#3399CC'>";
-echo "<td align='center' class='hdtable' width='20%'>�ӹǹ AN ������</td>";
-if ($colallan0>0){echo "<td align='center' class='hdtable' width='20%'>�ӹǹ AN admitted </td>";}
-echo "<td align='center' class='hdtable' width='20%'>�ӹǹ AN ��к�</td>";
-echo "<td align='center' class='hdtable' width='20%'>�ӹǹ AN �᡹����</td>";
-echo "<td align='center' class='hdtable' width='20%'>�ӹǹ AN ����᡹���ú</td>";
+echo "<td align='center' class='hdtable' width='20%'>จำนวน AN ทั้งหมด</td>";
+if ($colallan0>0){echo "<td align='center' class='hdtable' width='20%'>จำนวน AN admitted </td>";}
+echo "<td align='center' class='hdtable' width='20%'>จำนวน AN ในระบบ</td>";
+echo "<td align='center' class='hdtable' width='20%'>จำนวน AN สแกนแล้ว</td>";
+echo "<td align='center' class='hdtable' width='20%'>จำนวน AN ที่สแกนไม่ครบ</td>";
 echo "</tr>";
 if (fmod($id,2)) {$rcolor=' bgcolor=#99FF99';}else{$rcolor=' bgcolor=#FFFF5B';}
 echo "<tr".$rcolor.">";
@@ -169,7 +169,7 @@ if ($totalpage>0) {
 	echo "<table class='rowh' align='center' width='70%' cellspacing='1' cellpadding='1' border='0'>";// create table title
 	echo "<tr bgcolor='#ffffff'>";
 	echo "<td align='center' class='hdtable'>";
-	echo "<div class='blackb' align='center'>�������ŷ����� <span class=blue>".$total."</span> �� </div>";
+	echo "<div class='blackb' align='center'>พบข้อมูลทั้งหมด <span class=blue>".$total."</span> ปี </div>";
 	echo "</td>";
 	echo "<td align='right' class='hdtable' width='35'>";//onMouseover='return hidestatus()' onMouseOut='return hidestatus()' 
 	echo "<a title='Export to csv' target='_blank' href=anscancheck_export2csv.php?logno=".$_SESSION["logno"]."&colall=".$colall."&colallan0=".$colallan0."&colallan=".$colallan."&colallyesan=".$colallyesan."&colallnoan=".$colallnoan."&iptmaxdate=".$iptmaxdate."&iptmindate=".$iptmindate."&minyr=".$minyr."&maxyr=".$maxyr.">";
@@ -182,10 +182,10 @@ if ($totalpage>0) {
 		if ($id==1){
 		echo "<table class='rowh' align='center' width='70%' cellspacing='1' cellpadding='1' border='0'>";// create table title
 		echo "<tr bgcolor='#a9a9a9'>";
-		echo "<td align='center' class='hdtable' width='10%'>��</td>";
-		echo "<td align='center' class='hdtable' width='30%'>�ӹǹ AN ��к�</td>";
-		echo "<td align='center' class='hdtable' width='30%'>�ӹǹ AN �᡹����</td>";
-		echo "<td align='center' class='hdtable' width='30%'>�ӹǹ AN ����᡹���ú</td>";
+		echo "<td align='center' class='hdtable' width='10%'>ปี</td>";
+		echo "<td align='center' class='hdtable' width='30%'>จำนวน AN ในระบบ</td>";
+		echo "<td align='center' class='hdtable' width='30%'>จำนวน AN สแกนแล้ว</td>";
+		echo "<td align='center' class='hdtable' width='30%'>จำนวน AN ที่สแกนไม่ครบ</td>";
 		echo "</tr>";
 		}
 	//$colan=number_format(getValue("count(*)","hos.ipt","year(dchdate)= '".$enyr_array[$i]."'"));
@@ -195,7 +195,7 @@ if ($totalpage>0) {
 	if (fmod($i,2)) {$rcolor=' bgcolor=#f5deb3';}else{$rcolor=' bgcolor=#ffbb77';}
 	echo "<tr".$rcolor.">";
 	echo "<td align='center' class='listdetail'>";
-	echo "<a title='����������´' onMouseover='return hidestatus()' onMouseOut='return hidestatus()'  href=anscancheck_yeardetail.php?enyr=".$row[0]."&thyr=".$thyr."&colan=".$row[1]."&colyesan=".$colyesan."&colnoan=".$colnoan.">";
+	echo "<a title='ดูรายละเอียด' onMouseover='return hidestatus()' onMouseOut='return hidestatus()'  href=anscancheck_yeardetail.php?enyr=".$row[0]."&thyr=".$thyr."&colan=".$row[1]."&colyesan=".$colyesan."&colnoan=".$colnoan.">";
 	echo $thyr;
 	echo "</a>";
 	echo	"</td>";
@@ -224,7 +224,7 @@ if ($totalpage>0) {
 }//end while
 echo "</table>";
 }else{//no record found
-	echo "<BR><BR><div class='blackb' align='center'>======== ��辺������ ========</div><BR>";
+	echo "<BR><BR><div class='blackb' align='center'>======== ไม่พบข้อมูล ========</div><BR>";
 }// end of if chk $result
 
 	//header table pages row 
@@ -246,15 +246,15 @@ echo "</table>";
 <form name="search" method="post" action="anscancheck2.php">
 <table align="center" width="70%" border="1" bordercolor="#C0C0C0" cellspacing="0" cellpadding="0" style="border-collapse: collapse">
   <tr>
-    <td colspan="4" class="head-topic" bgcolor="#C0C0C0">:: ���͹䢡���ʴ��� ::</td>
+    <td colspan="4" class="head-topic" bgcolor="#C0C0C0">:: เงื่อนไขการแสดงผล ::</td>
   </tr>
   <tr>
-    <td width="38%" align="right" bgcolor="#CCCCCC" class="topic">��Ǩ�ͺ�͡��÷���᡹ ������ѹ��� :</td>
+    <td width="38%" align="right" bgcolor="#CCCCCC" class="topic">ตรวจสอบเอกสารที่สแกน ตั้งแต่วันที่ :</td>
     <td colspan="3">
     	<input type="text" name="admit_s" id="admit_s" />
         
         <img src="../images/span.gif" width="10" />   
-        <strong>�֧�ѹ���.</strong>
+        <strong>ถึงวันที่.</strong>
         <img src="../images/span.gif" width="10" />   
         
         <input type="text" name="admit_e" id="admit_e" />

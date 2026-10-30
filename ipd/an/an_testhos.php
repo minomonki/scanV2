@@ -63,7 +63,7 @@ echo "</table>";
     $message  = 'Invalid query: ' . mysql_error() . "\n";
     $message .= 'Whole query: ' . $query;
     die($message);
-	echo "<BR><BR><div class='blackb' align='center'>======== ‰¡Ëæ∫¢ÈÕ¡Ÿ≈ ========</div><BR>";
+	echo "<BR><BR><div class='blackb' align='center'>======== ‡πÑ‡∏°‡πà‡∏û‡∏ö‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏• ========</div><BR>";
 }// end of if chk $result
 
 echo "<BR><BR>";
@@ -98,7 +98,7 @@ echo "</table>";
     $message  = 'Invalid query: ' . mysql_error() . "\n";
     $message .= 'Whole query: ' . $query;
     die($message);
-	echo "<BR><BR><div class='blackb' align='center'>======== ‰¡Ëæ∫¢ÈÕ¡Ÿ≈ ========</div><BR>";
+	echo "<BR><BR><div class='blackb' align='center'>======== ‡πÑ‡∏°‡πà‡∏û‡∏ö‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏• ========</div><BR>";
 }// end of if chk $result
 
 

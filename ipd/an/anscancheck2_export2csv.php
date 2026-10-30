@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 
 <?php
@@ -23,9 +23,9 @@ $objWrite = fopen($pathdir.$filName, "w");
 //write header title
 $thminyr=substr($fromdate,0,4)+543;
 $thmaxyr=substr($todate,0,4)+543;
-$titleheader="�ʴ��š�ä��ҵ�����ѹ��� ".substr($fromdate,8,2)."-".substr($fromdate,5,2)."-".$thminyr." �֧ ".substr($todate,8,2)."-".substr($todate,5,2)."-".$thmaxyr;
+$titleheader="แสดงผลการค้นหาตั้งแต่วันที่ ".substr($fromdate,8,2)."-".substr($fromdate,5,2)."-".$thminyr." ถึง ".substr($todate,8,2)."-".substr($todate,5,2)."-".$thmaxyr;
 fwrite($objWrite, "\"$titleheader\"\n"); 
-fwrite($objWrite, "\"�ӹǹ AN ��к�\",\"�ӹǹ AN �᡹����\",\"�ӹǹ AN ����᡹���ú\"\n"); 
+fwrite($objWrite, "\"จำนวน AN ในระบบ\",\"จำนวน AN สแกนแล้ว\",\"จำนวน AN ที่สแกนไม่ครบ\"\n"); 
 fwrite($objWrite, "\"$colan\",\"$colyesan\",\"$colnoan\"\n"); 
 //////////////////////////////////
 fclose($objWrite); 

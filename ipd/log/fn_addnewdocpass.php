@@ -1,6 +1,6 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
- /////  check session_id �ͧ˹��
+ /////  check session_id ของหน้า
 if($_SESSION["PID"] == session_id()) {
 $flag	= $_REQUEST["flag"];
 if ($flag == 0){
@@ -29,7 +29,7 @@ savelogdetail($_REQUEST["logno"],"A",$txt_an,"");
 $detail=$sql." / ".$sql2;
 updatelogdetail($_REQUEST["logno"],$detail);
 //////////////////////////////////////////////
-		print "<script>alert ('�ѹ�֡��á�˹��Է�����º��������'); </script>";
+		print "<script>alert ('บันทึกการกำหนดสิทธิเรียบร้อยแล้ว'); </script>";
 		print "<script language='javascript' >window.location='frm_set_docpass.php?cmd_addan=1&txt_addan=$txt_password';</script>";
 }//end if flag
 

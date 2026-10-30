@@ -12,7 +12,7 @@ $conpass = $_POST["conpass"];
 //print $user."/".$pass."/".$passnew."/".$conpass."<br>";
 /////  CHECK VALID PASSWORD
 if($pass <> $_SESSION["userdocpass"]){
-	print "<script>alert (' °√ÿ≥“√–∫ÿ¢ÈÕ¡Ÿ≈ password ‡¥‘¡„ÀÈ∂Ÿ°µÈÕß '); </script>";
+	print "<script>alert (' ‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡∏£‡∏∞‡∏ö‡∏∏‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏• password ‡πÄ‡∏î‡∏¥‡∏°‡πÉ‡∏´‡πâ‡∏ñ‡∏π‡∏Å‡∏ï‡πâ‡∏≠‡∏á '); </script>";
 	print "<script language='javascript' >window.location='frm_change_docpass.php?syspass=".$_REQUEST['syspass']."';</script>";
 	exit();
 }// end if chk passnew==conpass
@@ -30,7 +30,7 @@ savelogdetail4($_SESSION["logno"],"U","","");
 $detail =$sqlupdate;
 updatelogdetail4($_SESSION["logno"],$detail);
 //////////////////////////////////////////////
-					print "<script>alert ('∫—π∑÷°‡√’¬∫√ÈÕ¬·≈È«'); </script>";
+					print "<script>alert ('‡∏ö‡∏±‡∏ô‡∏ó‡∏∂‡∏Å‡πÄ‡∏£‡∏µ‡∏¢‡∏ö‡∏£‡πâ‡∏≠‡∏¢‡πÅ‡∏•‡πâ‡∏ß'); </script>";
 				    print "<script language='javascript' >window.location='logoutdocpass.php';</script>";
 				}// end if resupdate
 }else{

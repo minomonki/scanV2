@@ -13,7 +13,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 </head>
 
@@ -39,11 +39,11 @@
     <td colspan="3"><input name="password" type="password" size="20" maxlength="20" /></td>
   </tr>
   <tr>
-    <td>�׹�ѹ Password</td>
+    <td>ยืนยัน Password</td>
     <td colspan="3"><input name="conpassword" type="password" size="20" maxlength="20" /></td>
   </tr>
   <tr>
-    <td>���������ҹ</td>
+    <td>กลุ่มผู้ช้งาน</td>
     <td colspan="3">
     	
         <?php

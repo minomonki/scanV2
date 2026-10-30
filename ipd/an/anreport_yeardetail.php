@@ -9,7 +9,7 @@ include ("../System_config/const.php");
 
 	include ("../System_config/connection.php");
 	
-  /////  check session_id �ͧ˹��
+  /////  check session_id ของหน้า
 	if($_SESSION["PID"] == session_id()) {
 
 ?>
@@ -17,7 +17,7 @@ include ("../System_config/const.php");
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="../datepick/css/smoothness/jquery-ui-1.7.2.custom.css">
@@ -71,14 +71,14 @@ return true
 include("../System_config/connect.php");
 include_once("../System_config/func.php");
 echo "<div class='blackb' align='center'>";
-echo "������ AN ��������к� �� <span class=blue>".$_REQUEST["yr"]."</span>";
+echo "ข้อมูล AN ทั้งหมดในระบบ ปี <span class=blue>".$_REQUEST["yr"]."</span>";
 echo "</div><br>";
 //###################################
 echo "<table class='rowh' align='center' width='60%' cellspacing='1' cellpadding='1' border='0'>";// create table title
 echo "<tr bgcolor='#3399CC'>";
-echo "<td align='center' class='hdtable' width='30%'>�ӹǹ AN ��к�</td>";
-echo "<td align='center' class='hdtable' width='30%'>�ӹǹ˹��</td>";
-echo "<td align='center' class='hdtable' width='30%'>��Ҵ (Mb)</td>";
+echo "<td align='center' class='hdtable' width='30%'>จำนวน AN ในระบบ</td>";
+echo "<td align='center' class='hdtable' width='30%'>จำนวนหน้า</td>";
+echo "<td align='center' class='hdtable' width='30%'>ขนาด (Mb)</td>";
 echo "</tr>";
 if (fmod($id,2)) {$rcolor=' bgcolor=#99FF99';}else{$rcolor=' bgcolor=#FFFF5B';}
 echo "<tr".$rcolor.">";
@@ -106,7 +106,7 @@ if ($result) {
 	echo "<table class='rowh' align='center' width='60%' cellspacing='1' cellpadding='1' border='0'>";// create table title
 	echo "<tr bgcolor='#ffffff'>";
 	echo "<td align='center' class='hdtable'>";
-	echo "<div class='blackb' align='center'>�������ŷ����� <span class=blue>".$total."</span> ��͹</div>";
+	echo "<div class='blackb' align='center'>พบข้อมูลทั้งหมด <span class=blue>".$total."</span> เดือน</div>";
 	echo "</div>";
 	echo "</td>";
 	echo "<td align='right' class='hdtable' width='35'>";//onMouseover='return hidestatus()' onMouseOut='return hidestatus()' 
@@ -118,10 +118,10 @@ if ($result) {
 	echo "</table>";
 echo "<table class='rowh' align='center' width='60%' cellspacing='1' cellpadding='1' border='0'>";// create table title
 echo "<tr bgcolor='#a9a9a9'>";
-echo "<td align='center' class='hdtable' width='10%'>��͹</td>";
-echo "<td align='center' class='hdtable' width='30%'>�ӹǹ AN ��к�</td>";
-echo "<td align='center' class='hdtable' width='30%'>�ӹǹ˹��</td>";
-echo "<td align='center' class='hdtable' width='30%'>��Ҵ (Mb)</td>";
+echo "<td align='center' class='hdtable' width='10%'>เดือน</td>";
+echo "<td align='center' class='hdtable' width='30%'>จำนวน AN ในระบบ</td>";
+echo "<td align='center' class='hdtable' width='30%'>จำนวนหน้า</td>";
+echo "<td align='center' class='hdtable' width='30%'>ขนาด (Mb)</td>";
 echo "</tr>";
 		while($row = mysql_fetch_array($result)){
 			if (fmod($id,2)) {$rcolor=' bgcolor=#f5deb3';}else{$rcolor=' bgcolor=#ffbb77';}
@@ -129,7 +129,7 @@ echo "</tr>";
 			$pages=getValue("sum( b.pages )","tb_ipd a, `tb_ipd_doctype_detail` b","a.an = b.an and year(datescan)=".$row['yr']." and month(datescan)=".$row['mon']."");
 			echo "<tr".$rcolor.">";
 			echo "<td align='center' class='listdetail'>";
-			echo "<a target='_blank' title='����������´' onMouseover='return hidestatus()' onMouseOut='return hidestatus()'  href=anreport_monthdetail.php?yr=".$row['yr']."&mon=".$row['mon']."&sum_an=".$row['sum_an']."&pages=".$pages."&sizes=".$sizes.">";
+			echo "<a target='_blank' title='ดูรายละเอียด' onMouseover='return hidestatus()' onMouseOut='return hidestatus()'  href=anreport_monthdetail.php?yr=".$row['yr']."&mon=".$row['mon']."&sum_an=".$row['sum_an']."&pages=".$pages."&sizes=".$sizes.">";
 			echo $month[$row['mon']-1];
 			echo "</a>";
 			echo "</td>";
@@ -141,7 +141,7 @@ echo "</tr>";
 		} //end of while loop
 		echo "</table>";
 }else{//no record found
-	echo "<BR><BR><div class='blackb' align='center'>======== ��辺������ ========</div><BR>";
+	echo "<BR><BR><div class='blackb' align='center'>======== ไม่พบข้อมูล ========</div><BR>";
 }// end of if chk $result
 
 //###################################

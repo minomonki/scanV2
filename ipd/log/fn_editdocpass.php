@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 
 	include("../System_config/connect.php");
@@ -17,7 +17,7 @@ echo "R_txtstartdate=".$_REQUEST['txtstartdate']."<br>";
 echo "R_txtexpired=".$_REQUEST['txtexpired']."<br>";
 */
 if(empty($txtforuser) && empty($txtstartdate) && empty($txtexpired)){
-	print "<script>alert ('��س��кآ��������ú��ǹ��͹��úѹ�֡..'); </script>";
+	print "<script>alert ('กรุณาระบุข้อมูลให้ครบถ้วนก่อนการบันทึก..'); </script>";
 	print "<script language='javascript' >window.location='frm_edit_docpass.php?an=$an&psw=$psw';</script>";
 	exit();
 }else{
@@ -29,23 +29,23 @@ if(empty($txtforuser) && empty($txtstartdate) && empty($txtexpired)){
 		//echo "start= ".checkdate ( $chks_m, $chks_d, $chks_y)."<br>";
 		//echo "end= ".checkdate ( $chke_m, $chke_d, $chke_y)."<br>";
 		if (substr($txtstartdate,0,4)<2500){
-			print "<script>alert ('Ǵ�.����������ҹ ��ͧ�кآ������繻� �.�. ��س��Ǩ�ͺ��͹��úѹ�֡..'); </script>";
+			print "<script>alert ('วดป.เริ่มการใช้งาน ต้องระบุข้อมูลเป็นปี พ.ศ. กรุณตรวจสอบก่อนการบันทึก..'); </script>";
 			print "<script language='javascript' >window.location='frm_edit_docpass.php?an=$an&psw=$psw';</script>";
 			exit();
 		}elseif  (substr($txtexpired,0,4)<2500){
-			print "<script>alert ('Ǵ�.����ش�����ҹ ��ͧ�кآ������繻� �.�. ��س��Ǩ�ͺ��͹��úѹ�֡..'); </script>";
+			print "<script>alert ('วดป.สิ้นสุดการใช้งาน ต้องระบุข้อมูลเป็นปี พ.ศ. กรุณตรวจสอบก่อนการบันทึก..'); </script>";
 			print "<script language='javascript' >window.location='frm_edit_docpass.php?an=$an&psw=$psw';</script>";
 			exit();
 		}elseif  (checkdate ( $chks_m, $chks_d, $chks_y)<>1){
-			print "<script>alert ('�ٻẺ������ Ǵ�.����������ҹ ���١��ͧ �վ.�.-��͹-�ѹ (yyyy-mm-dd) ��س��Ǩ�ͺ��͹��úѹ�֡..'); </script>";
+			print "<script>alert ('รูปแบบข้อมูล วดป.เริ่มการใช้งาน ไม่ถูกต้อง ปีพ.ศ.-เดือน-วัน (yyyy-mm-dd) กรุณตรวจสอบก่อนการบันทึก..'); </script>";
 			print "<script language='javascript' >window.location='frm_edit_docpass.php?an=$an&psw=$psw';</script>";
 			exit();
 		}elseif  (checkdate ( $chke_m, $chke_d, $chke_y)<>1){
-			print "<script>alert ('�ٻẺ������ Ǵ�.����ش�����ҹ ���١��ͧ �վ.�.-��͹-�ѹ (yyyy-mm-dd) ��س��Ǩ�ͺ��͹��úѹ�֡..'); </script>";
+			print "<script>alert ('รูปแบบข้อมูล วดป.สิ้นสุดการใช้งาน ไม่ถูกต้อง ปีพ.ศ.-เดือน-วัน (yyyy-mm-dd) กรุณตรวจสอบก่อนการบันทึก..'); </script>";
 			print "<script language='javascript' >window.location='frm_edit_docpass.php?an=$an&psw=$psw';</script>";
 			exit();
 		}elseif  ($txtexpired<$txtstartdate){
-			print "<script>alert ('Ǵ�.����ش�����ҹ ��ͧ�ҡ���� Ǵ�.����������ҹ ��س��Ǩ�ͺ��͹��úѹ�֡..'); </script>";
+			print "<script>alert ('วดป.สิ้นสุดการใช้งาน ต้องมากกว่า วดป.เริ่มการใช้งาน กรุณตรวจสอบก่อนการบันทึก..'); </script>";
 			print "<script language='javascript' >window.location='frm_edit_docpass.php?an=$an&psw=$psw';</script>";
 			exit();
 		}

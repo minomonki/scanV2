@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 $txt_an	= $_REQUEST["txt_an"];
 $txt_byuser= $_REQUEST["txt_byuser"];
@@ -16,7 +16,7 @@ $detail="INSERT AN=$txt_an is secreted";
 updatelogdetail($_REQUEST["logno"],$detail);
 //////////////////////////////////////////////
 
-print "<script>alert ('บันทึกข้อมูลเรียบร้อยแล้ว'); </script>";
+print "<script>alert ('เธเธฑเธเธ—เธถเธเธเนเธญเธกเธนเธฅเน€เธฃเธตเธขเธเธฃเนเธญเธขเนเธฅเนเธง'); </script>";
 print "<script language='javascript' >window.location='frm_list_secret.php?txt_an=$txt_an&cmd_show=1';</script>";
 
 ?>

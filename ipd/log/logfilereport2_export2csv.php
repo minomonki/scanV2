@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <?php
 	if($_SESSION["PID"] == session_id()) {
@@ -14,7 +14,7 @@ $filName = $filename.$today3.".csv";
 $objWrite = fopen($pathdir.$filName, "w"); 
 ///////////////////////////////////
 //write header title
-$titleheader="ข้อมูลทั้งหมด ".$total." รายการ"; 
+$titleheader="เธเนเธญเธกเธนเธฅเธ—เธฑเนเธเธซเธกเธ” ".$total." เธฃเธฒเธขเธเธฒเธฃ"; 
 fwrite($objWrite, "\"$titleheader\"\n"); 
 //////////////////////////////////
 /// assign column
@@ -76,13 +76,13 @@ if ($_REQUEST['txtdocpassforuser']<>""){$sql .=" and username in (select passwor
 //echo $sql."<br>";
 $result=mysql_query($sql);
 //$total=mysql_num_rows($result);
-fwrite($objWrite, "\"ลำดับ\",\"การเข้าใช้งาน\",\"Username\",\"ชื่อ-สกุล\","); 
+fwrite($objWrite, "\"เธฅเธณเธ”เธฑเธ\",\"เธเธฒเธฃเน€เธเนเธฒเนเธเนเธเธฒเธ\",\"Username\",\"เธเธทเนเธญ-เธชเธเธธเธฅ\","); 
 if ($_REQUEST['txtpcode']<>"" || $_REQUEST['txtan']<>""){
-	fwrite($objWrite, "\"AN\",\"Doc Type\",\"การใช้เอกสาร\","); 
+	fwrite($objWrite, "\"AN\",\"Doc Type\",\"เธเธฒเธฃเนเธเนเน€เธญเธเธชเธฒเธฃ\","); 
 }
-fwrite($objWrite, "\"วดป.-เวลา\",\"IP ADDRESS\""); 
+fwrite($objWrite, "\"เธงเธ”เธ.-เน€เธงเธฅเธฒ\",\"IP ADDRESS\""); 
 if ($_REQUEST['txtpcode']<>"" || $_REQUEST['txtan']<>""){
-	fwrite($objWrite, ",\"หมายเหตุ\""); 
+	fwrite($objWrite, ",\"เธซเธกเธฒเธขเน€เธซเธ•เธธ\""); 
 }
 fwrite($objWrite, "\n"); 
 
@@ -99,7 +99,7 @@ while($row = mysql_fetch_array($result)){
 	}elseif ($row['logtype']=="B"){
 		$usrname= "HosXP";
 	}elseif ($row['logtype']=="N" || $row['logtype']=="L" || $row['logtype']=="Q"){
-		$usrname= "ระบบยืม";
+		$usrname= "เธฃเธฐเธเธเธขเธทเธก";
 	}else{
 		$usrname= $row['username'];
 	}

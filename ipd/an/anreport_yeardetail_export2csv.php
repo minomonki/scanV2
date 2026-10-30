@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <?php
 	if($_SESSION["PID"] == session_id()) {
@@ -17,7 +17,7 @@ $pathdir= "../exportfile/";
 $filName = $filename.$today3.".csv"; 
 $objWrite = fopen($pathdir.$filName, "w"); 
 //write header title
-$titleheader="������ AN ��������к� �� ".$_REQUEST["yr"]; 
+$titleheader="ข้อมูล AN ทั้งหมดในระบบ ปี ".$_REQUEST["yr"]; 
 fwrite($objWrite, "\"$titleheader\"\n"); 
 //////////////////////////////////
 $select="select year(datescan) as yr,month(datescan) as mon , count( * ) AS sum_an";
@@ -28,8 +28,8 @@ $orderby .=" order by mon";
 $query =$select.$from.$where.$groupby.$orderby;
 $result=mysql_query($query);
 //$total=mysql_num_rows($result);
-fwrite($objWrite, "\"��͹\",\"�ӹǹ AN ��к�\",\"�ӹǹ˹��\","); 
-fwrite($objWrite, "\"��Ҵ (Mb)\"\n"); 
+fwrite($objWrite, "\"เดือน\",\"จำนวน AN ในระบบ\",\"จำนวนหน้า\","); 
+fwrite($objWrite, "\"ขนาด (Mb)\"\n"); 
 while($row = mysql_fetch_array($result)){
 	$moname=$month[$row[1]-1];
 	$sizes=getValue("sum( OCTET_LENGTH( imagescan ) /1048576 )","tb_ipd a, `tb_ipd_doctype_detail` b","a.an = b.an and year(datescan)=".$row['yr']." and month(datescan)=".$row['mon']."");
@@ -40,7 +40,7 @@ while($row = mysql_fetch_array($result)){
 	unset($sizes);unset($pages);
 } //end of while loop
 ////////////////////////////////// SUM
-fwrite($objWrite, "\"���\",\"$sum_an\",\"$sum_pages\","); 
+fwrite($objWrite, "\"รวม\",\"$sum_an\",\"$sum_pages\","); 
 fwrite($objWrite, "\"$sum_sizes\"\n"); 
 //////////////////////////////////
 fclose($objWrite); 

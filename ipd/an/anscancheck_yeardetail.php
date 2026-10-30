@@ -9,7 +9,7 @@ include ("../System_config/const.php");
 
 	include ("../System_config/connection.php");
 	
-  /////  check session_id �ͧ˹��
+  /////  check session_id ของหน้า
 	if($_SESSION["PID"] == session_id()) {
 
 ?>
@@ -17,7 +17,7 @@ include ("../System_config/const.php");
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="../datepick/css/smoothness/jquery-ui-1.7.2.custom.css">
@@ -71,14 +71,14 @@ return true
 include("../System_config/connect.php");
 include_once("../System_config/func.php");
 echo "<div class='blackb' align='center'>";
-echo "������ AN ��������к� �� <span class=blue>".$_REQUEST["thyr"]."</span>";
+echo "ข้อมูล AN ทั้งหมดในระบบ ปี <span class=blue>".$_REQUEST["thyr"]."</span>";
 echo "</div><br>";
 //###################################
 echo "<table class='rowh' align='center' width='60%' cellspacing='1' cellpadding='1' border='0'>";// create table title
 echo "<tr bgcolor='#3399CC'>";
-echo "<td align='center' class='hdtable' width='30%'>�ӹǹ AN ��к�</td>";
-echo "<td align='center' class='hdtable' width='30%'>�ӹǹ AN �᡹����</td>";
-echo "<td align='center' class='hdtable' width='30%'>�ӹǹ AN ����᡹���ú</td>";
+echo "<td align='center' class='hdtable' width='30%'>จำนวน AN ในระบบ</td>";
+echo "<td align='center' class='hdtable' width='30%'>จำนวน AN สแกนแล้ว</td>";
+echo "<td align='center' class='hdtable' width='30%'>จำนวน AN ที่สแกนไม่ครบ</td>";
 echo "</tr>";
 if (fmod($id,2)) {$rcolor=' bgcolor=#99FF99';}else{$rcolor=' bgcolor=#FFFF5B';}
 echo "<tr".$rcolor.">";
@@ -105,7 +105,7 @@ if ($total>0) {
 	echo "<table class='rowh' align='center' width='60%' cellspacing='1' cellpadding='1' border='0'>";// create table title
 	echo "<tr bgcolor='#ffffff'>";
 	echo "<td align='center' class='hdtable'>";
-	echo "<div class='blackb' align='center'>�������ŷ����� <span class=blue>".$total."</span> ��͹</div>";
+	echo "<div class='blackb' align='center'>พบข้อมูลทั้งหมด <span class=blue>".$total."</span> เดือน</div>";
 	echo "</td>";
 	echo "<td align='right' class='hdtable' width='35'>";//onMouseover='return hidestatus()' onMouseOut='return hidestatus()' 
 	echo "<a title='Export to csv' target='_blank' href=anscancheck_yeardetail_export2csv.php?logno=".$_SESSION['logno']."&colan=".number_format($_REQUEST["colan"])."&colyesan=".$_REQUEST["colyesan"]."&colnoan=".$_REQUEST["colnoan"]."&enyr=".$_REQUEST['enyr']."&thyr=".$_REQUEST['thyr'].">";
@@ -116,17 +116,17 @@ if ($total>0) {
 	echo "</table>";
 echo "<table class='rowh' align='center' width='60%' cellspacing='1' cellpadding='1' border='0'>";// create table title
 echo "<tr bgcolor='#a9a9a9'>";
-echo "<td align='center' class='hdtable' width='10%'>��͹</td>";
-echo "<td align='center' class='hdtable' width='30%'>�ӹǹ AN ��к�</td>";
-echo "<td align='center' class='hdtable' width='30%'>�ӹǹ AN �᡹����</td>";
-echo "<td align='center' class='hdtable' width='30%'>�ӹǹ AN ����᡹���ú</td>";
+echo "<td align='center' class='hdtable' width='10%'>เดือน</td>";
+echo "<td align='center' class='hdtable' width='30%'>จำนวน AN ในระบบ</td>";
+echo "<td align='center' class='hdtable' width='30%'>จำนวน AN สแกนแล้ว</td>";
+echo "<td align='center' class='hdtable' width='30%'>จำนวน AN ที่สแกนไม่ครบ</td>";
 echo "</tr>";
 	for ($i=1;$i<=12;$i++){
 			if ($colan_array[$i]>0){
 				if (fmod($id,2)) {$rcolor=' bgcolor=#f5deb3';}else{$rcolor=' bgcolor=#ffbb77';}
 				echo "<tr".$rcolor.">";
 				echo "<td align='center' class='listdetail'>";
-				echo "<a target='_blank' title='����������´' onMouseover='return hidestatus()' onMouseOut='return hidestatus()'  href=anscancheck_monthdetail.php?enyr=".$_REQUEST["enyr"]."&thyr=".$_REQUEST["thyr"]."&mon=".$i."&colan=".$colan_array[$i]."&colyesan=".$colyesan_array[$i]."&colnoan=".$colnoan_array[$i].">";
+				echo "<a target='_blank' title='ดูรายละเอียด' onMouseover='return hidestatus()' onMouseOut='return hidestatus()'  href=anscancheck_monthdetail.php?enyr=".$_REQUEST["enyr"]."&thyr=".$_REQUEST["thyr"]."&mon=".$i."&colan=".$colan_array[$i]."&colyesan=".$colyesan_array[$i]."&colnoan=".$colnoan_array[$i].">";
 				echo $month[$i-1];
 				echo "</a>";
 				echo "</td>";
@@ -155,7 +155,7 @@ echo "</tr>";
 		} //end of for
 		echo "</table>";
 }else{//no record found
-	echo "<BR><BR><div class='blackb' align='center'>======== ��辺������ ========</div><BR>";
+	echo "<BR><BR><div class='blackb' align='center'>======== ไม่พบข้อมูล ========</div><BR>";
 }// end of if chk $result
 
 //###################################

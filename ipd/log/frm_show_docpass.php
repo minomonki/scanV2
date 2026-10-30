@@ -9,7 +9,7 @@ include ("../System_config/const.php");
 
 	include ("../System_config/connection.php");
 	
-  /////  check session_id ของหน้า
+  /////  check session_id เธเธญเธเธซเธเนเธฒ
 	//if($_SESSION["PID"] == session_id()) {
 if($_SESSION['userdocpass']<>"") {
 ?>
@@ -17,7 +17,7 @@ if($_SESSION['userdocpass']<>"") {
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="../datepick/css/smoothness/jquery-ui-1.7.2.custom.css">
@@ -91,21 +91,21 @@ if ($_SESSION['userdocpass']<>''){
 			echo "<td class='listdetail' colspan=4>&nbsp;&nbsp;&nbsp;&nbsp;".$syspass;
 			echo "</td>";
 			echo "<td>";
-			echo "<a href=frm_change_docpass.php title='เปลี่ยนรหัสผ่าน ระบบยืม'><img src='../images/key.jpg' border=0 width=30></a>";
+			echo "<a href=frm_change_docpass.php title='เน€เธเธฅเธตเนเธขเธเธฃเธซเธฑเธชเธเนเธฒเธ เธฃเธฐเธเธเธขเธทเธก'><img src='../images/key.jpg' border=0 width=30></a>";
 			echo "&nbsp;&nbsp;&nbsp;&nbsp;";
-			echo "<a href=../logoutdocpass.php title='logout ระบบยืม'><img src='../images/logout-icon.png' border=0 width=30></a>";
+			echo "<a href=../logoutdocpass.php title='logout เธฃเธฐเธเธเธขเธทเธก'><img src='../images/logout-icon.png' border=0 width=30></a>";
 			echo "</td>";
 			echo "</tr>";
 			echo "<tr>";
-			echo "<td bgcolor='#a9a9a9' align='right' class='hdtable' width='12%'>ชื่อ-สกุล :&nbsp; </td>";
+			echo "<td bgcolor='#a9a9a9' align='right' class='hdtable' width='12%'>เธเธทเนเธญ-เธชเธเธธเธฅ :&nbsp; </td>";
 			echo "<td class='listdetail' colspan=5>&nbsp;&nbsp;&nbsp;&nbsp;".$row['foruser']."</td>";
 			echo "</tr>";
 			echo "<tr>";
 			echo "<td align='right' class='hdtable' width='12%' bgcolor='#ffffff' >&nbsp; </td>";
-			echo "<td class='hdtable' align='center' width=5%>ลำดับ</td>";
+			echo "<td class='hdtable' align='center' width=5%>เธฅเธณเธ”เธฑเธ</td>";
 			echo "<td class='hdtable' align='center'>AN</td>";
-			echo "<td class='hdtable' align='center'>รายละเอียด</td>";
-			echo "<td class='hdtable' align='center'>ระยะเวลาใช้งาน</td>";
+			echo "<td class='hdtable' align='center'>เธฃเธฒเธขเธฅเธฐเน€เธญเธตเธขเธ”</td>";
+			echo "<td class='hdtable' align='center'>เธฃเธฐเธขเธฐเน€เธงเธฅเธฒเนเธเนเธเธฒเธ</td>";
 			echo "<td class='hdtable' align='center'>imagescan</td>";
 			echo "</tr>";
 		}// end  if did
@@ -131,7 +131,7 @@ if ($chkpass==1){
 		echo "</table><br>";
 		//////////////////////////////////////////////////////////////
 	}else{//no record found
-		echo "<div class='blackb' align='center'>======== ไม่พบข้อมูล ========</div>";
+		echo "<div class='blackb' align='center'>======== เนเธกเนเธเธเธเนเธญเธกเธนเธฅ ========</div>";
 	}// end if num_rows
 
 }// end if chk cmd???

@@ -4,7 +4,7 @@
 	$imgpath_top = "../images/design_webIPD/web-IPDS01_01.jpg";
 	$imgpath_botton = "../images/design_webIPD/web-IPDS01_04.jpg";
 
-  /////  check session_id �ͧ˹��
+  /////  check session_id ของหน้า
 	if($_SESSION["PID"] == session_id()) {
 		
 	include ("../System_config/connection.php");
@@ -14,7 +14,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 <title>:: IPD - DELETE  User Account ::</title>
 
@@ -40,7 +40,7 @@
         
         <form name="DelDoc" id="DelDoc" action="fn_delsecret.php" method="post">
     	<table  align="center" width="500" border="0" cellspacing="0" cellpadding="0">
-  			<tr class="head-tb"><td height="38"> �׹�ѹ���ź�����Ũҡʶҹ��Ѻ </td></tr>
+  			<tr class="head-tb"><td height="38"> ยืนยันการลบข้อมูลจากสถานะลับ </td></tr>
   			<tr bgcolor="#FFFFFF">
     			<td align="left">
                 	<img src="../images/span.gif" height="10" /><br />
@@ -52,7 +52,7 @@
   			<tr bgcolor="#FFFFFF">
             	<td align="center">
                		<img src="../images/span.gif" height="10" /><br />
-                	<span class="memo">�׹�ѹ���ź������</span><br />
+                	<span class="memo">ยืนยันการลบข้อมูล</span><br />
             		<input type="submit" value=" DELETE " />
                     <br /><img src="../images/span.gif" height="10" />
                 </td>

@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr valign="bottom"  bgcolor="#99CCFF">
@@ -31,49 +31,49 @@ if ($_SESSION["user_ipd"]!=""){
 
 	print "<ul id=\"css3menu\">";
 	//if ($_SESSION['userdocpass']==""){
-		print "		<li class=\"topfirst\"><a href=\"../page_content/frm_search.php\" style='cursor: hand'>สืบค้น</a></li>";
-		print "		<li><a href=\"../page_content/changepass.php\" style='cursor: hand'>รหัสผ่าน</a></li>";
+		print "		<li class=\"topfirst\"><a href=\"../page_content/frm_search.php\" style='cursor: hand'>เธชเธทเธเธเนเธ</a></li>";
+		print "		<li><a href=\"../page_content/changepass.php\" style='cursor: hand'>เธฃเธซเธฑเธชเธเนเธฒเธ</a></li>";
 	//}
 	#print $_SESSION["UserType_ipd"];
 	
 	if($Mdoc==1){
-		print "		<li><a href=\"#\"><span>จัดการเอกสาร</span></a>";
+		print "		<li><a href=\"#\"><span>เธเธฑเธ”เธเธฒเธฃเน€เธญเธเธชเธฒเธฃ</span></a>";
 		print "			<ul>";
-		print "				<li><a href=\"../page_content/show_document.php\" style='cursor: hand'>เพิ่มประเภทเอกสาร</a></li>";
+		print "				<li><a href=\"../page_content/show_document.php\" style='cursor: hand'>เน€เธเธดเนเธกเธเธฃเธฐเน€เธ เธ—เน€เธญเธเธชเธฒเธฃ</a></li>";
 		print "			</ul>";
 		print "		</li>";
 	}
 	if($Mdocpass==1){
-		print "		<li><a href=\"../log/frm_list_docpass.php\" style='cursor: hand'>ระบบยืม</a></li>";
+		print "		<li><a href=\"../log/frm_list_docpass.php\" style='cursor: hand'>เธฃเธฐเธเธเธขเธทเธก</a></li>";
 	}
 	if($Muser==1){
-		print "		<li><a href=\"#\"><span>จัดการผู้ใช้งาน</span></a>";
+		print "		<li><a href=\"#\"><span>เธเธฑเธ”เธเธฒเธฃเธเธนเนเนเธเนเธเธฒเธ</span></a>";
 		print "			<ul>";
-		print "				<li><a href=\"../page_content/show_usergroup.php\" style='cursor: hand'>กลุ่มผู้ใช้</a></li>";
-		print "				<li><a href=\"../page_content/show_user.php\" style='cursor: hand'>เพิ่มผู้ใช้</a></li>";
+		print "				<li><a href=\"../page_content/show_usergroup.php\" style='cursor: hand'>เธเธฅเธธเนเธกเธเธนเนเนเธเน</a></li>";
+		print "				<li><a href=\"../page_content/show_user.php\" style='cursor: hand'>เน€เธเธดเนเธกเธเธนเนเนเธเน</a></li>";
 		print "			</ul>";
 		print "		</li>";
 	}
-		print "		<li><a href=\"#\"><span>รายงาน</span></a>";
+		print "		<li><a href=\"#\"><span>เธฃเธฒเธขเธเธฒเธ</span></a>";
 		print "			<ul>";
 	if($Mlog==1){
-		print "				<li><a href=\"../log/logfilereport.php\" style='cursor: hand'>การใช้งานทั้งหมด</a></li>";
-		print "				<li><a href=\"../log/logfilereport2.php\" style='cursor: hand'>การใช้งานตามเงื่อนไข</a></li>";
+		print "				<li><a href=\"../log/logfilereport.php\" style='cursor: hand'>เธเธฒเธฃเนเธเนเธเธฒเธเธ—เธฑเนเธเธซเธกเธ”</a></li>";
+		print "				<li><a href=\"../log/logfilereport2.php\" style='cursor: hand'>เธเธฒเธฃเนเธเนเธเธฒเธเธ•เธฒเธกเน€เธเธทเนเธญเธเนเธ</a></li>";
 		print "				<li><a href=\"../log/logfilemanager.php\" style='cursor: hand'>Log Manager</a></li>";
 	}
 	$Mansummary=1;
 	if($Mansummary==1){
-		print "				<li><a href=\"../an/anreport.php\" style='cursor: hand'>เอกสารที่สแกน</a></li>";
-		print "				<li><a href=\"../an/anscancheck.php\" style='cursor: hand'>เอกสารที่สแกนไม่ครบ</a></li>";
+		print "				<li><a href=\"../an/anreport.php\" style='cursor: hand'>เน€เธญเธเธชเธฒเธฃเธ—เธตเนเธชเนเธเธ</a></li>";
+		print "				<li><a href=\"../an/anscancheck.php\" style='cursor: hand'>เน€เธญเธเธชเธฒเธฃเธ—เธตเนเธชเนเธเธเนเธกเนเธเธฃเธ</a></li>";
 	}
 		print "			</ul>";
 		print "		</li>";
 	if($Mdocsecret==1){
-		print "		<li><a href=\"../log/frm_list_secret.php\" style='cursor: hand'>จัดการเอกสารลับ</a></li>";
+		print "		<li><a href=\"../log/frm_list_secret.php\" style='cursor: hand'>เธเธฑเธ”เธเธฒเธฃเน€เธญเธเธชเธฒเธฃเธฅเธฑเธ</a></li>";
 	}
 
 	$userG  = $_SESSION["user_ipd"];
-	print "		<li class=\"toplast\"><a href=\"../logout.php\" style='cursor: hand'>ออกจากระบบ  [ $userG ]</a> </li>";
+	print "		<li class=\"toplast\"><a href=\"../logout.php\" style='cursor: hand'>เธญเธญเธเธเธฒเธเธฃเธฐเธเธ  [ $userG ]</a> </li>";
 	print "	</ul>";
 }
 ?>

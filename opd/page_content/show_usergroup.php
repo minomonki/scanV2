@@ -8,18 +8,18 @@
 
 	include ("../System_config/connection.php");
 	
-  /////  check session_id ของหน้า
+  /////  check session_id เธเธญเธเธซเธเนเธฒ
 	if($_SESSION["PID"] == session_id()) {
 
 $StatusAdd=$_GET["status"];
 	#print  $StatusAdd;
 	if($StatusAdd == 1){
 			$bgcolor = "#66FF66";
-			$showstatus = "ดำเนินการสำเร็จ";
+			$showstatus = "เธ”เธณเน€เธเธดเธเธเธฒเธฃเธชเธณเน€เธฃเนเธ";
 	}
 	else if (($StatusAdd == 0) and ($StatusAdd != "")){
 			$bgcolor = "#FF0000";
-			$showstatus = "ไม่สามารถดำเนินการได้ กรุณาลองอีกครั้ง";
+			$showstatus = "เนเธกเนเธชเธฒเธกเธฒเธฃเธ–เธ”เธณเน€เธเธดเธเธเธฒเธฃเนเธ”เน เธเธฃเธธเธ“เธฒเธฅเธญเธเธญเธตเธเธเธฃเธฑเนเธ";
 	}
 	else {
 			$bgcolor = "";
@@ -31,7 +31,7 @@ $StatusAdd=$_GET["status"];
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 <title>:: OPD - SHOW Usergroup ::</title>
@@ -67,10 +67,10 @@ $StatusAdd=$_GET["status"];
 
 <table align="center" width="800" border="1" cellspacing="0" cellpadding="0">
   <tr class="head-tb">
-    <td width="62" height="37" align="center">ลำดับที่</td>
-    <td width="635" align="center">ชื่อกลุ่มผู้ใช้งาน</td>
-    <td width="59" align="center">แก้ไข</td>
-    <td width="44" align="center">ลบ</td>
+    <td width="62" height="37" align="center">เธฅเธณเธ”เธฑเธเธ—เธตเน</td>
+    <td width="635" align="center">เธเธทเนเธญเธเธฅเธธเนเธกเธเธนเนเนเธเนเธเธฒเธ</td>
+    <td width="59" align="center">เนเธเนเนเธ</td>
+    <td width="44" align="center">เธฅเธ</td>
   </tr>
 <?php
 $SQLshowG = "select * from tb_opd_group order by groupID asc";

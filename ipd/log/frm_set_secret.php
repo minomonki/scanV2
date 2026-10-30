@@ -9,7 +9,7 @@ include ("../System_config/const.php");
 
 	include ("../System_config/connection.php");
 	
-  /////  check session_id �ͧ˹��
+  /////  check session_id ของหน้า
 	if($_SESSION["PID"] == session_id()) {
 
 ?>
@@ -17,7 +17,7 @@ include ("../System_config/const.php");
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="../datepick/css/smoothness/jquery-ui-1.7.2.custom.css">
@@ -62,7 +62,7 @@ return true
   <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
 <form name="search" method="post" action="frm_set_secret.php">
   <tr>
-    <td class="head-topic"><BR>:: ��˹�ʶҹФ����Ѻ�����ҹ AN  ::
+    <td class="head-topic"><BR>:: กำหนดสถานะความลับการใช้งาน AN  ::
 		<input type="text" name="txt_an" size="15" maxlength="20"/>
 		<input type="submit" name="cmd_create" value=" Create " />
     </td>
@@ -91,7 +91,7 @@ if ($_REQUEST['txt_an']<>''){
 		echo "<td class='listdetail'>&nbsp;&nbsp;&nbsp;&nbsp;".$row['hn']."</td>";
 		echo "</tr>";
 		echo "<tr>";
-		echo "<td bgcolor='#a9a9a9' align='right' class='hdtable' width='10%'>����-ʡ�� :&nbsp; </td>";
+		echo "<td bgcolor='#a9a9a9' align='right' class='hdtable' width='10%'>ชื่อ-สกุล :&nbsp; </td>";
 		echo "<td class='listdetail'>&nbsp;&nbsp;&nbsp;&nbsp;".$row['firstname']."&nbsp;&nbsp;".$row['lastname']."</td>";
 		echo "</tr>";
 		echo "<tr>";
@@ -106,23 +106,23 @@ if ($_REQUEST['txt_an']<>''){
 		$result = mysql_query($query);
 		$row = mysql_fetch_array($result);
 		if ($row[0]==1) {
-			echo "<div class='blackb' align='center'>======== AN : ".$_REQUEST['txt_an']." ���١��˹�ʶҹФ����Ѻ��к����� ========</div>";
+			echo "<div class='blackb' align='center'>======== AN : ".$_REQUEST['txt_an']." นี้ถูกกำหนดสถานะความลับในระบบแล้ว ========</div>";
 		}else{//no record found
 			//////////////////////// Create new //////////////////////////
-			echo "<div class='blackb' align='center'>###### ��á�˹�ʶҹФ����Ѻ  #####</div>";
+			echo "<div class='blackb' align='center'>###### การกำหนดสถานะความลับ  #####</div>";
 			echo "<table class='rowh1' align='center' width='90%' cellspacing='0' cellpadding='0' bordercolor='#000000' border='1' style='border-collapse:collapse;'>";
 			echo "<tr bgcolor='#a9a9a9'>";
-			echo "<td align='center' class='hdtable' width='5%'>�ӴѺ</td>";
+			echo "<td align='center' class='hdtable' width='5%'>ลำดับ</td>";
 			echo "<td align='center' class='hdtable' width='10%'>AN</td>";
-			//echo "<td align='center' class='hdtable' width='20%'>������Է����ҹ</td>";
-			echo  "<td width='5%' align='center' class='hdtable'>�ѹ�֡</td>";
+			//echo "<td align='center' class='hdtable' width='20%'>ผู้มีสิทธิใช้งาน</td>";
+			echo  "<td width='5%' align='center' class='hdtable'>บันทึก</td>";
 			echo "</tr>";
 			echo "<form name='dform' method='post' action='fn_setsecret.php' onSubmit='JavaScript:return validSubmit();'>";
 			echo "<tr>";
 			echo "<td align='center' class='listdetail'>1</td>";
 			echo "<td align='center' class='listdetail'>".$_REQUEST['txt_an']."</td>";
 			echo "<td align='center' class='listdetail'>";
-			echo "<input type='submit' name='cmd_show' value=' ��˹������ʶҹ��Ѻ ' />";
+			echo "<input type='submit' name='cmd_show' value=' กำหนดให้เป็นสถานะลับ ' />";
 			echo "</td>";
 			echo "</tr>";
 			echo "<input type='hidden' name='txt_an' value='".$_REQUEST['txt_an']."'>";
@@ -134,7 +134,7 @@ if ($_REQUEST['txt_an']<>''){
 			//////////////////////// End Create new ///////////////////////////
 		}// end of if chk $result
 	}else{//no record found
-		echo "<div class='blackb' align='center'>======== ��辺������ AN : ".$_REQUEST['txt_an']." ��к� ========</div>";
+		echo "<div class='blackb' align='center'>======== ไม่พบข้อมูล AN : ".$_REQUEST['txt_an']." ในระบบ ========</div>";
 	}// end of if chk $result
 }// end if chk txt_an
 ?>

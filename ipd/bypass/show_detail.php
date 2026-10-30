@@ -10,8 +10,8 @@ if (chkSecret($anID)==1){
 		$detail=" Access deny AN=".$anID;
 		updatelogdetail($_SESSION["logno"],$detail);
 		//////////////////////////////////////////////
-	print "<script>alert ('AN : $anID ���١��˹��繢������Ѻ'); </script>";
-	print "<script language='javascript' >window.location='show_message.php?msg=AN : $anID ���١��˹��繢������Ѻ';</script>";
+	print "<script>alert ('AN : $anID นี้ถูกกำหนดเป็นข้อมูลลับ'); </script>";
+	print "<script language='javascript' >window.location='show_message.php?msg=AN : $anID นี้ถูกกำหนดเป็นข้อมูลลับ';</script>";
 }
 
 	include ("../System_config/connection.php");
@@ -58,7 +58,7 @@ if (chkSecret($anID)==1){
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<script type="text/javascript" src="../jstree/_lib/jquery.js"></script>
 	<script type="text/javascript" src="../jstree/_lib/jquery.cookie.js"></script>
 	<script type="text/javascript" src="../jstree/_lib/jquery.hotkeys.js"></script>
@@ -76,7 +76,7 @@ return true
 
 </script>
 <script language="JavaScript"> <!--
-var message="���͹حҵ����ԡ���.\n"; // Message for the alert box
+var message="ไม่อนุญาตให้คลิกขวา.\n"; // Message for the alert box
 
 // Don't edit below!
 

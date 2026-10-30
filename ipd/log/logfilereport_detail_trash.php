@@ -9,7 +9,7 @@ include ("../System_config/const.php");
 
 	include ("../System_config/connection.php");
 	
-  /////  check session_id ของหน้า
+  /////  check session_id เธเธญเธเธซเธเนเธฒ
 	if($_SESSION["PID"] == session_id()) {
 
 ?>
@@ -17,7 +17,7 @@ include ("../System_config/const.php");
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="../datepick/css/smoothness/jquery-ui-1.7.2.custom.css">
@@ -94,16 +94,16 @@ $query=$query." order by ldate desc LIMIT $start,$pagesize";
 $result=mysql_query($query);
 if ($totalpage>0) {
 	echo "<div class='blackb' align='center'><img src='../images/trash_full.gif' border='0' />&nbsp;&nbsp;";
-	echo "ชื่อผู้ใช้ : <span class=blue>".$_REQUEST['getname']."</span>";
+	echo "เธเธทเนเธญเธเธนเนเนเธเน : <span class=blue>".$_REQUEST['getname']."</span>";
 	echo "</div><br>";
 	echo "<table class='rowh' align='center' width='90%' cellspacing='1' cellpadding='1' border='0'>";// create table title
 	echo "<tr bgcolor='#a9a9a9'>";
-	echo "<td align='center' class='hdtable' width='5%'>ลำดับ</td>";
+	echo "<td align='center' class='hdtable' width='5%'>เธฅเธณเธ”เธฑเธ</td>";
 	echo "<td align='center' class='hdtable' width='10%'>AN</td>";
 	echo "<td align='center' class='hdtable' width='20%'>Doc Type</td>";
-	echo "<td align='center' class='hdtable' width='15%'>การใช้เอกสาร</td>";
-	echo "<td align='center' class='hdtable' width='20%'>วดป.-เวลา</td>";
-	echo "<td align='center' class='hdtable' width='10%'>หมายเหตุ</td>";
+	echo "<td align='center' class='hdtable' width='15%'>เธเธฒเธฃเนเธเนเน€เธญเธเธชเธฒเธฃ</td>";
+	echo "<td align='center' class='hdtable' width='20%'>เธงเธ”เธ.-เน€เธงเธฅเธฒ</td>";
+	echo "<td align='center' class='hdtable' width='10%'>เธซเธกเธฒเธขเน€เธซเธ•เธธ</td>";
 	echo "</tr>";
 		while($row = mysql_fetch_array($result)){
 			if (fmod($id,2)) {$rcolor=' bgcolor=#f5deb3';}else{$rcolor=' bgcolor=#ffbb77';}
@@ -134,7 +134,7 @@ if ($totalpage>0) {
 		} //end of while loop
 		echo "</table>";
 }else{//no record found
-	echo "<BR><BR><div class='blackb' align='center'>======== ไม่พบข้อมูล ========</div><BR><BR>";
+	echo "<BR><BR><div class='blackb' align='center'>======== เนเธกเนเธเธเธเนเธญเธกเธนเธฅ ========</div><BR><BR>";
 }// end of if chk $result
 
 //header table pages row 

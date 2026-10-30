@@ -73,9 +73,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-	<title>:: √“¬≈–‡Õ’¬¥ ::</title>
+	<title>:: ‡∏£‡∏≤‡∏¢‡∏•‡∏∞‡πÄ‡∏≠‡∏µ‡∏¢‡∏î ::</title>
 	 	<!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
-	<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<script type="text/javascript" src="jstree/_lib/jquery.js"></script>
 	<script type="text/javascript" src="stree/_lib/jquery.cookie.js"></script>
 	<script type="text/javascript" src="jstree/_lib/jquery.hotkeys.js"></script>
@@ -113,7 +113,7 @@
 						} 
 						window.location = url2;
 					}
-				"/> ‡√’¬ßµ“¡™π‘¥¢Õß‡Õ° “√  <br />
+				"/> ‡πÄ‡∏£‡∏µ‡∏¢‡∏á‡∏ï‡∏≤‡∏°‡∏ä‡∏ô‡∏¥‡∏î‡∏Ç‡∏≠‡∏á‡πÄ‡∏≠‡∏Å‡∏™‡∏≤‡∏£  <br />
 			</td>
 		</tr>
 		<tr>
@@ -153,18 +153,18 @@
 										$m = substr($day,5,2);
 										$d = substr($day,8,2);
 										
-										if($m=="01"){ $m="¡.§.";}
-										else if($m=="02"){ $m="°.æ.";}
-										else if($m=="03"){ $m="¡’.§.";}
-										else if($m=="04"){ $m="‡¡.¬.";}
-										else if($m=="05"){ $m="æ.§.";}
-										else if($m=="06"){ $m="¡‘.¬.";}
-										else if($m=="07"){ $m="°.§.";}
-										else if($m=="08"){ $m=" .§.";}
-										else if($m=="09"){ $m="°.¬.";}
-										else if($m=="10"){ $m="µ.§.";}
-										else if($m=="11"){ $m="æ.¬.";}
-										else { $m="∏.§.";}
+										if($m=="01"){ $m="‡∏°.‡∏Ñ.";}
+										else if($m=="02"){ $m="‡∏Å.‡∏û.";}
+										else if($m=="03"){ $m="‡∏°‡∏µ.‡∏Ñ.";}
+										else if($m=="04"){ $m="‡πÄ‡∏°.‡∏¢.";}
+										else if($m=="05"){ $m="‡∏û.‡∏Ñ.";}
+										else if($m=="06"){ $m="‡∏°‡∏¥.‡∏¢.";}
+										else if($m=="07"){ $m="‡∏Å.‡∏Ñ.";}
+										else if($m=="08"){ $m="‡∏™.‡∏Ñ.";}
+										else if($m=="09"){ $m="‡∏Å.‡∏¢.";}
+										else if($m=="10"){ $m="‡∏ï.‡∏Ñ.";}
+										else if($m=="11"){ $m="‡∏û.‡∏¢.";}
+										else { $m="‡∏ò.‡∏Ñ.";}
 								
 										$Gday = $d." ".$m." ".$y;
 	?>
@@ -202,18 +202,18 @@
 				$y = substr($mm,0,4);
 				$m = substr($mm,5,2);
 				
-					if($m=="01"){ $m="¡.§.";}
-					else if($m=="02"){ $m="°.æ.";}
-					else if($m=="03"){ $m="¡’.§.";}
-					else if($m=="04"){ $m="‡¡.¬.";}
-					else if($m=="05"){ $m="æ.§.";}
-					else if($m=="06"){ $m="¡‘.¬.";}
-					else if($m=="07"){ $m="°.§.";}
-					else if($m=="08"){ $m=" .§.";}
-					else if($m=="09"){ $m="°.¬.";}
-					else if($m=="10"){ $m="µ.§.";}
-					else if($m=="11"){ $m="æ.¬.";}
-					else { $m="∏.§.";}
+					if($m=="01"){ $m="‡∏°.‡∏Ñ.";}
+					else if($m=="02"){ $m="‡∏Å.‡∏û.";}
+					else if($m=="03"){ $m="‡∏°‡∏µ.‡∏Ñ.";}
+					else if($m=="04"){ $m="‡πÄ‡∏°.‡∏¢.";}
+					else if($m=="05"){ $m="‡∏û.‡∏Ñ.";}
+					else if($m=="06"){ $m="‡∏°‡∏¥.‡∏¢.";}
+					else if($m=="07"){ $m="‡∏Å.‡∏Ñ.";}
+					else if($m=="08"){ $m="‡∏™.‡∏Ñ.";}
+					else if($m=="09"){ $m="‡∏Å.‡∏¢.";}
+					else if($m=="10"){ $m="‡∏ï.‡∏Ñ.";}
+					else if($m=="11"){ $m="‡∏û.‡∏¢.";}
+					else { $m="‡∏ò.‡∏Ñ.";}
 					
 			$Gmonth = $m."-".$y;
    ?>          
@@ -230,18 +230,18 @@
 									$m = substr($day,5,2);
 									$d = substr($day,8,2);
 									
-									if($m=="01"){ $m="¡.§.";}
-									else if($m=="02"){ $m="°.æ.";}
-									else if($m=="03"){ $m="¡’.§.";}
-									else if($m=="04"){ $m="‡¡.¬.";}
-									else if($m=="05"){ $m="æ.§.";}
-									else if($m=="06"){ $m="¡‘.¬.";}
-									else if($m=="07"){ $m="°.§.";}
-									else if($m=="08"){ $m=" .§.";}
-									else if($m=="09"){ $m="°.¬.";}
-									else if($m=="10"){ $m="µ.§.";}
-									else if($m=="11"){ $m="æ.¬.";}
-									else { $m="∏.§.";}
+									if($m=="01"){ $m="‡∏°.‡∏Ñ.";}
+									else if($m=="02"){ $m="‡∏Å.‡∏û.";}
+									else if($m=="03"){ $m="‡∏°‡∏µ.‡∏Ñ.";}
+									else if($m=="04"){ $m="‡πÄ‡∏°.‡∏¢.";}
+									else if($m=="05"){ $m="‡∏û.‡∏Ñ.";}
+									else if($m=="06"){ $m="‡∏°‡∏¥.‡∏¢.";}
+									else if($m=="07"){ $m="‡∏Å.‡∏Ñ.";}
+									else if($m=="08"){ $m="‡∏™.‡∏Ñ.";}
+									else if($m=="09"){ $m="‡∏Å.‡∏¢.";}
+									else if($m=="10"){ $m="‡∏ï.‡∏Ñ.";}
+									else if($m=="11"){ $m="‡∏û.‡∏¢.";}
+									else { $m="‡∏ò.‡∏Ñ.";}
 							
 								$Gday = $d." ".$m." ".$y;
 							

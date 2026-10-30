@@ -10,7 +10,7 @@
 
 	include ("../System_config/connection.php");
 	
-  /////  check session_id �ͧ˹��
+  /////  check session_id ของหน้า
 	if($_SESSION["PID"] == session_id()) {
 
 	$showTable = $_GET['showTable'];
@@ -29,7 +29,7 @@ $un = $usertype;
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="../datepick/css/smoothness/jquery-ui-1.7.2.custom.css">
@@ -80,7 +80,7 @@ return true
 <form name="search" method="post" action="?showTable=1">
 <table align="center" width="701" border="0" cellspacing="2" cellpadding="0">
   <tr>
-    <td colspan="4" class="head-topic">:: ���� ::</td>
+    <td colspan="4" class="head-topic">:: ค้นหา ::</td>
   </tr>
   <tr>
     <td width="158" align="right" bgcolor="#CCCCCC" class="topic">HN :</td>
@@ -95,12 +95,12 @@ return true
 	</td>
   </tr>
   <tr>
-    <td width="158" align="right" bgcolor="#CCCCCC" class="topic">���� :</td>
+    <td width="158" align="right" bgcolor="#CCCCCC" class="topic">ชื่อ :</td>
     <td>
 		<input type="text" name="txtFname" id="s_txtFname" />
 		<input name="h_txtFname" type="hidden" id="h_txtFname" value="" />
 	</td>
-    <td width="144" align="right" bgcolor="#CCCCCC" class="topic">���ʡ�� :</td>
+    <td width="144" align="right" bgcolor="#CCCCCC" class="topic">นามสกุล :</td>
     <td>
 		<input type="text" name="txtLname" id="s_txtLname" />
 		<input name="h_txtLname" type="hidden" id="h_txtLname" value="" />
@@ -334,11 +334,11 @@ if ((trim($dis_s)== "") and (trim($dis_e)!= "")){
 <?php
 if (!empty($_POST['cmd_search'])){
 	echo "<table align='center' width='88%' border='1' cellspacing='0' cellpadding='0'><tr><td colspan=7 class=blue>";
-	echo "���͹䢡�ä��� : ";
+	echo "เงื่อนไขการค้นหา : ";
 	if (!empty($_POST['txtSearchHN'])){echo "HN --> ".$_POST['txtSearchHN'];}
 	if (!empty($_POST['txtSearchAN'])){echo "&nbsp; AN --> ".$_POST['txtSearchAN'];}
-	if (!empty($_POST['txtFname'])){echo "&nbsp; ���� --> ".$_POST['txtFname'];}
-	if (!empty($_POST['txtLname'])){echo "&nbsp; ���ʡ�� --> ".$_POST['txtLname'];}
+	if (!empty($_POST['txtFname'])){echo "&nbsp; ชื่อ --> ".$_POST['txtFname'];}
+	if (!empty($_POST['txtLname'])){echo "&nbsp; นามสกุล --> ".$_POST['txtLname'];}
 	if (!empty($_POST['admit_s'])){echo " Admit Date --> ".$_POST['admit_s'];}
 	if (!empty($_POST['admit_e'])){echo "&nbsp; To --> ".$_POST['admit_e'];}
 	if (!empty($_POST['dis_s'])){echo "&nbsp; Dis Date --> ".$_POST['dis_s'];}
@@ -352,10 +352,10 @@ if (!empty($_POST['cmd_search'])){
   <tr class="head-tb">
     <td width="10%" height="37" align="center">AN</td>
     <td width="11%" align="center">HN</td>
-    <td width="18%" align="center">����</td>
-    <td width="14%" align="center">���ʡ��</td>
-    <td width="12%" align="center">�Ѻ����ѡ��</td>
-    <td width="12%" align="center">����ش����ѡ��</td>
+    <td width="18%" align="center">ชื่อ</td>
+    <td width="14%" align="center">นามสกุล</td>
+    <td width="12%" align="center">รับการรักษา</td>
+    <td width="12%" align="center">สิ้นสุดการรักษา</td>
     <!--<td width="8%" align="center">pages</td> -->
     <!--<td width="9%" align="center">datescan</td> -->
    	<!--<td width="8%" align="center">doctype</td> -->
@@ -363,7 +363,7 @@ if (!empty($_POST['cmd_search'])){
   <?php 	
   		#print "<td width=7% >   ";
 		if ($del==1){
-    	print "<td width=\"9%\" ><div align=\"center\">ź</div></td>";}?>
+    	print "<td width=\"9%\" ><div align=\"center\">ลบ</div></td>";}?>
   </tr>
 
 <?php
@@ -383,7 +383,7 @@ if (!empty($_POST['cmd_search'])){
     <!--<td><?$VALsearch['datescan'];?></td> -->
    	<!--<td><?$VALsearch['doctype'];?></td> -->
     <td align="center">
-    <!--<a href="javascript:popup('show_detail.php?anID=<?$VALsearch['an'];?>&doctype=<?$VALsearch['doctype']?>','null',800,500);">��������´</a>  -->
+    <!--<a href="javascript:popup('show_detail.php?anID=<?$VALsearch['an'];?>&doctype=<?$VALsearch['doctype']?>','null',800,500);">รายละเอียด</a>  -->
      <a href="javascript:popup('show_detail.php?anID=<?=base64_encode($VALsearch['an']);?>&logno=<?=base64_encode($_SESSION['logno']);?>','null',950,500);"onMouseover="return hidestatus()" onMouseOut="return hidestatus()"><img src="../images/icon_showinfo.gif" border="0"/></a>
     </td>
 
@@ -425,8 +425,8 @@ function make_autocom(autoObj,showObj){
     });	
 }	
  
-// �����ҹ
-// make_autocom(" id �ͧ input ��Ƿ���ͧ��á�˹� "," id �ͧ input ��Ƿ���ͧ����Ѻ���");
+// การใช้งาน
+// make_autocom(" id ของ input ตัวที่ต้องการกำหนด "," id ของ input ตัวที่ต้องการรับค่า");
 make_autocom("s_txtSearchHN","h_txtSearchHN");
 </script>
 <script type="text/javascript">
@@ -446,8 +446,8 @@ function make_autocom2(autoObj,showObj){
     });	
 }	
  
-// �����ҹ
-// make_autocom(" id �ͧ input ��Ƿ���ͧ��á�˹� "," id �ͧ input ��Ƿ���ͧ����Ѻ���");
+// การใช้งาน
+// make_autocom(" id ของ input ตัวที่ต้องการกำหนด "," id ของ input ตัวที่ต้องการรับค่า");
 make_autocom2("s_txtSearchAN","h_txtSearchAN");
 </script>
 <script type="text/javascript">
@@ -467,8 +467,8 @@ function make_autocom3(autoObj,showObj){
     });	
 }	
  
-// �����ҹ
-// make_autocom(" id �ͧ input ��Ƿ���ͧ��á�˹� "," id �ͧ input ��Ƿ���ͧ����Ѻ���");
+// การใช้งาน
+// make_autocom(" id ของ input ตัวที่ต้องการกำหนด "," id ของ input ตัวที่ต้องการรับค่า");
 make_autocom3("s_txtFname","h_txtFname");
 </script>
 <script type="text/javascript">
@@ -488,8 +488,8 @@ function make_autocom4(autoObj,showObj){
     });	
 }	
  
-// �����ҹ
-// make_autocom(" id �ͧ input ��Ƿ���ͧ��á�˹� "," id �ͧ input ��Ƿ���ͧ����Ѻ���");
+// การใช้งาน
+// make_autocom(" id ของ input ตัวที่ต้องการกำหนด "," id ของ input ตัวที่ต้องการรับค่า");
 make_autocom4("s_txtLname","h_txtLname");
 </script>
 

@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 
 <?php
@@ -21,12 +21,12 @@ $pathdir= "../exportfile/";
 $filName = "anscancheck".$today3.".csv";  
 $objWrite = fopen($pathdir.$filName, "w"); 
 //write header title
-$titleheader="��ػ�͡����᡹ AN ������ ������ѹ��� ".$_REQUEST['iptmindate']." - ".$_REQUEST['iptmaxdate'];
+$titleheader="สรุปเอกสารสแกน AN ทั้งหมด ตั้งแต่วันที่ ".$_REQUEST['iptmindate']." - ".$_REQUEST['iptmaxdate'];
 fwrite($objWrite, "\"$titleheader\"\n"); 
-fwrite($objWrite, "\"�ӹǹ AN ������\",\"�ӹǹ AN admitted\",\"�ӹǹ AN ��к�\",\"�ӹǹ AN �᡹����\",\"�ӹǹ AN ����᡹���ú\"\n"); 
+fwrite($objWrite, "\"จำนวน AN ทั้งหมด\",\"จำนวน AN admitted\",\"จำนวน AN ในระบบ\",\"จำนวน AN สแกนแล้ว\",\"จำนวน AN ที่สแกนไม่ครบ\"\n"); 
 fwrite($objWrite, "\"$colall\",\"$colallan0\",\"$colallan\",\"$colallyesan\",\"$colallnoan\"\n"); 
 //////////////////////////////////
-fwrite($objWrite, "\"��\",\"�ӹǹ AN ��к�\",\"�ӹǹ AN �᡹����\",\"�ӹǹ AN ����᡹���ú\"\n"); 
+fwrite($objWrite, "\"ปี\",\"จำนวน AN ในระบบ\",\"จำนวน AN สแกนแล้ว\",\"จำนวน AN ที่สแกนไม่ครบ\"\n"); 
 //////////////////////////////////
 /*$thminyr=$_REQUEST['minyr']+543;
 $thmaxyr=$_REQUEST['maxyr']+543;
@@ -55,7 +55,7 @@ while($row = mysql_fetch_array($result)){
 	unset($thyr);unset($colan);unset($colyesan);unset($colnoan);
 } //end while loop
 ////////////////////////////////// SUM
-fwrite($objWrite, "\"���\",\"$colallan\",\"$colallyesan\",\"$colallnoan\"\n"); 
+fwrite($objWrite, "\"รวม\",\"$colallan\",\"$colallyesan\",\"$colallnoan\"\n"); 
 //////////////////////////////////
 fclose($objWrite); 
 //echo "<br>Generate CSV Done<br><a href=".$pathdir."".$filName.">Download</a>"; 

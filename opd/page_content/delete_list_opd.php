@@ -4,7 +4,7 @@
 	$imgpath_top = "../images/design_webOPD/web-OPDS01_01.jpg";
 	$imgpath_botton = "../images/design_webOPD/web-OPDS01_04.jpg";
 
-  /////  check session_id �ͧ˹��
+  /////  check session_id ของหน้า
 	if($_SESSION["PID"] == session_id()) {
 		
 	include ("../System_config/connection.php");
@@ -21,7 +21,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 <title>:: OPD - DELETE  User Account ::</title>
 
@@ -48,7 +48,7 @@
        <!-- <form name="DelDoc" id="DelDoc" action="FN_Delete/fn_deluser.php?userid=<?$uid?>" method="post"> -->
     	<table width="610" border="0" cellspacing="0" cellpadding="0">
   			<tr class="head-tb">
-            		<td width="610" height="38" align="left"> 	ź��¡�â����� �ͧ HN : <?=$uid?> [<?=$VALdelUser['firstname']?>  <?=$VALdelUser['lastname']?> ]         </td>
+            		<td width="610" height="38" align="left"> 	ลบรายการข้อมูล ของ HN : <?=$uid?> [<?=$VALdelUser['firstname']?>  <?=$VALdelUser['lastname']?> ]         </td>
             </tr>
   			<tr bgcolor="#FFFFFF">
     			<td align="center">
@@ -57,8 +57,8 @@
   							<tr bgcolor="#FFFFCC" align="center" >
     								<td>VN</td>
     								<!--<td>dater </td> -->
-    								<td>�������͡���</td>
-    								<td>ź</td>
+    								<td>ประเภทเอกสาร</td>
+    								<td>ลบ</td>
   							</tr>
                 <?php
 							$SQLdelUser = "select * from tb_opd  where hn='$uid' ";
@@ -75,7 +75,7 @@
     								<!--<td align="center"><?$VALdetail['dater'];?></td> -->
     								<td align="center"><?=$docname?></td>
     								<td align="center">
-                                    			<a href="JavaScript:if(confirm('�׹�ѹ���ź ?')==true){window.location='FN_Delete/fn_deluserdetail.php?hn=<?=$uid?>&vn=<?=$VALdetail['vn'];?>&docid=<?=$VALdetail['doctype_id'];?>'}"><img src="../images/icon_b_delete2.gif" width="25" height="25" border="0" /></a>
+                                    			<a href="JavaScript:if(confirm('ยืนยันการลบ ?')==true){window.location='FN_Delete/fn_deluserdetail.php?hn=<?=$uid?>&vn=<?=$VALdetail['vn'];?>&docid=<?=$VALdetail['doctype_id'];?>'}"><img src="../images/icon_b_delete2.gif" width="25" height="25" border="0" /></a>
 
 
 												
@@ -91,7 +91,7 @@
 		</table>
      <!--   </form> -->
      	<br>
-     		<a href="frm_search.php?showTable=1"><<< ��Ѻ˹���׺�� >>></a>
+     		<a href="frm_search.php?showTable=1"><<< กลับหน้าสืบค้น >>></a>
         <br>
         <img src="../images/span.gif" height="20" /></td>
   </tr>

@@ -46,7 +46,7 @@ $detail =$sqlupdate;
 updatelogdetail($_SESSION["logno"],$detail);
 //////////////////////////////////////////////
 					//header("location:../changepass.php?status=1");
-					print "<script>alert ('∫—π∑÷°‡√’¬∫√ÈÕ¬·≈È«'); </script>";
+					print "<script>alert ('‡∏ö‡∏±‡∏ô‡∏ó‡∏∂‡∏Å‡πÄ‡∏£‡∏µ‡∏¢‡∏ö‡∏£‡πâ‡∏≠‡∏¢‡πÅ‡∏•‡πâ‡∏ß'); </script>";
 				    //print "<script language='javascript' >window.location='../frm_login_docpass.php';</script>";
 
 				}// end if resupdate

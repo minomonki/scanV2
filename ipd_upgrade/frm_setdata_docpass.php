@@ -10,9 +10,9 @@ function getPassdata(){
 	$total=mysql_num_rows($result);
 	//$row = mysql_fetch_array($result);
 	if ($total>0){
-		$descr="password ที่ยังไม่ได้ import เข้าตาราง tb_ipd_doc_pass มีจำนวน ".$total." รายการ";
+		$descr="password เธ—เธตเนเธขเธฑเธเนเธกเนเนเธ”เน import เน€เธเนเธฒเธ•เธฒเธฃเธฒเธ tb_ipd_doc_pass เธกเธตเธเธณเธเธงเธ ".$total." เธฃเธฒเธขเธเธฒเธฃ";
 	}else{
-		$descr="<span class='redb'>ไม่มีรายการ import data เข้าตาราง table tb_ipd_doc_pass </span>";
+		$descr="<span class='redb'>เนเธกเนเธกเธตเธฃเธฒเธขเธเธฒเธฃ import data เน€เธเนเธฒเธ•เธฒเธฃเธฒเธ table tb_ipd_doc_pass </span>";
 	}//  check if exist 
 	return $descr;
 }
@@ -24,9 +24,9 @@ function getForuserdata(){
 	$total=mysql_num_rows($result);
 	//$row = mysql_fetch_array($result);
 	if ($total>0){
-		$descr="ชื่อผู้ใช้งานที่มี password ในระบบยืมมากกว่าหนึ่ง มีจำนวน ".$total." รายการ";
+		$descr="เธเธทเนเธญเธเธนเนเนเธเนเธเธฒเธเธ—เธตเนเธกเธต password เนเธเธฃเธฐเธเธเธขเธทเธกเธกเธฒเธเธเธงเนเธฒเธซเธเธถเนเธ เธกเธตเธเธณเธเธงเธ ".$total." เธฃเธฒเธขเธเธฒเธฃ";
 	}else{
-		$descr="<span class='redb'>ไม่มีรายการ ชื่อผู้ใช้งานที่มี password ในระบบยืมมากกว่าหนึ่ง </span>";
+		$descr="<span class='redb'>เนเธกเนเธกเธตเธฃเธฒเธขเธเธฒเธฃ เธเธทเนเธญเธเธนเนเนเธเนเธเธฒเธเธ—เธตเนเธกเธต password เนเธเธฃเธฐเธเธเธขเธทเธกเธกเธฒเธเธเธงเนเธฒเธซเธเธถเนเธ </span>";
 	}//  check if exist 
 	return $descr;
 }
@@ -52,7 +52,7 @@ function showforuser($foruser){
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="../ipd/css/menu/style.css" type="text/css" />
 <title>:: IPD : Upgrade System ::</title>
 </head>
@@ -82,7 +82,7 @@ if (substr($passdata,0,1)<>"<"){
 </form>
 <form name="check" method="post" action="frm_setdata_docpass.php">
   <tr>
-    <td class="lnku" align="center"><BR>:: ตรวจสอบชื่อผู้ใช้งานซ้ำในระบบ :: </td>
+    <td class="lnku" align="center"><BR>:: เธ•เธฃเธงเธเธชเธญเธเธเธทเนเธญเธเธนเนเนเธเนเธเธฒเธเธเนเธณเนเธเธฃเธฐเธเธ :: </td>
   </tr>
   <?php $foruserdata= getForuserdata();?>
   <tr>
@@ -113,12 +113,12 @@ if ($_REQUEST['cmd_setdata']<>''){
 	if ($total>0) {
 			echo "<table class='rowh' align='center' width='70%' cellspacing='2' cellpadding='2' border='0'>";
 			echo "<tr>";
-			echo "<td align='center' class='hdtable' colspan=3>import data to ตาราง tb_ipd_doc_pass จำนวน $total &nbsp;รายการ </td>";
+			echo "<td align='center' class='hdtable' colspan=3>import data to เธ•เธฒเธฃเธฒเธ tb_ipd_doc_pass เธเธณเธเธงเธ $total &nbsp;เธฃเธฒเธขเธเธฒเธฃ </td>";
 			echo "</tr>";
 			echo "<tr bgcolor='#a9a9a9'>";
-			echo "<td align='center' class='hdtable' width='10%'>ลำดับ</td>";
+			echo "<td align='center' class='hdtable' width='10%'>เธฅเธณเธ”เธฑเธ</td>";
 			echo "<td class='hdtable' align='center'>password</td>";
-			echo "<td class='hdtable' align='center'>&nbsp;&nbsp;ชื่อผู้ใช้</td>";
+			echo "<td class='hdtable' align='center'>&nbsp;&nbsp;เธเธทเนเธญเธเธนเนเนเธเน</td>";
 			echo "</tr>";
 		while ($row = mysql_fetch_array($result)){
 			$userdocpass=$row[0].$row[0];
@@ -138,7 +138,7 @@ if ($_REQUEST['cmd_setdata']<>''){
 		echo "</table><br>";
 		//////////////////////////////////////////////////////////////
 	}else{//no record found
-		//echo "<div class='blackb' align='center'>======== ไม่พบข้อมูล import ========</div>";
+		//echo "<div class='blackb' align='center'>======== เนเธกเนเธเธเธเนเธญเธกเธนเธฅ import ========</div>";
 	}// end of if chk $result
 }// end if chk cmd???
 ?>
@@ -154,13 +154,13 @@ if ($_REQUEST['cmd_foruserdata']<>''){
 	$total=mysql_num_rows($result);
 	$id=1;
 	if ($total>0) {
-			echo "<div align=center>ข้อมูลชื่อผู้ใช้ซ้ำ ในระบบยืม จำนวน $total &nbsp;รายการ</div>";
+			echo "<div align=center>เธเนเธญเธกเธนเธฅเธเธทเนเธญเธเธนเนเนเธเนเธเนเธณ เนเธเธฃเธฐเธเธเธขเธทเธก เธเธณเธเธงเธ $total &nbsp;เธฃเธฒเธขเธเธฒเธฃ</div>";
 			echo "<table class='rowh' align='center' width='100%' cellspacing='0' cellpadding='0' border='1' bordercolor='#000000' style='border-collapse: collapse'>";
 			echo "<tr bgcolor='#a9a9a9'>";
-			echo "<td align='center' class='hdtable' width='10%' rowspan=2>ลำดับ</td>";
-			echo "<td class='hdtable' align='center' rowspan=2>ชื่อผู้ใช้</td>";
-			echo "<td class='hdtable' align='center' rowspan=2>จำนวน</td>";
-			echo "<td class='hdtable' align='center' colspan=3>รายละเอียด</td>";
+			echo "<td align='center' class='hdtable' width='10%' rowspan=2>เธฅเธณเธ”เธฑเธ</td>";
+			echo "<td class='hdtable' align='center' rowspan=2>เธเธทเนเธญเธเธนเนเนเธเน</td>";
+			echo "<td class='hdtable' align='center' rowspan=2>เธเธณเธเธงเธ</td>";
+			echo "<td class='hdtable' align='center' colspan=3>เธฃเธฒเธขเธฅเธฐเน€เธญเธตเธขเธ”</td>";
 			echo "</tr>";
 			echo "<tr bgcolor='#a9a9a9'>";
 			echo "<td class='hdtable' width=15% align='center'>password</td>";
@@ -185,7 +185,7 @@ if ($_REQUEST['cmd_foruserdata']<>''){
 		echo "</form></div>";
 		//////////////////////////////////////////////////////////////
 	}else{//no record found
-		//echo "<div class='blackb' align='center'>======== ไม่พบข้อมูล import ========</div>";
+		//echo "<div class='blackb' align='center'>======== เนเธกเนเธเธเธเนเธญเธกเธนเธฅ import ========</div>";
 	}// end of if chk $result
 }// end if chk cmd???
 ?>

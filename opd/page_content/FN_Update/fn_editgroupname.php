@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 
 include ("../../System_config/connection.php");
@@ -8,7 +8,7 @@ $txtGname				= $_POST["txtGname"];
 
 ////////////////////////  check from
 if (empty($txtGname)){
-	print "<script>alert ('กรุณากรอกชื่อกลุ่มผู้ใช้ก่อนการบันทึก'); </script>";
+	print "<script>alert ('เธเธฃเธธเธ“เธฒเธเธฃเธญเธเธเธทเนเธญเธเธฅเธธเนเธกเธเธนเนเนเธเนเธเนเธญเธเธเธฒเธฃเธเธฑเธเธ—เธถเธ'); </script>";
 	print "<script language='javascript' >window.location='../show_usergroup.php?status=0';</script>";
 	exit();	
 }
@@ -28,7 +28,7 @@ else{
 			$chkgname = $VALgname['groupname'];
 		}
 		if($txtGname==$chkgname){
-			print "<script>alert ('ชื่อกลุ่มผู้ใช้นี้มีอยู่แล้ว กรุณตรวจสอบก่อนการบันทึก..'); </script>";
+			print "<script>alert ('เธเธทเนเธญเธเธฅเธธเนเธกเธเธนเนเนเธเนเธเธตเนเธกเธตเธญเธขเธนเนเนเธฅเนเธง เธเธฃเธธเธ“เธ•เธฃเธงเธเธชเธญเธเธเนเธญเธเธเธฒเธฃเธเธฑเธเธ—เธถเธ..'); </script>";
 			print "<script language='javascript' >window.location='../show_usergroup.php?status=0';</script>";
 			exit();
 		}

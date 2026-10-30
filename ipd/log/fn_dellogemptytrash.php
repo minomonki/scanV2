@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 $startd	= $_REQUEST["startd"]." 00:00:00";
 $endd= $_REQUEST["endd"]." 23:59:59";
@@ -32,7 +32,7 @@ updatelogdetail($_REQUEST["logno"],$detail);
 
 //////////////////////////////////////////////
 
-print "<script>alert ('ลบข้อมูลเรียบร้อยแล้ว'); </script>";
+print "<script>alert ('เธฅเธเธเนเธญเธกเธนเธฅเน€เธฃเธตเธขเธเธฃเนเธญเธขเนเธฅเนเธง'); </script>";
 print "<script language='javascript' >window.location='logfilemanager.php';</script>";
 
 ?>

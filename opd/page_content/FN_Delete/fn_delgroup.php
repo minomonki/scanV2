@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 
 include("../../System_config/connection.php");
@@ -7,7 +7,7 @@ include("../../System_config/connection.php");
 	#print $gid;
 	
 if(empty($gid)){
-	print "<script>alert ('��سҵ�Ǩ�ͺ��¡�á����������ա����..'); </script>";
+	print "<script>alert ('กรุณาตรวจสอบรายการกลุ่มผู้ใช้อีกครั้ง..'); </script>";
 	print "<script language='javascript' >window.location='../show_usergroup.php?status=0';</script>";
 	exit();
 }	

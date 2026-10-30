@@ -1,6 +1,6 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
- /////  check session_id ของหน้า
+ /////  check session_id เธเธญเธเธซเธเนเธฒ
 if($_SESSION["PID"] == session_id()) {
 
 $txt_an	= $_REQUEST["txt_an"];
@@ -11,23 +11,23 @@ $admit_e= $_REQUEST["admit_e"];
 $txt_byuser= $_REQUEST["txt_byuser"];
 $logno= $_REQUEST["logno"];
 
-$errmsg="ข้อมูลไม่ครบถ้วน ";
+$errmsg="เธเนเธญเธกเธนเธฅเนเธกเนเธเธฃเธเธ–เนเธงเธ ";
 $flag = 0;
 
 ////////// check to complete data
 if(empty($txt_foruser)){
 	$flag = 1;
-	$errmsg .=" ต้องระบุข้อมูลผู้ใช้งานเอกสาร";
+	$errmsg .=" เธ•เนเธญเธเธฃเธฐเธเธธเธเนเธญเธกเธนเธฅเธเธนเนเนเธเนเธเธฒเธเน€เธญเธเธชเธฒเธฃ";
 	print "<script>alert ('$errmsg'); </script>";
 	print "<script language='javascript' >window.location='frm_list_docpass.php';</script>";
 }elseif (empty($admit_s)){
 	$flag = 1;
-	$errmsg .=" , ต้องระบุข้อมูล วดป.เริ่มการใช้งาน";
+	$errmsg .=" , เธ•เนเธญเธเธฃเธฐเธเธธเธเนเธญเธกเธนเธฅ เธงเธ”เธ.เน€เธฃเธดเนเธกเธเธฒเธฃเนเธเนเธเธฒเธ";
 	print "<script>alert ('$errmsg'); </script>";
 	print "<script language='javascript' >window.location='frm_list_docpass.php';</script>";
 }elseif (empty($admit_e)){
 	$flag = 1;
-	$errmsg .=" , ต้องระบุข้อมูล วดป.สิ้นสุดการใช้งาน";
+	$errmsg .=" , เธ•เนเธญเธเธฃเธฐเธเธธเธเนเธญเธกเธนเธฅ เธงเธ”เธ.เธชเธดเนเธเธชเธธเธ”เธเธฒเธฃเนเธเนเธเธฒเธ";
 	print "<script>alert ('$errmsg'); </script>";
 	print "<script language='javascript' >window.location='frm_list_docpass.php';</script>";
 }
@@ -37,13 +37,13 @@ $gotopass=getPassbyForuser($txt_foruser);
 ////////// check to complete data
 if (check2anForuser($txt_foruser,$txt_an)==1){
 	$flag = 1;
-	$errmsg ="มี AN นี้ในระบบยืมของชื่อผู้ใช้งานนี้แล้ว";
+	$errmsg ="เธกเธต AN เธเธตเนเนเธเธฃเธฐเธเธเธขเธทเธกเธเธญเธเธเธทเนเธญเธเธนเนเนเธเนเธเธฒเธเธเธตเนเนเธฅเนเธง";
 	//echo $errmsg;
 	print "<script>alert ('$errmsg'); </script>";
 	print "<script language='javascript' >window.location='frm_set_docpass.php?cmd_addan=1&txt_addan=$gotopass';</script>";
 }elseif (check2pass($txt_foruser)==1){
 	$flag = 1;
-	$errmsg ="มีชื่อผู้ใช้งานนี้ในระบบแล้ว";
+	$errmsg ="เธกเธตเธเธทเนเธญเธเธนเนเนเธเนเธเธฒเธเธเธตเนเนเธเธฃเธฐเธเธเนเธฅเนเธง";
 	//echo $errmsg;
 	print "<script>alert ('$errmsg'); </script>";
 	print "<script language='javascript' >window.location='frm_set_docpass.php?cmd_addan=1&txt_addan=$gotopass';</script>";

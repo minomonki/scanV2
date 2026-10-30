@@ -9,7 +9,7 @@ include ("../System_config/const.php");
 
 	include ("../System_config/connection.php");
 	
-  /////  check session_id �ͧ˹��
+  /////  check session_id ของหน้า
 	if($_SESSION["PID"] == session_id()) {
 
 ?>
@@ -17,7 +17,7 @@ include ("../System_config/const.php");
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="../datepick/css/smoothness/jquery-ui-1.7.2.custom.css">
@@ -86,15 +86,15 @@ return true
 <form name="search" method="post" action="anreport2.php">
 <table align="center" width="70%" border="0" bordercolor="#C0C0C0" cellspacing="0" cellpadding="0" style="border-collapse: collapse">
   <tr>
-    <td colspan="4" class="head-topic">:: ���͹䢡���ʴ��� ::</td>
+    <td colspan="4" class="head-topic">:: เงื่อนไขการแสดงผล ::</td>
   </tr>
   <tr>
-    <td width="35%" align="right" bgcolor="#CCCCCC" class="topic">�͡��÷���᡹ ������ѹ��� :</td>
+    <td width="35%" align="right" bgcolor="#CCCCCC" class="topic">เอกสารที่สแกน ตั้งแต่วันที่ :</td>
     <td colspan="3">
     	<input type="text" name="admit_s" id="admit_s" />
         
         <img src="../images/span.gif" width="10" />   
-        <strong>�֧�ѹ���.</strong>
+        <strong>ถึงวันที่.</strong>
         <img src="../images/span.gif" width="10" />   
         
         <input type="text" name="admit_e" id="admit_e" />
@@ -149,7 +149,7 @@ if (!is_null($_REQUEST['cmd_show'])){
 include("../System_config/connect.php");
 include_once("../System_config/func.php");
 echo "<BR><div class='blackb' align='center'>";
-echo "��ػ������ AN ��к� �����ä��� ����� <span class=blue>".substr($fromdate,8,2)."/".substr($fromdate,5,2)."/".substr($fromdate,0,4)."</span> �֧ <span class=blue>".substr($todate,8,2)."/".substr($todate,5,2)."/".substr($todate,0,4)."</span>";
+echo "สรุปข้อมูล AN ในระบบ ตามการค้นหา ตั้งแต่ <span class=blue>".substr($fromdate,8,2)."/".substr($fromdate,5,2)."/".substr($fromdate,0,4)."</span> ถึง <span class=blue>".substr($todate,8,2)."/".substr($todate,5,2)."/".substr($todate,0,4)."</span>";
 //###################################
 //$colanreport=getValue("count(a.an)","tb_ipd a, `tb_ipd_doctype_detail` b","a.an = b.an and datescan between '$fromdate' and '$todate'");
 //$colpages=getValue("sum( pages )","tb_ipd a, `tb_ipd_doctype_detail` b","a.an = b.an and datescan between '$fromdate' and '$todate'");
@@ -160,9 +160,9 @@ $colpages=getValue("sum( b.pages )","tb_ipd a, `tb_ipd_doctype_detail` b","a.an 
 $colsizes=getValue("sum( OCTET_LENGTH( imagescan ) /1048576 )","tb_ipd a, `tb_ipd_doctype_detail` b","a.an = b.an and datescan between '$fromdate' and '$todate'");
 echo "<table class='rowh' align='center' width='70%' cellspacing='1' cellpadding='1' border='0'>";// create table title
 echo "<tr bgcolor='#3399CC'>";
-echo "<td align='center' class='hdtable' width='30%'>�ӹǹ AN ��к�</td>";
-echo "<td align='center' class='hdtable' width='30%'>�ӹǹ˹��</td>";
-echo "<td align='center' class='hdtable' width='30%'>��Ҵ (Mb)</td>";
+echo "<td align='center' class='hdtable' width='30%'>จำนวน AN ในระบบ</td>";
+echo "<td align='center' class='hdtable' width='30%'>จำนวนหน้า</td>";
+echo "<td align='center' class='hdtable' width='30%'>ขนาด (Mb)</td>";
 echo "</tr>";
 if (fmod($id,2)) {$rcolor=' bgcolor=#99FF99';}else{$rcolor=' bgcolor=#FFFF5B';}
 echo "<tr".$rcolor.">";
@@ -211,8 +211,8 @@ if ($totalpage>0) {
 	echo "<table class='rowh' align='center' width='70%' cellspacing='1' cellpadding='1' border='0'>";// create table title
 	echo "<tr bgcolor='#ffffff'>";
 	echo "<td align='center' class='hdtable'>";
-	echo "<div class='blackb' align='center'>��������´��ä��� �������ŷ����� <span class=blue>".$total."</span> ��¡��";
-	if ($totalpage>1){echo " ��й���ʴ�˹�ҷ��  ".$pageid."/".$totalpage;}
+	echo "<div class='blackb' align='center'>รายละเอียดการค้นหา พบข้อมูลทั้งหมด <span class=blue>".$total."</span> รายการ";
+	if ($totalpage>1){echo " ขณะนี้แสดงหน้าที่  ".$pageid."/".$totalpage;}
 	echo "</div>";
 	echo "</td>";
 	echo "<td align='right' class='hdtable' width='35'>"; 
@@ -224,10 +224,10 @@ if ($totalpage>0) {
 	echo "</table>";
 echo "<table class='rowh' align='center' width='70%' cellspacing='1' cellpadding='1' border='0'>";// create table title
 echo "<tr bgcolor='#a9a9a9'>";
-echo "<td align='center' class='hdtable' width='15%'>Ǵ�.</td>";
-echo "<td align='center' class='hdtable' width='25%'>�ӹǹ AN ��к�</td>";
-echo "<td align='center' class='hdtable' width='30%'>�ӹǹ˹��</td>";
-echo "<td align='center' class='hdtable' width='30%'>��Ҵ (Mb)</td>";
+echo "<td align='center' class='hdtable' width='15%'>วดป.</td>";
+echo "<td align='center' class='hdtable' width='25%'>จำนวน AN ในระบบ</td>";
+echo "<td align='center' class='hdtable' width='30%'>จำนวนหน้า</td>";
+echo "<td align='center' class='hdtable' width='30%'>ขนาด (Mb)</td>";
 echo "</tr>";
 		while($row = mysql_fetch_array($result)){
 			if (fmod($id,2)) {$rcolor=' bgcolor=#f5deb3';}else{$rcolor=' bgcolor=#ffbb77';}
@@ -235,7 +235,7 @@ echo "</tr>";
 			$pages=getValue("sum(b.pages)","tb_ipd a, `tb_ipd_doctype_detail` b","a.an = b.an and year(datescan)=".$row['yr']." and month(datescan)=".$row['mon']." and day(datescan)=".$row['d']."");
 			echo "<tr".$rcolor.">";
 			echo "<td align='center' class='listdetail'>";
-			//echo "<a title='����������´' onMouseover='return hidestatus()' onMouseOut='return hidestatus()' target='_blank' href=anreport_monthdetail.php?yr=".$row['yr']."&mon=".$row['mon']."&sum_an=".$row['sum_an']."&pages=".$row['pages']."&sizes=".$row['sizes'].">";
+			//echo "<a title='ดูรายละเอียด' onMouseover='return hidestatus()' onMouseOut='return hidestatus()' target='_blank' href=anreport_monthdetail.php?yr=".$row['yr']."&mon=".$row['mon']."&sum_an=".$row['sum_an']."&pages=".$row['pages']."&sizes=".$row['sizes'].">";
 			echo $row['d']." ".$month[$row['mon']-1]." ".$row['yr'];
 			//echo "</a>";
 			echo "</td>";
@@ -247,7 +247,7 @@ echo "</tr>";
 		} //end of while loop
 		echo "</table><BR><BR>";
 }else{//no record found
-	echo "<BR><BR><div class='blackb' align='center'>======== ��辺������ ========</div><BR>";
+	echo "<BR><BR><div class='blackb' align='center'>======== ไม่พบข้อมูล ========</div><BR>";
 }// end of if chk $result
 
 	//header table pages row 

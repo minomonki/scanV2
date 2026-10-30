@@ -5,7 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="css/menu/style.css" type="text/css" />
 <title>:: IPDS System ::</title>
 </head>
@@ -19,7 +19,7 @@
 		<form action="logindocpass.php" method="post" name="login">
 		<table align="center" width="314" border="0" cellspacing="1" cellpadding="1">
   			<tr bgcolor="#C0C0C0">
-    			<td colspan="2" align="center"><div class="lnku">ระบบยืม</div></td>
+    			<td colspan="2" align="center"><div class="lnku">เธฃเธฐเธเธเธขเธทเธก</div></td>
   			</tr>
   			<tr>
     			<td colspan="2" align="center"><BR> </td>

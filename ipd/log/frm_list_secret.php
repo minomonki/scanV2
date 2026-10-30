@@ -9,7 +9,7 @@ include ("../System_config/const.php");
 
 	include ("../System_config/connection.php");
 	
-  /////  check session_id �ͧ˹��
+  /////  check session_id ของหน้า
 	if($_SESSION["PID"] == session_id()) {
 
 ?>
@@ -17,7 +17,7 @@ include ("../System_config/const.php");
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<link rel="stylesheet" href="../css/menu/style.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="../datepick/css/smoothness/jquery-ui-1.7.2.custom.css">
@@ -63,20 +63,20 @@ return true
 <table align="center" width="701" border="0" cellspacing="2" cellpadding="0">
 <form name="searchan" method="post" action="frm_list_secret.php">
   <tr>
-    <td class="head-topic" align=right width=350><BR>:: ��ʶҹФ����Ѻ��� AN ��к������� ::</td>
+    <td class="head-topic" align=right width=350><BR>:: ดูสถานะความลับตาม AN ในระบบทั้งหมด ::</td>
 	<td><BR>&nbsp;<input type="submit" name="cmd_showall" value=" OK " /></td>
   </tr>
 </form>
 <form name="searchan" method="post" action="frm_list_secret.php">
   <tr>
-    <td class="head-topic" align=right width=350><BR>:: ��ʶҹФ����Ѻ��� AN ::</td>
+    <td class="head-topic" align=right width=350><BR>:: ดูสถานะความลับตาม AN ::</td>
 <td><BR><input type="text" name="txt_an" size="25" maxlength="20"/>&nbsp;<input type="submit" name="cmd_show" value=" OK " /></td>
   </tr>
 </form>
 <form name="add" method="post" action="frm_set_secret.php">
 <table align="center" width="701" border="0" cellspacing="2" cellpadding="0">
   <tr>
-    <td class="head-topic" align=right width=350><BR>:: ��˹�ʶҹФ����Ѻ�����ҹ AN ::</td>
+    <td class="head-topic" align=right width=350><BR>:: กำหนดสถานะความลับการใช้งาน AN ::</td>
 <td><BR> <input type="text" name="txt_an" size="25" maxlength="20"/>&nbsp;<input type="submit" name="cmd_create" value=" Create " /></td>
   </tr>
   <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
@@ -103,7 +103,7 @@ if ($_REQUEST['cmd_show']<>''){
 		echo "<td class='listdetail'>&nbsp;&nbsp;&nbsp;&nbsp;".$row['hn']."</td>";
 		echo "</tr>";
 		echo "<tr>";
-		echo "<td bgcolor='#a9a9a9' align='right' class='hdtable' width='10%'>����-ʡ�� :&nbsp; </td>";
+		echo "<td bgcolor='#a9a9a9' align='right' class='hdtable' width='10%'>ชื่อ-สกุล :&nbsp; </td>";
 		echo "<td class='listdetail'>&nbsp;&nbsp;&nbsp;&nbsp;".$row['firstname']."&nbsp;&nbsp;".$row['lastname']."</td>";
 		echo "</tr>";
 		echo "<tr>";
@@ -118,19 +118,19 @@ if ($_REQUEST['cmd_show']<>''){
 		if (mysql_num_rows($result)>0) {
 		echo "<table class='rowh' align='center' width='90%' cellspacing='1' cellpadding='1' border='0'>";
 		echo "<tr bgcolor='#a9a9a9'>";
-		echo "<td align='center' class='hdtable' width='5%'>�ӴѺ</td>";
+		echo "<td align='center' class='hdtable' width='5%'>ลำดับ</td>";
 		echo "<td align='center' class='hdtable' width='10%'>AN</td>";
-		echo "<td align='center' class='hdtable' width='20%'>ʶҹ�</td>";
-		echo  "<td width='5%' align='center' class='hdtable'>��˹���</td>";
-		echo "<td align='center' class='hdtable' width='20%'>Ǵ�.����˹�</td>";
-		echo  "<td width='5%' align='center' class='hdtable'>ź</td>";
+		echo "<td align='center' class='hdtable' width='20%'>สถานะ</td>";
+		echo  "<td width='5%' align='center' class='hdtable'>กำหนดโดย</td>";
+		echo "<td align='center' class='hdtable' width='20%'>วดป.ที่กำหนด</td>";
+		echo  "<td width='5%' align='center' class='hdtable'>ลบ</td>";
 		echo "</tr>";$id=1;
 		while($line = mysql_fetch_array($result)){
 			if (fmod($id,2)) {$rcolor=' bgcolor=#f5deb3';}else{$rcolor=' bgcolor=#ffbb77';}
 			echo "<tr".$rcolor.">";
 			echo "<td align='center' class='listdetail'>".$id."</td>";
 			echo "<td align='center' class='listdetail'>".$line['an']."</td>";
-			echo "<td align='center' class='listdetail'>�Ѻ</td>";
+			echo "<td align='center' class='listdetail'>ลับ</td>";
 			echo "<td align='center' class='listdetail'>".$line['byuser']."</td>";
 			echo "<td align='center' class='listdetail'>".$line['byupdate']."</td>";
  			echo "<td align='center' class='listdetail'>";
@@ -149,10 +149,10 @@ if ($_REQUEST['cmd_show']<>''){
 		$result = mysql_query($query);
 		if (mysql_num_rows($result)>0) {
 			echo "<table class='rowh' align='center' width='90%' cellspacing='1' cellpadding='1' border='0'>";
-			echo "<tr><td colspan=3> AN: ".$_REQUEST['txt_an']." �բ������͡��� Scan ��к������� ".mysql_num_rows($result)." ��¡��";
+			echo "<tr><td colspan=3> AN: ".$_REQUEST['txt_an']." มีข้อมูลเอกสาร Scan ในระบบทั้งหมด ".mysql_num_rows($result)." รายการ";
 			echo "</td></tr>";
 			echo "<tr bgcolor='#0080FF'>";
-			echo "<td align='center' class='hdtable' width='5%'>�ӴѺ</td>";
+			echo "<td align='center' class='hdtable' width='5%'>ลำดับ</td>";
 			//echo "<td align='center' class='hdtable' width='10%'>AN</td>";
 			echo "<td align='center' class='hdtable' width='70%'>DocTypeName</td>";
 			echo "<td align='center' class='hdtable' width='25%'>DocType</td>";
@@ -169,11 +169,11 @@ if ($_REQUEST['cmd_show']<>''){
 			} //end of while loop
 			echo "</table><br>";
 		}else{//no record found
-			echo "<div class='blackb' align='center'>======== ��辺�������͡��� Scan �ͧ AN : ".$_REQUEST['txt_an']."========</div>";
+			echo "<div class='blackb' align='center'>======== ไม่พบข้อมูลเอกสาร Scan ของ AN : ".$_REQUEST['txt_an']."========</div>";
 		}// end of if chk $result
 			//////////////////////////////////////////////////////////////
 	}else{//no record found tb_ipd
-		echo "<div class='blackb' align='center'>======== ��辺������ AN : ".$_REQUEST['txt_an']."========</div>";
+		echo "<div class='blackb' align='center'>======== ไม่พบข้อมูล AN : ".$_REQUEST['txt_an']."========</div>";
 	}// end of if chk $result
 
 }elseif ($_REQUEST['cmd_showall']<>''){
@@ -200,24 +200,24 @@ if ($_REQUEST['cmd_show']<>''){
 		//echo $comm;
 		$result=mysql_query($comm);
 		if ($totalpage>0) {
-			echo "<div class='blackb' align='center'>�ʴ������ŷ���˹������ʶҹ��Ѻ ��к������� ".$total." ��¡��";
-			if ($totalpage>1){echo " ��й���ʴ�˹�ҷ��  ".$pageid."/".$totalpage;}
+			echo "<div class='blackb' align='center'>แสดงข้อมูลที่กำหนดให้เป็นสถานะลับ ในระบบทั้งหมด ".$total." รายการ";
+			if ($totalpage>1){echo " ขณะนี้แสดงหน้าที่  ".$pageid."/".$totalpage;}
 			echo "</div>";
 			echo "<table class='rowh' align='center' width='90%' cellspacing='1' cellpadding='1' border='0'>";
 			echo "<tr bgcolor='#a9a9a9'>";
-			echo "<td align='center' class='hdtable' width='5%'>�ӴѺ</td>";
+			echo "<td align='center' class='hdtable' width='5%'>ลำดับ</td>";
 			echo "<td align='center' class='hdtable' width='10%'>AN</td>";
-			echo "<td align='center' class='hdtable' width='20%'>ʶҹ�</td>";
-			echo "<td align='center' class='hdtable' width='20%'>Ǵ�.����˹�</td>";
-			echo  "<td width='5%' align='center' class='hdtable'>��˹���</td>";
-			echo  "<td width='5%' align='center' class='hdtable'>ź</td>";
+			echo "<td align='center' class='hdtable' width='20%'>สถานะ</td>";
+			echo "<td align='center' class='hdtable' width='20%'>วดป.ที่กำหนด</td>";
+			echo  "<td width='5%' align='center' class='hdtable'>กำหนดโดย</td>";
+			echo  "<td width='5%' align='center' class='hdtable'>ลบ</td>";
 			echo "</tr>";
 			while($line = mysql_fetch_array($result)){
 				if (fmod($id,2)) {$rcolor=' bgcolor=#f5deb3';}else{$rcolor=' bgcolor=#ffbb77';}
 				echo "<tr".$rcolor.">";
 				echo "<td align='center' class='listdetail'>".$id."</td>";
 				echo "<td align='center' class='listdetail'>".$line['an']."</td>";
-				echo "<td align='center' class='listdetail'>�Ѻ</td>";
+				echo "<td align='center' class='listdetail'>ลับ</td>";
 				echo "<td align='center' class='listdetail'>".$line['byupdate']."</td>";
 				echo "<td align='center' class='listdetail'>".$line['byuser']."</td>";
 				echo "<td align='center' class='listdetail'>";
@@ -241,7 +241,7 @@ if ($_REQUEST['cmd_show']<>''){
 				echo "</td></tr></table><br>";
 			}// end if list pages
 	}else{//no record found
-		echo "<div class='blackb' align='center'>======== ����բ����� AN ���١��˹���ʶҹ��Ѻ========</div>";
+		echo "<div class='blackb' align='center'>======== ไม่มีข้อมูล AN ที่ถูกกำหนดเป็นสถานะลับ========</div>";
 	}// end of if chk $result
 		///////////////////////// End List secreted AN 
 	

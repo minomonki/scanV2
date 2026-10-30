@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr valign="bottom"  bgcolor="#99CCFF">
