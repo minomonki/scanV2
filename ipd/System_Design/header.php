@@ -14,7 +14,7 @@
     
 	<!-- Menu---->
 <?php
-if ($_SESSION["user_ipd"]!=""){
+if (isset($_SESSION["user_ipd"]) && $_SESSION["user_ipd"]!=""){
 	
 	$userG =  $_SESSION["Usergroup_ipd"];
 	include("../System_config/connection.php");

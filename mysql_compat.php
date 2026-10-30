@@ -6,6 +6,9 @@
 
 require_once __DIR__ . '/db_config.php';
 
+// Suppress notices and warnings for legacy PHP 5 array key accesses
+error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING & ~E_DEPRECATED);
+
 // Disable mysqli default exception mode (PHP 8.1+) to match legacy mysql_* warning behavior
 if (function_exists('mysqli_report')) {
     @mysqli_report(MYSQLI_REPORT_OFF);

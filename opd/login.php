@@ -22,7 +22,7 @@ $numLogin = mysql_num_rows($resLogin);
 	}
 	else { 
 		$lastlogin = date('Y-m-d H:i:s');
-		$sqllastlogin = "UPDATE tb_login SET lastLogin='$lastlogin' WHERE username='$user'";
+		$sqllastlogin = "UPDATE tb_opd_login SET lastLogin='$lastlogin' WHERE username='$user'";
 		$reslastlogin = mysql_db_query($database,$sqllastlogin);
 		
 		while($typenum = mysql_fetch_array($resLogin)){

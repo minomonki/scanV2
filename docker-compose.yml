@@ -1,0 +1,21 @@
+services:
+  scan-web:
+    image: scan-web:latest
+    container_name: scan-web
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/html
+    environment:
+      - DB_HOST=cmhos-kpi-db
+      - DB_USER=authen
+      - DB_PASS=authen
+      - DB_NAME=hdbms
+      - DB_CHARSET=tis620
+    networks:
+      - cmhoskpi_cmhos-network
+
+networks:
+  cmhoskpi_cmhos-network:
+    external: true
