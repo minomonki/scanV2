@@ -194,7 +194,7 @@ document.onmousedown=click;
                     									<li id="<?=$hnID?>" id2="<?=$VALdate['vn']?>">
 														<a href="#"><?=$Gday?> [ <?=$doctype?> ]  VN : <?=$VALdate['vn']?></a>
 														</li>
-													<? }//===if
+													<?php }//===if
 														else{
 																if ($Xfile_Allowed ==1){
 																$SQLdocname= "	select *  from  tb_opd_doctype  where  (doctype_id = '$docID ')";
@@ -206,7 +206,7 @@ document.onmousedown=click;
                     											<li id="<?=$hnID?>" id2="<?=$VALdate['vn']?>">
 																<a href="#"><?=$Gday?> [ <?=$doctype?> ]  VN : <?=$VALdate['vn']?></a>
 																</li>
-														<?		}//===else
+														<?php		}//===else
 														} //========end if 555?>
 					<?php
 	 						}    ///////////////////////////  while 2 sub

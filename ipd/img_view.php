@@ -1,4 +1,4 @@
-<? 
+<?php 
 if ($_GET['chkpass']==1){
 
 $Img_Id = $_GET['an'];

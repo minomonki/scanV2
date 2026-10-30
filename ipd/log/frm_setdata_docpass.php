@@ -81,7 +81,7 @@ return true
 <tr valign="top">
 <td><!--detail body -->
 <br>
-<?
+<?php
 if ($_REQUEST['cmd_setdata']<>''){
 	include("../System_config/connect.php");
 	////////// Check Exist AN

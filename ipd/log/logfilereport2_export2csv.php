@@ -94,7 +94,7 @@ while($row = mysql_fetch_array($result)){
 		if ($key==5){$logtype="HosXP";}else{$logtype=$logtype_array[$key];}
 	}			
 	if ($row['logtype']=="E"){	
-		$u_array = split('/', $row['username']);
+		$u_array = explode('/', $row['username']);
 		$usrname= $u_array[0]."/****";
 	}elseif ($row['logtype']=="B"){
 		$usrname= "HosXP";

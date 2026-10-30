@@ -76,7 +76,7 @@ $Rcount = 0;
 while($VALshowG = mysql_fetch_array($RESshowG)){
  if (($VALshowG["groupID"])<>"") $Rcount = $Rcount + 1;
 ?>
- <? if ($VALshowG["groupID"] !=99){ //Chk GroupAdmin Not show in table?>
+ <?php if ($VALshowG["groupID"] !=99){ //Chk GroupAdmin Not show in table?>
   <tr>
     <td align="center"><?=$Rcount?></td>
     <td><?=$VALshowG["groupname"]?></td>

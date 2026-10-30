@@ -67,7 +67,7 @@ return true
 <tr valign="top">
 <td bgcolor="#ffffff"><!--detail body -->
 <br>
-<?
+<?php
 if ($_SESSION['userdocpass']<>''){
 	include("../System_config/connect.php");
 	include("../System_config/func.php");
@@ -120,7 +120,7 @@ if ($_SESSION['userdocpass']<>''){
 $chkpass = chkPass2show2($row['an'],$syspass,$today2);
 if ($chkpass==1){
 ?>     <a title='View' href="javascript:popup('show_detail.php?an=<?=$row['an'];?>&logno=<?=$_SESSION['lognodocpass'];?>','null',950,500);"onMouseover="return hidestatus()" onMouseOut="return hidestatus()"><img src="../images/icon_showinfo.gif" border="0"/></a>
-<?
+<?php
 }else{
 	echo "<span title='Expired' style='cursor: hand'><img  src='../images/cancel-icon.png' border='0' alt='Expired'/></span>";
 }

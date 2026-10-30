@@ -167,8 +167,8 @@ for ($i = 1; $i <= count($pcode_array); $i++){
 if (!is_null($_REQUEST['cmd_show'])){
 
 /*
-$fromdate=split("-",$_REQUEST['admit_s']);
-$todate=split("-",$_REQUEST['admit_e']);
+$fromdate=explode("-",$_REQUEST['admit_s']);
+$todate=explode("-",$_REQUEST['admit_e']);
 if ($fromdate[0]>2400){$fy=$fromdate[0]-543;}else{$fy=$fromdate[0];}
 $fm=$fromdate[1];
 $fd=$fromdate[2];
@@ -307,7 +307,7 @@ if ($result) {
 			echo "</td>";
 			echo "<td align='center' class='listdetail'>";
 			if ($row['logtype']=="E"){	
-				$u_array = split('/', $row['username']);
+				$u_array = explode('/', $row['username']);
 				echo $u_array[0]."/****";
 			}elseif ($row['logtype']=="B"){
 				echo "HosXP";

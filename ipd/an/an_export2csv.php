@@ -52,7 +52,7 @@ if ($returnurl=="anreport"){
 	/*$list=array('รวม,$sum_an,$pages,$sizes');
 	$fp = fopen($path.$exportname, 'a+');
 foreach ($list as $line) {
-    fputcsv($fp, split(',', $line));
+    fputcsv($fp, explode(',', $line));
 }
 	fclose($fp);
 */

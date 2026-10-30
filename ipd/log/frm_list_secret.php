@@ -88,7 +88,7 @@ return true
 <tr valign="top">
 <td bgcolor="#ffffff"><!--detail body -->
 
-<?
+<?php
 if ($_REQUEST['cmd_show']<>''){
 	include("../System_config/connect.php");
 	////////// Check Exist AN

@@ -1,4 +1,4 @@
-<? 
+<?php 
 $Img_Id = $_GET['hnID'];
 $vn = $_GET['vn'];
 $docid = $_GET['docid'];

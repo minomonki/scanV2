@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<?
+<?php
 $pswtxt=$_REQUEST['pswtxt'];
 $an=$_REQUEST['an'];
 

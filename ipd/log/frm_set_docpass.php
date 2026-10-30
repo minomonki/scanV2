@@ -144,7 +144,7 @@ function validSubmit2() {
 <tr valign="top">
 <td bgcolor="#ffffff"><!--detail body -->
 <br>
-<?
+<?php
 if ($_REQUEST['cmd_create']<>''){
 	include("../System_config/connect.php");
 	////////// Check Exist AN

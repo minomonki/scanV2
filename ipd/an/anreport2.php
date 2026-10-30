@@ -123,8 +123,8 @@ return true
 <?php
 if (!is_null($_REQUEST['cmd_show'])){
 		/*
-		$fromdate=split("-",$_REQUEST['admit_s']);
-		$todate=split("-",$_REQUEST['admit_e']);
+		$fromdate=explode("-",$_REQUEST['admit_s']);
+		$todate=explode("-",$_REQUEST['admit_e']);
 		if ($fromdate[0]>2400){$fy=$fromdate[0]-543;}else{$fy=$fromdate[0];}
 		$fm=$fromdate[1];
 		$fd=$fromdate[2];

@@ -1,4 +1,5 @@
 <?php
+require_once dirname(__DIR__, 4) . '/mysql_compat.php';
 class _database {
 	private $link		= false;
 	private $result		= false;

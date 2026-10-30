@@ -77,7 +77,7 @@ while($VALshowUser = mysql_fetch_array($RESshowUser)){
 						$VALG = mysql_fetch_array($RESG);
 						if (($VALshowUser["userID"])<>"") $RCount  = $RCount +1;
 ?>
-  <? if ($VALshowUser["userID"] !=999){ //Chk Admin Not show in table?>
+  <?php if ($VALshowUser["userID"] !=999){ //Chk Admin Not show in table?>
   <tr bgcolor="#FFFFFF">
     <td align="center"><?=$RCount?></td>
     <td>

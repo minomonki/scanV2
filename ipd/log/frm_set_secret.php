@@ -76,7 +76,7 @@ return true
 <table align="left" width="100%" cellspacing="0" cellpadding="0" border="0" >
 <tr valign="top">
 <td bgcolor="#ffffff"><!--detail body -->
-<?
+<?php
 if ($_REQUEST['txt_an']<>''){
 	include("../System_config/connect.php");
 	////////// Check Exist AN

@@ -66,7 +66,7 @@ return true
 <tr valign="top">
 <td bgcolor="#ffffff"><!--detail body -->
 <br>
-<?
+<?php
 $col ="logno,items,pcode,an,doctype,day(ldate) as d , month(ldate) as m , year(ldate)+543 as y, hour(ldate) as h, minute(ldate) as mn, second(ldate) as s, descr";
 include("../System_config/connect.php");
 $pagesize=20;

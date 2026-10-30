@@ -212,7 +212,7 @@ $j=0;
 		$doctypename	= $VALdoctype["DocTypeName"];
 
 ?>
- <?
+ <?php
   		if ($docid!=999){?>
   <tr>
     	<td align="left"><?=$doctypename?></td>	

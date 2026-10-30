@@ -75,7 +75,7 @@ $RESshowDoc = mysql_db_query($database,$SQLshowDoc);
 $RCount = 0;
 while($VALshowDoc = mysql_fetch_array($RESshowDoc)){
 ?>
- <? if ($VALshowDoc["doctype_id"] !=999){ //Chk Doc Not show in table
+ <?php if ($VALshowDoc["doctype_id"] !=999){ //Chk Doc Not show in table
   if (($VALshowDoc ["doctype_id"])<>"") $RCount  = $RCount +1;
   ?>
   <tr bgcolor="#FFFFFF">

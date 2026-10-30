@@ -1,4 +1,5 @@
 <?php
+require_once dirname(__DIR__, 2) . '/mysql_compat.php';
 
 /*$hostDB = "192.168.1.10";
 $userDB = "sa";

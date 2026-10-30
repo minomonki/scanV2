@@ -301,7 +301,7 @@
                     							<li id="<?=$hnID?>" id2="<?=$VALdate['vn']?>"  id3="<?=$docid?> ">
 												<a href="#"><?=$Gday?> [ <?=$docname?> ]  VN : <?=$VALdate['vn']?></a>
 												</li>
-										<? $chkOk =$VALdate['vn'];
+										<?php $chkOk =$VALdate['vn'];
 											$chkDoc =$doctype;}
 										}//===end 22
 									break;
@@ -312,7 +312,7 @@
 											if  (($VALdate['doctype_id'] ==$docid)and ($chksec != 1)) { ?>
                     									<li id="<?=$hnID?>" id2="<?=$VALdate['vn']?>" id3="<?=$docid?> ">
 														<a href="#"><?=$Gday?> [ <?=$docname?> ]  VN : <?=$VALdate['vn']?></a>
-								<?  $chkOk =$VALdate['vn']; 
+								<?php  $chkOk =$VALdate['vn']; 
 										$chkDoc =$doctype;}
 										}//===end44
 									break;
@@ -330,7 +330,7 @@
 						<li id="<?=$hnID?>" id2="<?=$VALdate['vn']?>" id3="<?=$tmpDocID?> ">
 														<a href="#"><?=$Gday?> [ <?=$tmpDocName?> ]  VN : <?=$VALdate['vn']?></a>
 						
-						<? }
+						<?php }
 						}
 						//print "<li id=\"$anID\" id2=\"$tmpDocID\"><a href=\"#\">$tmpDocName</a></li>";}
 

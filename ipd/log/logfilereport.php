@@ -130,7 +130,7 @@ if ($totalpage>0) {
 			//echo $u_array[0];
 			echo "<a title='ดูรายละเอียด' onMouseover='return hidestatus()' onMouseOut='return hidestatus()' target='_blank' href=logfilereport_detail.php?logno=".$row['logno']."&username=".base64_encode($row['username'])."&getname=".$getname.">";
 			if ($row['logtype']=="E"){	
-				$u_array = split('/', $row['username']);
+				$u_array = explode('/', $row['username']);
 				echo $u_array[0]."/****";
 			}elseif ($row['logtype']=="B"){
 				echo "HosXP";

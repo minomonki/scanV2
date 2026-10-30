@@ -318,7 +318,7 @@ document.onmousedown=click;
 																<li id="<?=$hnID?>" id2="<?=$VALdate['vn']?>"  id3="<?=$docid?> ">
 																<a href="#"><?=$Gday?> [ <?=$docname?> ]  VN : <?=$VALdate['vn']?></a>
 																</li>
-	<?	
+	<?php	
 																$chkOk =$VALdate['vn'];
 																$chkDoc =$doctype;
 															}
@@ -336,7 +336,7 @@ document.onmousedown=click;
 																<li id="<?=$hnID?>" id2="<?=$VALdate['vn']?>" id3="<?=$docid?> ">
 																<a href="#"><?=$Gday?> [ <?=$docname?> ]  VN : <?=$VALdate['vn']?></a>
 																</li>
-	<?  
+	<?php  
 																$chkOk =$VALdate['vn']; 
 																$chkDoc =$doctype;
 															}
@@ -359,7 +359,7 @@ document.onmousedown=click;
 											<li id="<?=$hnID?>" id2="<?=$VALdate['vn']?>" id3="<?=$tmpDocID?> ">
 											<a href="#"><?=$Gday?> [ <?=$tmpDocName?> ]  VN : <?=$VALdate['vn']?></a>
 											</li>
-	<? 										
+	<?php 										
 										}
 									}
 									//print "<li id=\"$anID\" id2=\"$tmpDocID\"><a href=\"#\">$tmpDocName</a></li>";}

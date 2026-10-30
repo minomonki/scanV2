@@ -1,19 +1,18 @@
 <?php
+require_once dirname(__DIR__, 2) . '/mysql_compat.php';
 
-$hostDB = "localhost";
-$userDB = "root";
-$passDB = "authen";
-//$userDB = "root";
-//$passDB = "password";
-//$passDB = "1234";
+$hostDB   = DB_HOST;
+$userDB   = DB_USER;
+$passDB   = DB_PASS;
+$database = DB_NAME;
 
-$database = "hdbms";
+$connDB = @mysql_connect($hostDB, $userDB, $passDB);
 
-$connDB = @mysql_connect($hostDB,$userDB,$passDB);
-
-mysql_query("SET NAMES tis620");
-
-if(!$connDB){
-	print "Cann't Connect to Database";	
+if ($connDB) {
+    if (defined('DB_CHARSET') && DB_CHARSET) {
+        mysql_query("SET NAMES " . DB_CHARSET);
+    }
+} else {
+    print "Cann't Connect to Database";
 }
 ?>

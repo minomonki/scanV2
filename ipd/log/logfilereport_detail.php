@@ -66,7 +66,7 @@ return true
 <tr valign="top">
 <td bgcolor="#ffffff"><!--detail body -->
 <br>
-<?
+<?php
 include("../System_config/connect.php");
 $pagesize=20;
 $sql="select * from tb_ipd_logfile_detail ";

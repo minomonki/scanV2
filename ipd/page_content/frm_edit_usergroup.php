@@ -258,7 +258,7 @@ $j=0;
 								$checkdocP = "";}						
 ?>
 
-  <?
+  <?php
   		if ($docid!=999){?>
   <tr>
     	<td align="left"><?=$doctypename?></td>

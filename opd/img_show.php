@@ -43,14 +43,14 @@ $uc=alterna($g,$fieldDoc);
 <table width="640" border="1" cellpadding="0" cellspacing="0">
   <tr> 
     <td>
-    <? if (is_numeric($docid)) { ?>
+    <?php if (is_numeric($docid)) { ?>
     <embed  
   	  	src="img_view.php?hnID=<?=$hnID;?>&vn=<?=$vn?>&docid=<?=$docid?>" width=670 height=1000 access=512 type="image/tiff"
     	negative=no toolbaritems="<?=$uc;?>">
-	<? }
+	<?php }
 	   else{
 		?>
-		<tr><td bgcolor="#000000" width="670" height="1000"></td></tr><? }?>
+		<tr><td bgcolor="#000000" width="670" height="1000"></td></tr><?php }?>
 	</td>
   </tr>
 </table>

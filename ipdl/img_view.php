@@ -1,4 +1,4 @@
-<? 
+<?php 
 $Img_Id = $_GET['an'];
 $docid = $_GET['docid'];
 #$tmp = $_SESSION["tmp"];

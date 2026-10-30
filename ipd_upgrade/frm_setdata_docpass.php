@@ -101,7 +101,7 @@ if (substr($foruserdata,0,1)<>"<"){
 <tr valign="top">
 <td><!--detail body -->
 <br>
-<?
+<?php
 if ($_REQUEST['cmd_setdata']<>''){
 	include("../ipd/System_config/connect.php");
 	////////// Check Exist AN
@@ -143,7 +143,7 @@ if ($_REQUEST['cmd_setdata']<>''){
 }// end if chk cmd???
 ?>
 <br>
-<?
+<?php
 if ($_REQUEST['cmd_foruserdata']<>''){
 	include("../ipd/System_config/connect.php");
 	include("../ipd/System_config/func.php");
