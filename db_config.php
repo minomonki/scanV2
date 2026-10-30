@@ -15,3 +15,4 @@ defined('DB_NAME')    or define('DB_NAME', getenv('DB_NAME') ?: 'hdbms');
  * - 'utf8mb4' : สำหรับเมื่อย้ายฐานข้อมูลไประบบใหม่ (MariaDB 11.4 / AlmaLinux 9)
  */
 defined('DB_CHARSET') or define('DB_CHARSET', getenv('DB_CHARSET') ?: 'tis620');
+
